@@ -11,9 +11,42 @@ import { useState } from "react";
  * - Elementos: Orbes abstratos, linhas diagonais, cards com brilho sutil
  */
 
+interface FAQItem {
+  question: string;
+  answer: string;
+}
+
+const faqItems: FAQItem[] = [
+  {
+    question: "Qual é o pré-requisito para fazer o curso?",
+    answer: "Nenhum! O curso é 100% do zero. Você não precisa ter conhecimento prévio sobre criptomoedas ou blockchain. Começamos desde os conceitos mais básicos.",
+  },
+  {
+    question: "Quanto tempo leva para completar o curso?",
+    answer: "O curso tem 7 módulos completos. O tempo varia de acordo com seu ritmo, mas em média leva de 4 a 8 semanas estudando 1-2 horas por dia.",
+  },
+  {
+    question: "O curso inclui suporte?",
+    answer: "Sim! Você terá acesso a uma comunidade ativa, suporte direto e acesso a um mapa mental exclusivo para facilitar o farm de airdrops.",
+  },
+  {
+    question: "Posso acessar o curso em qualquer dispositivo?",
+    answer: "Sim! O curso é acessível via web em qualquer dispositivo (computador, tablet ou smartphone). Você estuda quando quiser, onde quiser.",
+  },
+  {
+    question: "Há garantia de reembolso?",
+    answer: "Sim! Oferecemos garantia de 7 dias. Se não gostar do curso, devolvemos 100% do seu investimento, sem perguntas.",
+  },
+  {
+    question: "O curso aborda airdrops?",
+    answer: "Sim! Temos um módulo completo sobre airdrops com um mapa mental exclusivo e estratégias práticas para maximizar seus ganhos.",
+  },
+];
+
 export default function Home() {
   const [email, setEmail] = useState("");
   const [submitted, setSubmitted] = useState(false);
+  const [expandedFAQ, setExpandedFAQ] = useState<number | null>(null);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -41,7 +74,7 @@ export default function Home() {
             <div className="flex items-center gap-2">
               <Bitcoin className="w-8 h-8 text-yellow-400" />
               <span className="text-xl font-bold" style={{ fontFamily: "Poppins" }}>
-                Bitcoin Pro
+                Level Cripto PRO
               </span>
             </div>
             <nav className="hidden md:flex gap-8 text-sm">
@@ -50,6 +83,12 @@ export default function Home() {
               </a>
               <a href="#conteudo" className="hover:text-yellow-400 transition-colors">
                 Conteúdo
+              </a>
+              <a href="#professor" className="hover:text-yellow-400 transition-colors">
+                Professor
+              </a>
+              <a href="#faq" className="hover:text-yellow-400 transition-colors">
+                FAQ
               </a>
               <a href="#depoimentos" className="hover:text-yellow-400 transition-colors">
                 Depoimentos
@@ -68,14 +107,14 @@ export default function Home() {
               className="text-5xl md:text-6xl font-bold mb-6 leading-tight"
               style={{ fontFamily: "Poppins" }}
             >
-              Domine o Mercado de
+              Level Cripto
               <span className="bg-gradient-to-r from-purple-400 to-yellow-400 bg-clip-text text-transparent">
                 {" "}
-                Criptomoedas
+                PRO
               </span>
             </h1>
             <p className="text-xl text-gray-300 mb-8 leading-relaxed" style={{ fontFamily: "Inter" }}>
-              Aprenda do zero até operar em todas as frentes do mercado cripto. Bitcoin, DeFi, NFTs, Metaverso e Web3.
+              Do zero ao avançado: Bitcoin, DeFi, NFTs, Metaverso, Mercado de Futuros e Web3. Com suporte, comunidade ativa, mapa mental para airdrops e acesso vitalício.
             </p>
 
             {/* Email Form */}
@@ -155,15 +194,15 @@ export default function Home() {
               },
               {
                 icon: Zap,
-                title: "Didática Prática",
+                title: "Suporte & Comunidade",
                 description:
-                  "Explicações claras e objetivas com exemplos reais do mercado. Sem jargão desnecessário.",
+                  "Acesso a comunidade ativa, suporte direto, mapa mental exclusivo para farm de airdrops e estratégias práticas.",
               },
               {
                 icon: Globe,
                 title: "Acesso Vitalício",
                 description:
-                  "Estude no seu ritmo com acesso permanente ao conteúdo. Atualizações incluídas.",
+                  "Estude no seu ritmo com acesso permanente ao conteúdo. Atualizações incluídas e airdrops em destaque.",
               },
             ].map((feature, idx) => {
               const Icon = feature.icon;
@@ -205,9 +244,9 @@ export default function Home() {
                   "Estratégias de investimento seguro",
                   "DeFi e finanças descentralizadas",
                   "NFTs e ativos digitais",
-                  "Preparação para Web3",
+                  "Airdrops: Mapa Mental e Farm Estratégico",
                   "Análise técnica e fundamental",
-                  "Segurança e boas práticas",
+                  "Segurança, Suporte e Comunidade",
                 ].map((item, idx) => (
                   <li key={idx} className="flex items-start gap-3">
                     <ChevronRight className="w-5 h-5 text-yellow-400 flex-shrink-0 mt-1" />
@@ -224,6 +263,76 @@ export default function Home() {
                 className="w-full h-full object-contain animate-stagger"
                 style={{ animationDelay: "0.2s" }}
               />
+            </div>
+          </div>
+        </section>
+
+        {/* Divider */}
+        <div className="container">
+          <div className="divider-diagonal" />
+        </div>
+
+        {/* Professor Section */}
+        <section id="professor" className="container py-20">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div className="relative h-96 flex items-center justify-center">
+              <img
+                src="/images/testimonial-avatar-1.png"
+                alt="Renan Mataveli"
+                className="w-64 h-64 rounded-full animate-stagger"
+                style={{ animationDelay: "0s" }}
+              />
+            </div>
+
+            <div className="animate-stagger" style={{ animationDelay: "0.2s" }}>
+              <h2 className="text-4xl font-bold mb-6" style={{ fontFamily: "Poppins" }}>
+                Conheça o Professor
+              </h2>
+              <h3 className="text-2xl font-semibold text-yellow-400 mb-4" style={{ fontFamily: "Outfit" }}>
+                Renan Mataveli
+              </h3>
+              <p className="text-gray-300 mb-6 leading-relaxed" style={{ fontFamily: "Inter" }}>
+                Especialista em criptomoedas com mais de 10 anos de experiência no mercado financeiro. Renan é criador do canal <strong>Level Cripto</strong>, com mais de 10k seguidores no YouTube e comunidade ativa no Instagram.
+              </p>
+              <p className="text-gray-300 mb-6 leading-relaxed" style={{ fontFamily: "Inter" }}>
+                Sua missão é democratizar o conhecimento sobre criptomoedas, explicando de forma clara e sem jargão desnecessário. No canal, você encontra:
+              </p>
+              <ul className="space-y-3 text-gray-300 mb-8" style={{ fontFamily: "Inter" }}>
+                <li className="flex items-start gap-3">
+                  <span className="text-yellow-400 mt-1">✓</span>
+                  <span>Análises profundas do mercado de criptomoedas</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-yellow-400 mt-1">✓</span>
+                  <span>Estratégias de investimento e farm de airdrops</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-yellow-400 mt-1">✓</span>
+                  <span>Conteúdo educativo sobre DeFi, NFTs e Web3</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-yellow-400 mt-1">✓</span>
+                  <span>Comunidade ativa e suporte direto aos alunos</span>
+                </li>
+              </ul>
+              <div className="flex gap-4">
+                <a
+                  href="https://www.instagram.com/level_cripto/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-6 py-3 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 rounded-lg font-semibold transition-all"
+                >
+                  Seguir no Instagram
+                </a>
+                <a
+                  href="https://www.youtube.com/channel/UCCbpFaIRJkltWCbiFNiv2Bw"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-6 py-3 bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 rounded-lg font-semibold transition-all"
+                >
+                  Inscrever no YouTube
+                </a>
+              </div>
             </div>
           </div>
         </section>
@@ -303,6 +412,50 @@ export default function Home() {
           <div className="divider-diagonal" />
         </div>
 
+        {/* FAQ Section */}
+        <section id="faq" className="container py-20">
+          <div className="text-center mb-16 animate-stagger">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4" style={{ fontFamily: "Poppins" }}>
+              Perguntas Frequentes
+            </h2>
+            <p className="text-gray-400 text-lg" style={{ fontFamily: "Inter" }}>
+              Tire suas dúvidas sobre o curso Level Cripto PRO
+            </p>
+          </div>
+
+          <div className="max-w-3xl mx-auto space-y-4">
+            {faqItems.map((item, idx) => (
+              <div
+                key={idx}
+                className="card-luminous overflow-hidden animate-stagger"
+                style={{ animationDelay: `${idx * 0.05}s` }}
+              >
+                <button
+                  onClick={() => setExpandedFAQ(expandedFAQ === idx ? null : idx)}
+                  className="w-full px-8 py-6 flex items-center justify-between hover:bg-white/5 transition-colors text-left"
+                >
+                  <h3 className="font-semibold text-lg" style={{ fontFamily: "Outfit" }}>
+                    {item.question}
+                  </h3>
+                  <span className="text-yellow-400 text-2xl flex-shrink-0">
+                    {expandedFAQ === idx ? "−" : "+"}
+                  </span>
+                </button>
+                {expandedFAQ === idx && (
+                  <div className="px-8 pb-6 border-t border-white/10 text-gray-300" style={{ fontFamily: "Inter" }}>
+                    {item.answer}
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* Divider */}
+        <div className="container">
+          <div className="divider-diagonal" />
+        </div>
+
         {/* CTA Section */}
         <section className="container py-20 text-center">
           <div className="animate-stagger">
@@ -332,10 +485,10 @@ export default function Home() {
                 <div className="flex items-center gap-2 mb-4">
                   <Bitcoin className="w-6 h-6 text-yellow-400" />
                   <span className="font-bold" style={{ fontFamily: "Poppins" }}>
-                    Bitcoin Pro
+                    Level Cripto PRO
                   </span>
                 </div>
-                <p className="text-sm text-gray-400">Educação em criptomoedas de qualidade.</p>
+                <p className="text-sm text-gray-400">Educação em criptomoedas de qualidade com Renan Mataveli.</p>
               </div>
               <div>
                 <h4 className="font-bold mb-4" style={{ fontFamily: "Outfit" }}>
@@ -407,7 +560,7 @@ export default function Home() {
 
             <div className="border-t border-white/10 pt-8 text-center text-sm text-gray-500">
               <p>
-                © 2026 Bitcoin Pro. Todos os direitos reservados. Desenvolvido com{" "}
+                © 2026 Level Cripto PRO. Todos os direitos reservados. Desenvolvido com{" "}
                 <span className="text-yellow-400">♥</span> para educação em criptomoedas.
               </p>
             </div>
