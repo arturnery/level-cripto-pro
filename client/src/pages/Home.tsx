@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { ChevronRight, Bitcoin, TrendingUp, Zap, Globe, Users, ArrowRight } from "lucide-react";
-import { useState } from "react";
+import { ChevronRight, Bitcoin, TrendingUp, Zap, Globe, Users, ArrowRight, Copy, Check } from "lucide-react";
+import { useState, useEffect } from "react";
 
 /**
  * Design System: Minimalismo Futurista com Gradientes Dinâmicos
@@ -47,14 +47,56 @@ export default function Home() {
   const [email, setEmail] = useState("");
   const [submitted, setSubmitted] = useState(false);
   const [expandedFAQ, setExpandedFAQ] = useState<number | null>(null);
+  const [referralCode, setReferralCode] = useState("");
+  const [referralCount, setReferralCount] = useState(0);
+  const [userPosition, setUserPosition] = useState(0);
+  const [totalSignups, setTotalSignups] = useState(347);
+  const [countdown, setCountdown] = useState({ days: 45, hours: 12, minutes: 30, seconds: 45 });
+  const [copied, setCopied] = useState(false);
+
+  // Calcular temporizador regressivo
+  useEffect(() => {
+    const launchDate = new Date("2026-03-15T00:00:00").getTime();
+    
+    const timer = setInterval(() => {
+      const now = new Date().getTime();
+      const distance = launchDate - now;
+
+      if (distance > 0) {
+        setCountdown({
+          days: Math.floor(distance / (1000 * 60 * 60 * 24)),
+          hours: Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
+          minutes: Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)),
+          seconds: Math.floor((distance % (1000 * 60)) / 1000),
+        });
+      }
+    }, 1000);
+
+    return () => clearInterval(timer);
+  }, []);
+
+  const generateReferralCode = () => {
+    return "LC" + Math.random().toString(36).substring(2, 10).toUpperCase();
+  };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (email) {
-      setSubmitted(true);
-      setEmail("");
-      setTimeout(() => setSubmitted(false), 3000);
-    }
+    if (!email) return;
+
+    const code = generateReferralCode();
+    setReferralCode(code);
+    const position = totalSignups + 1;
+    setUserPosition(position);
+    setTotalSignups(totalSignups + 1);
+
+    console.log("Email inscrito:", email, "Codigo:", code);
+    setSubmitted(true);
+  };
+
+  const copyReferralCode = () => {
+    navigator.clipboard.writeText(referralCode);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
   };
 
   return (
@@ -70,101 +112,176 @@ export default function Home() {
       <div className="relative z-10">
         {/* Header */}
         <header className="border-b border-white/10 backdrop-blur-sm sticky top-0 z-50">
-          <div className="container py-4 flex items-center justify-between">
+          <div className="container flex items-center justify-between h-16">
             <div className="flex items-center gap-2">
-              <Bitcoin className="w-8 h-8 text-yellow-400" />
-              <span className="text-xl font-bold" style={{ fontFamily: "Poppins" }}>
+              <Bitcoin className="w-6 h-6 text-yellow-400" />
+              <span className="font-bold text-lg" style={{ fontFamily: "Poppins" }}>
                 Level Cripto PRO
               </span>
             </div>
-            <nav className="hidden md:flex gap-8 text-sm">
-              <a href="#beneficios" className="hover:text-yellow-400 transition-colors">
+            <nav className="hidden md:flex gap-8">
+              <a href="#beneficios" className="text-sm hover:text-yellow-400 transition-colors">
                 Benefícios
               </a>
-              <a href="#conteudo" className="hover:text-yellow-400 transition-colors">
+              <a href="#conteudo" className="text-sm hover:text-yellow-400 transition-colors">
                 Conteúdo
               </a>
-              <a href="#professor" className="hover:text-yellow-400 transition-colors">
+              <a href="#professor" className="text-sm hover:text-yellow-400 transition-colors">
                 Professor
               </a>
-              <a href="#faq" className="hover:text-yellow-400 transition-colors">
+              <a href="#faq" className="text-sm hover:text-yellow-400 transition-colors">
                 FAQ
               </a>
-              <a href="#depoimentos" className="hover:text-yellow-400 transition-colors">
+              <a href="#depoimentos" className="text-sm hover:text-yellow-400 transition-colors">
                 Depoimentos
               </a>
             </nav>
           </div>
         </header>
 
-        {/* Hero Section */}
-        <section className="container py-20 md:py-32 grid md:grid-cols-2 gap-12 items-center">
-          <div className="animate-stagger">
-            <div className="inline-block mb-6 px-4 py-2 bg-purple-600/20 border border-purple-400/30 rounded-full text-sm">
-              <span className="text-yellow-400">✨</span> Lançamento Exclusivo
-            </div>
-            <h1
-              className="text-5xl md:text-6xl font-bold mb-6 leading-tight"
-              style={{ fontFamily: "Poppins" }}
-            >
-              Level Cripto
-              <span className="bg-gradient-to-r from-purple-400 to-yellow-400 bg-clip-text text-transparent">
-                {" "}
-                PRO
-              </span>
-            </h1>
-            <p className="text-xl text-gray-300 mb-8 leading-relaxed" style={{ fontFamily: "Inter" }}>
-              Do zero ao avançado: Bitcoin, DeFi, NFTs, Metaverso, Mercado de Futuros e Web3. Com suporte, comunidade ativa, mapa mental para airdrops e acesso vitalício.
-            </p>
-
-            {/* Email Form */}
-            <form onSubmit={handleSubmit} className="flex gap-3 mb-8">
-              <input
-                type="email"
-                placeholder="seu@email.com"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                className="flex-1 px-4 py-3 bg-slate-900/50 border border-white/10 rounded-lg focus:outline-none focus:border-yellow-400 transition-colors text-white placeholder-gray-500"
-                required
-              />
-              <Button
-                type="submit"
-                className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white px-8 py-3 rounded-lg font-semibold flex items-center gap-2 pulse-subtle"
+        {/* Hero Section with Countdown */}
+        <section className="container py-20 md:py-32">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div className="animate-stagger">
+              <div className="inline-block mb-6 px-4 py-2 bg-purple-600/20 border border-purple-400/30 rounded-full text-sm">
+                <span className="text-yellow-400">✨</span> Lançamento Exclusivo
+              </div>
+              <h1
+                className="text-5xl md:text-6xl font-bold mb-6 leading-tight"
+                style={{ fontFamily: "Poppins" }}
               >
-                Inscrever <ArrowRight className="w-4 h-4" />
-              </Button>
-            </form>
+                Level Cripto
+                <span className="bg-gradient-to-r from-purple-400 to-yellow-400 bg-clip-text text-transparent">
+                  {" "}
+                  PRO
+                </span>
+              </h1>
+              <p className="text-xl text-gray-300 mb-8 leading-relaxed" style={{ fontFamily: "Inter" }}>
+                Do zero ao avançado: Bitcoin, DeFi, NFTs, Metaverso, Mercado de Futuros e Web3. Com suporte, comunidade ativa, mapa mental para airdrops e acesso vitalício.
+              </p>
 
-            {submitted && (
-              <div className="text-green-400 text-sm animate-stagger">
-                ✓ Inscrição realizada com sucesso! Verifique seu email.
+              {/* Countdown Timer */}
+              <div className="mb-8 p-6 bg-gradient-to-r from-purple-600/20 to-blue-600/20 border border-purple-400/30 rounded-lg">
+                <p className="text-sm text-gray-400 mb-4" style={{ fontFamily: "Inter" }}>
+                  Lançamento em:
+                </p>
+                <div className="grid grid-cols-4 gap-4">
+                  <div className="text-center">
+                    <div className="text-3xl font-bold text-yellow-400" style={{ fontFamily: "Poppins" }}>
+                      {countdown.days}
+                    </div>
+                    <div className="text-xs text-gray-400 mt-2">Dias</div>
+                  </div>
+                  <div className="text-center">
+                    <div className="text-3xl font-bold text-yellow-400" style={{ fontFamily: "Poppins" }}>
+                      {countdown.hours}
+                    </div>
+                    <div className="text-xs text-gray-400 mt-2">Horas</div>
+                  </div>
+                  <div className="text-center">
+                    <div className="text-3xl font-bold text-yellow-400" style={{ fontFamily: "Poppins" }}>
+                      {countdown.minutes}
+                    </div>
+                    <div className="text-xs text-gray-400 mt-2">Minutos</div>
+                  </div>
+                  <div className="text-center">
+                    <div className="text-3xl font-bold text-yellow-400" style={{ fontFamily: "Poppins" }}>
+                      {countdown.seconds}
+                    </div>
+                    <div className="text-xs text-gray-400 mt-2">Segundos</div>
+                  </div>
+                </div>
               </div>
-            )}
 
-            <div className="flex gap-8 text-sm text-gray-400">
-              <div>
-                <div className="font-bold text-white">+347</div>
-                <div>Alunos Inscritos</div>
-              </div>
-              <div>
-                <div className="font-bold text-white">1.2K+</div>
-                <div>Seguidores YouTube</div>
-              </div>
-              <div>
-                <div className="font-bold text-white">7</div>
-                <div>Módulos Completos</div>
+              {/* Email Form */}
+              {!submitted ? (
+                <form onSubmit={handleSubmit} className="flex gap-3 mb-8">
+                  <input
+                    type="email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    placeholder="seu@email.com"
+                    className="flex-1 px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-yellow-400 transition-colors"
+                    required
+                  />
+                  <button
+                    type="submit"
+                    className="px-6 py-3 bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 rounded-lg font-semibold transition-all flex items-center gap-2"
+                  >
+                    Inscrever
+                    <ArrowRight className="w-4 h-4" />
+                  </button>
+                </form>
+              ) : (
+                <div className="mb-8 p-6 bg-green-600/20 border border-green-400/30 rounded-lg">
+                  <h3 className="font-bold mb-4 text-green-400">Parabéns! Você está na lista de espera!</h3>
+                  <div className="space-y-4">
+                    <div>
+                      <p className="text-sm text-gray-400 mb-2">Seu código de indicação:</p>
+                      <div className="flex gap-2">
+                        <input
+                          type="text"
+                          value={referralCode}
+                          readOnly
+                          className="flex-1 px-4 py-2 bg-white/10 border border-white/20 rounded-lg text-white font-mono text-sm"
+                        />
+                        <button
+                          onClick={copyReferralCode}
+                          className="px-4 py-2 bg-yellow-400/20 hover:bg-yellow-400/30 border border-yellow-400/30 rounded-lg transition-colors flex items-center gap-2"
+                        >
+                          {copied ? (
+                            <>
+                              <Check className="w-4 h-4 text-green-400" />
+                              <span className="text-xs text-green-400">Copiado!</span>
+                            </>
+                          ) : (
+                            <>
+                              <Copy className="w-4 h-4" />
+                              <span className="text-xs">Copiar</span>
+                            </>
+                          )}
+                        </button>
+                      </div>
+                    </div>
+                    <div className="grid grid-cols-2 gap-4 pt-4 border-t border-white/10">
+                      <div>
+                        <p className="text-xs text-gray-400">Posição na fila</p>
+                        <p className="text-2xl font-bold text-yellow-400">#{userPosition}</p>
+                      </div>
+                      <div>
+                        <p className="text-xs text-gray-400">Suas indicações</p>
+                        <p className="text-2xl font-bold text-purple-400">{referralCount}</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              )}
+
+              {/* Social Proof */}
+              <div className="flex gap-8">
+                <div>
+                  <p className="text-2xl font-bold text-yellow-400">+{totalSignups}</p>
+                  <p className="text-sm text-gray-400">Pessoas na fila</p>
+                </div>
+                <div>
+                  <p className="text-2xl font-bold text-yellow-400">1.2K+</p>
+                  <p className="text-sm text-gray-400">Seguidores YouTube</p>
+                </div>
+                <div>
+                  <p className="text-2xl font-bold text-yellow-400">7</p>
+                  <p className="text-sm text-gray-400">Módulos Completos</p>
+                </div>
               </div>
             </div>
-          </div>
 
-          {/* Hero Image */}
-          <div className="relative h-96 md:h-full flex items-center justify-center">
-            <img
-              src="/images/bitcoin-hero.png"
-              alt="Bitcoin Pro"
-              className="w-full h-full object-contain animate-stagger"
-              style={{ animationDelay: "0.2s" }}
-            />
+            {/* Hero Image */}
+            <div className="relative h-96 flex items-center justify-center animate-stagger" style={{ animationDelay: "0.2s" }}>
+              <img
+                src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663190783268/cKJrIRfRyjiATVmg.png"
+                alt="Bitcoin Pro"
+                className="w-full h-full object-contain"
+              />
+            </div>
           </div>
         </section>
 
@@ -173,14 +290,14 @@ export default function Home() {
           <div className="divider-diagonal" />
         </div>
 
-        {/* Features Section */}
+        {/* Benefits Section */}
         <section id="beneficios" className="container py-20">
           <div className="text-center mb-16 animate-stagger">
             <h2 className="text-4xl md:text-5xl font-bold mb-4" style={{ fontFamily: "Poppins" }}>
-              Por que escolher Bitcoin Pro?
+              Por que aderir cedo?
             </h2>
             <p className="text-gray-400 text-lg" style={{ fontFamily: "Inter" }}>
-              Tudo que você precisa para começar e prosperar no mercado de criptomoedas
+              Benefícios exclusivos para os primeiros inscritos
             </p>
           </div>
 
@@ -188,35 +305,35 @@ export default function Home() {
             {[
               {
                 icon: TrendingUp,
-                title: "Conhecimento Completo",
+                title: "Desconto de Lançamento",
                 description:
-                  "Do zero ao avançado: Bitcoin, DeFi, NFTs, Metaverso, Mercado de Futuros e Web3 em um único curso.",
+                  "Garanta 50% de desconto no preço final. Quanto mais cedo se inscrever, maior o desconto!",
               },
               {
                 icon: Zap,
-                title: "Suporte & Comunidade",
+                title: "Acesso Antecipado",
                 description:
-                  "Acesso a comunidade ativa, suporte direto, mapa mental exclusivo para farm de airdrops e estratégias práticas.",
+                  "Seja um dos primeiros a acessar o curso. Ganhe 2 semanas de antecedência antes do lançamento público.",
               },
               {
                 icon: Globe,
-                title: "Acesso Vitalício",
+                title: "Bônus Exclusivo",
                 description:
-                  "Estude no seu ritmo com acesso permanente ao conteúdo. Atualizações incluídas e airdrops em destaque.",
+                  "Receba 3 módulos bônus sobre estratégias avançadas de trading e análise técnica profissional.",
               },
             ].map((feature, idx) => {
               const Icon = feature.icon;
               return (
                 <div
                   key={idx}
-                  className="card-luminous card-hover p-8 animate-stagger"
+                  className="card-luminous p-8 animate-stagger"
                   style={{ animationDelay: `${idx * 0.1}s` }}
                 >
                   <Icon className="w-12 h-12 text-yellow-400 mb-4" />
                   <h3 className="text-xl font-bold mb-3" style={{ fontFamily: "Outfit" }}>
                     {feature.title}
                   </h3>
-                  <p className="text-gray-400 leading-relaxed" style={{ fontFamily: "Inter" }}>
+                  <p className="text-gray-300" style={{ fontFamily: "Inter" }}>
                     {feature.description}
                   </p>
                 </div>
@@ -230,13 +347,73 @@ export default function Home() {
           <div className="divider-diagonal" />
         </div>
 
-        {/* Course Preview Section */}
+        {/* Referral Progress Section */}
+        <section id="referrals" className="container py-20">
+          <div className="text-center mb-16 animate-stagger">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4" style={{ fontFamily: "Poppins" }}>
+              Indique e Ganhe
+            </h2>
+            <p className="text-gray-400 text-lg" style={{ fontFamily: "Inter" }}>
+              Compartilhe seu código e suba na fila de espera
+            </p>
+          </div>
+
+          <div className="max-w-2xl mx-auto">
+            <div className="card-luminous p-8 animate-stagger">
+              <div className="mb-8">
+                <div className="flex justify-between mb-4">
+                  <span className="text-sm font-semibold">Progresso de Indicações</span>
+                  <span className="text-sm text-yellow-400 font-bold">0 / 5 indicações</span>
+                </div>
+                <div className="w-full bg-white/10 rounded-full h-3 overflow-hidden">
+                  <div
+                    className="bg-gradient-to-r from-purple-500 to-yellow-400 h-full transition-all duration-500"
+                    style={{ width: "0%" }}
+                  />
+                </div>
+              </div>
+
+              <div className="grid md:grid-cols-3 gap-4 text-center">
+                <div className="p-4 bg-white/5 rounded-lg">
+                  <p className="text-xs text-gray-400 mb-2">1 indicação</p>
+                  <p className="text-sm font-bold">Suba 10 posições</p>
+                </div>
+                <div className="p-4 bg-white/5 rounded-lg">
+                  <p className="text-xs text-gray-400 mb-2">3 indicações</p>
+                  <p className="text-sm font-bold">Ganhe 1 mês grátis</p>
+                </div>
+                <div className="p-4 bg-white/5 rounded-lg">
+                  <p className="text-xs text-gray-400 mb-2">5 indicações</p>
+                  <p className="text-sm font-bold">Acesso vitalício</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Divider */}
+        <div className="container">
+          <div className="divider-diagonal" />
+        </div>
+
+        {/* Course Content Section */}
         <section id="conteudo" className="container py-20">
           <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="animate-stagger">
+            <div className="relative h-96 flex items-center justify-center animate-stagger">
+              <img
+                src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663190783268/PpVZxBRJBlDFtaCv.png"
+                alt="Conteúdo do Curso"
+                className="w-full h-full object-contain"
+              />
+            </div>
+
+            <div className="animate-stagger" style={{ animationDelay: "0.2s" }}>
               <h2 className="text-4xl font-bold mb-6" style={{ fontFamily: "Poppins" }}>
                 O que você vai aprender
               </h2>
+              <p className="text-gray-300 mb-8 leading-relaxed" style={{ fontFamily: "Inter" }}>
+                Conteúdo completo e estruturado para levar você do zero ao profissional em criptomoedas.
+              </p>
               <ul className="space-y-4 text-gray-300" style={{ fontFamily: "Inter" }}>
                 {[
                   "Origem e história do Bitcoin",
@@ -254,15 +431,6 @@ export default function Home() {
                   </li>
                 ))}
               </ul>
-            </div>
-
-            <div className="relative h-96 flex items-center justify-center">
-              <img
-                src="/images/course-preview.png"
-                alt="Conteúdo do Curso"
-                className="w-full h-full object-contain animate-stagger"
-                style={{ animationDelay: "0.2s" }}
-              />
             </div>
           </div>
         </section>
@@ -392,10 +560,10 @@ export default function Home() {
                     <p className="text-sm text-gray-400">{testimonial.role}</p>
                   </div>
                 </div>
-                <p className="text-gray-300 leading-relaxed" style={{ fontFamily: "Inter" }}>
+                <p className="text-gray-300 mb-4 leading-relaxed" style={{ fontFamily: "Inter" }}>
                   "{testimonial.text}"
                 </p>
-                <div className="flex gap-1 mt-4">
+                <div className="flex gap-1">
                   {[...Array(5)].map((_, i) => (
                     <span key={i} className="text-yellow-400">
                       ★
@@ -465,15 +633,10 @@ export default function Home() {
             <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto" style={{ fontFamily: "Inter" }}>
               Inscreva-se agora para acesso antecipado e receba um desconto exclusivo de lançamento.
             </p>
-            <Button
-              onClick={() => {
-                const input = document.querySelector("input[type='email']") as HTMLInputElement;
-                input?.focus();
-              }}
-              className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white px-10 py-4 rounded-lg font-bold text-lg flex items-center gap-2 mx-auto pulse-subtle"
-            >
-              Inscrever Agora <ArrowRight className="w-5 h-5" />
-            </Button>
+            <button className="px-8 py-4 bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 rounded-lg font-bold text-lg transition-all inline-flex items-center gap-2">
+              Inscrever Agora
+              <ArrowRight className="w-5 h-5" />
+            </button>
           </div>
         </section>
 
