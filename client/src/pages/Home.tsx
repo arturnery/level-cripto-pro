@@ -4,11 +4,12 @@ import { ChevronRight, Bitcoin, TrendingUp, Zap, Globe, Users, ArrowRight, Copy,
 import { useState, useEffect } from "react";
 
 /**
- * Design System: Minimalismo Futurista com Gradientes Dinâmicos
- * - Paleta: Azul escuro (#0F172A), Roxo (#7C3AED), Amarelo ouro (#FCD34D)
- * - Tipografia: Poppins 700 (títulos), Outfit 600 (subtítulos), Inter 400 (corpo)
+ * Design System: Minimalismo Futurista + Estilo Defiverso
+ * - Paleta: Azul escuro (#0F172A), Roxo (#7C3AED), Amarelo ouro (#FCD34D), Verde Neon (#00FF00)
+ * - Tipografia: Poppins 700 (títulos em CAPS), Outfit 600 (subtítulos), Inter 400 (corpo)
  * - Animações: Fade-in + slide-up, hover effects com profundidade, pulse effects
- * - Elementos: Orbes abstratos, linhas diagonais, cards com brilho sutil
+ * - Elementos: Orbes abstratos, linhas diagonais, cards com borda neon, CTAs vibrantes
+ * - Inspiração: Defiverso (borda neon, CAPS, hero com foto, carousel)
  */
 
 interface FAQItem {
@@ -147,16 +148,18 @@ export default function Home() {
                 <span className="text-yellow-400">✨</span> Lançamento Exclusivo
               </div>
               <h1
-                className="text-5xl md:text-6xl font-bold mb-6 leading-tight"
+                className="text-6xl md:text-7xl font-black mb-6 leading-tight tracking-tighter uppercase"
                 style={{ fontFamily: "Poppins" }}
               >
-                Level Cripto
-                <span className="bg-gradient-to-r from-purple-400 to-yellow-400 bg-clip-text text-transparent">
-                  {" "}
-                  PRO
+                SE TORNE UM
+                <span className="block bg-gradient-to-r from-purple-400 via-yellow-400 to-purple-400 bg-clip-text text-transparent">
+                  LEVEL CRIPTO PRO
                 </span>
               </h1>
-              <p className="text-xl text-gray-300 mb-8 leading-relaxed" style={{ fontFamily: "Inter" }}>
+              <p className="text-2xl text-gray-200 mb-8 leading-relaxed font-semibold" style={{ fontFamily: "Inter" }}>
+                Domine o mercado cripto em 7 semanas
+              </p>
+              <p className="text-lg text-gray-400 mb-8 leading-relaxed" style={{ fontFamily: "Inter" }}>
                 Do zero ao avançado: Bitcoin, DeFi, NFTs, Metaverso, Mercado de Futuros e Web3. Com suporte, comunidade ativa, mapa mental para airdrops e acesso vitalício.
               </p>
 
@@ -206,10 +209,10 @@ export default function Home() {
                   />
                   <button
                     type="submit"
-                    className="px-6 py-3 bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 rounded-lg font-semibold transition-all flex items-center gap-2"
+                    className="px-8 py-4 bg-gradient-to-r from-yellow-400 to-yellow-500 hover:from-yellow-500 hover:to-yellow-600 text-black font-black uppercase tracking-wide transition-all transform hover:scale-105 flex items-center gap-2 rounded-lg shadow-lg shadow-yellow-500/50"
                   >
-                    Inscrever
-                    <ArrowRight className="w-4 h-4" />
+                    Entrar na Lista de Espera
+                    <ArrowRight className="w-5 h-5" />
                   </button>
                 </form>
               ) : (
@@ -293,7 +296,7 @@ export default function Home() {
         {/* Benefits Section */}
         <section id="beneficios" className="container py-20">
           <div className="text-center mb-16 animate-stagger">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4" style={{ fontFamily: "Poppins" }}>
+            <h2 className="text-5xl md:text-6xl font-black mb-4 uppercase" style={{ fontFamily: "Poppins" }}>
               Por que aderir cedo?
             </h2>
             <p className="text-gray-400 text-lg" style={{ fontFamily: "Inter" }}>
@@ -326,7 +329,7 @@ export default function Home() {
               return (
                 <div
                   key={idx}
-                  className="card-luminous p-8 animate-stagger"
+                  className="card-luminous p-8 animate-stagger border-2 border-yellow-400/50 hover:border-yellow-400 hover:shadow-lg hover:shadow-yellow-400/30 transition-all"
                   style={{ animationDelay: `${idx * 0.1}s` }}
                 >
                   <Icon className="w-12 h-12 text-yellow-400 mb-4" />
@@ -350,7 +353,7 @@ export default function Home() {
         {/* Referral Progress Section */}
         <section id="referrals" className="container py-20">
           <div className="text-center mb-16 animate-stagger">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4" style={{ fontFamily: "Poppins" }}>
+            <h2 className="text-5xl md:text-6xl font-black mb-4 uppercase" style={{ fontFamily: "Poppins" }}>
               Indique e Ganhe
             </h2>
             <p className="text-gray-400 text-lg" style={{ fontFamily: "Inter" }}>
@@ -359,7 +362,7 @@ export default function Home() {
           </div>
 
           <div className="max-w-2xl mx-auto">
-            <div className="card-luminous p-8 animate-stagger">
+            <div className="card-luminous p-8 animate-stagger border-2 border-yellow-400/50 hover:border-yellow-400 transition-all">
               <div className="mb-8">
                 <div className="flex justify-between mb-4">
                   <span className="text-sm font-semibold">Progresso de Indicações</span>
@@ -408,7 +411,7 @@ export default function Home() {
             </div>
 
             <div className="animate-stagger" style={{ animationDelay: "0.2s" }}>
-              <h2 className="text-4xl font-bold mb-6" style={{ fontFamily: "Poppins" }}>
+              <h2 className="text-5xl font-black mb-6 uppercase" style={{ fontFamily: "Poppins" }}>
                 O que você vai aprender
               </h2>
               <p className="text-gray-300 mb-8 leading-relaxed" style={{ fontFamily: "Inter" }}>
@@ -453,7 +456,7 @@ export default function Home() {
             </div>
 
             <div className="animate-stagger" style={{ animationDelay: "0.2s" }}>
-              <h2 className="text-4xl font-bold mb-6" style={{ fontFamily: "Poppins" }}>
+              <h2 className="text-5xl font-black mb-6 uppercase" style={{ fontFamily: "Poppins" }}>
                 Conheça o Professor
               </h2>
               <h3 className="text-2xl font-semibold text-yellow-400 mb-4" style={{ fontFamily: "Outfit" }}>
@@ -513,7 +516,7 @@ export default function Home() {
         {/* Testimonials Section */}
         <section id="depoimentos" className="container py-20">
           <div className="text-center mb-16 animate-stagger">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4" style={{ fontFamily: "Poppins" }}>
+            <h2 className="text-5xl md:text-6xl font-black mb-4 uppercase" style={{ fontFamily: "Poppins" }}>
               O que dizem nossos alunos
             </h2>
             <p className="text-gray-400 text-lg" style={{ fontFamily: "Inter" }}>
@@ -544,7 +547,7 @@ export default function Home() {
             ].map((testimonial, idx) => (
               <div
                 key={idx}
-                className="card-luminous p-8 animate-stagger"
+                className="card-luminous p-8 animate-stagger border-2 border-yellow-400/50 hover:border-yellow-400 transition-all"
                 style={{ animationDelay: `${idx * 0.1}s` }}
               >
                 <div className="flex items-center gap-4 mb-4">
@@ -583,7 +586,7 @@ export default function Home() {
         {/* FAQ Section */}
         <section id="faq" className="container py-20">
           <div className="text-center mb-16 animate-stagger">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4" style={{ fontFamily: "Poppins" }}>
+            <h2 className="text-5xl md:text-6xl font-black mb-4 uppercase" style={{ fontFamily: "Poppins" }}>
               Perguntas Frequentes
             </h2>
             <p className="text-gray-400 text-lg" style={{ fontFamily: "Inter" }}>
@@ -595,7 +598,7 @@ export default function Home() {
             {faqItems.map((item, idx) => (
               <div
                 key={idx}
-                className="card-luminous overflow-hidden animate-stagger"
+                className="card-luminous overflow-hidden animate-stagger border-2 border-yellow-400/50 hover:border-yellow-400 transition-all"
                 style={{ animationDelay: `${idx * 0.05}s` }}
               >
                 <button
@@ -627,14 +630,14 @@ export default function Home() {
         {/* CTA Section */}
         <section className="container py-20 text-center">
           <div className="animate-stagger">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6" style={{ fontFamily: "Poppins" }}>
+            <h2 className="text-5xl md:text-6xl font-black mb-6 uppercase" style={{ fontFamily: "Poppins" }}>
               Pronto para começar sua jornada?
             </h2>
             <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto" style={{ fontFamily: "Inter" }}>
               Inscreva-se agora para acesso antecipado e receba um desconto exclusivo de lançamento.
             </p>
-            <button className="px-8 py-4 bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 rounded-lg font-bold text-lg transition-all inline-flex items-center gap-2">
-              Inscrever Agora
+            <button className="px-8 py-4 bg-gradient-to-r from-yellow-400 to-yellow-500 hover:from-yellow-500 hover:to-yellow-600 text-black font-black uppercase tracking-wide text-lg transition-all transform hover:scale-105 inline-flex items-center gap-2 rounded-lg shadow-lg shadow-yellow-500/50">
+              Entrar na Lista de Espera
               <ArrowRight className="w-5 h-5" />
             </button>
           </div>
