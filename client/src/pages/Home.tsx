@@ -300,7 +300,7 @@ export default function Home() {
               Por que aderir cedo?
             </h2>
             <p className="text-gray-400 text-lg" style={{ fontFamily: "Inter" }}>
-              Benefícios exclusivos para os primeiros inscritos
+              
             </p>
           </div>
 
