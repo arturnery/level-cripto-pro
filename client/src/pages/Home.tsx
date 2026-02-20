@@ -156,7 +156,7 @@ export default function Home() {
           </h1>
 
           <p className="text-xl text-gray-300 mb-8 max-w-2xl">
-            Domine o mercado cripto em 7 semanas
+            Domine o mercado cripto com a ajuda de profissionais que vivem desse mercado.
           </p>
 
           <p className="text-gray-400 mb-12 max-w-2xl leading-relaxed">
