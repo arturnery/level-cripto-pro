@@ -219,17 +219,8 @@ export default function Home() {
         </header>
 
         {/* Hero Section with Countdown */}
-        <section 
-          className="container py-20 md:py-32 relative"
-          style={{
-            backgroundImage: 'url(https://files.manuscdn.com/user_upload_by_module/session_file/310519663190783268/HObuWaqAnaxktFdi.jpg)',
-            backgroundSize: 'cover',
-            backgroundPosition: 'center right',
-            backgroundAttachment: 'fixed'
-          }}
-        >
-          <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/80 to-transparent" />
-          <div className="grid md:grid-cols-1 gap-12 items-center relative z-10">
+        <section className="hero-bg w-full py-20 md:py-32 relative overflow-hidden">
+          <div className="max-w-7xl mx-auto px-4 md:px-8 relative z-10">
             <div className="animate-stagger">
               <div className="inline-block mb-6 px-4 py-2 bg-purple-600/20 border border-purple-400/30 rounded-full text-sm">
                 <span className="text-yellow-400">✨</span> Lançamento Exclusivo
@@ -363,7 +354,6 @@ export default function Home() {
                 </div>
               </div>
             </div>
-
           </div>
         </section>
 

@@ -250,3 +250,27 @@
     box-shadow: 0 20px 40px rgba(251, 191, 36, 0.15);
   }
 }
+  /* Hero section with background image */
+  .hero-bg {
+    background: linear-gradient(135deg, rgb(15, 23, 42) 0%, rgb(30, 27, 75) 50%, rgb(15, 23, 42) 100%);
+    background-image: url('https://files.manuscdn.com/user_upload_by_module/session_file/310519663190783268/SUVUAFxKTtdSEoMo.jpg');
+    background-size: cover;
+    background-position: center right;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    position: relative;
+  }
+
+  .hero-bg::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to right, rgb(15, 23, 42) 0%, rgba(15, 23, 42, 0.7) 40%, rgba(15, 23, 42, 0.3) 70%, transparent 100%);
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  .hero-bg > * {
+    position: relative;
+    z-index: 10;
+  }
