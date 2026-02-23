@@ -1,20 +1,11 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import {
   ArrowRight,
   Copy,
   Check,
-  TrendingUp,
-  Zap,
-  Globe,
+  X,
   ChevronDown,
 } from "lucide-react";
-
-interface CountdownState {
-  days: number;
-  hours: number;
-  minutes: number;
-  seconds: number;
-}
 
 interface FAQItem {
   question: string;
@@ -22,53 +13,27 @@ interface FAQItem {
 }
 
 export default function Home() {
-  const [countdown, setCountdown] = useState<CountdownState>({
-    days: 0,
-    hours: 0,
-    minutes: 0,
-    seconds: 0,
-  });
   const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
   const [submitted, setSubmitted] = useState(false);
   const [referralCode, setReferralCode] = useState("");
   const [copied, setCopied] = useState(false);
-  const [userPosition, setUserPosition] = useState(0);
-  const [referralCount, setReferralCount] = useState(0);
-  const [totalSignups, setTotalSignups] = useState(347);
+  const [totalSignups, setTotalSignups] = useState(1);
   const [expandedFAQ, setExpandedFAQ] = useState<number | null>(null);
-
-  useEffect(() => {
-    const launchDate = new Date("2026-03-15T00:00:00").getTime();
-
-    const updateCountdown = () => {
-      const now = new Date().getTime();
-      const distance = launchDate - now;
-
-      if (distance > 0) {
-        setCountdown({
-          days: Math.floor(distance / (1000 * 60 * 60 * 24)),
-          hours: Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
-          minutes: Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)),
-          seconds: Math.floor((distance % (1000 * 60)) / 1000),
-        });
-      }
-    };
-
-    updateCountdown();
-    const timer = setInterval(updateCountdown, 1000);
-    return () => clearInterval(timer);
-  }, []);
+  const [showModal, setShowModal] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (email) {
+    if (email && phone) {
       const code = `LC${Math.random().toString(36).substring(2, 9).toUpperCase()}`;
       setReferralCode(code);
-      setUserPosition(totalSignups + 1);
+      setTotalSignups(totalSignups + 1);
       setSubmitted(true);
       setTimeout(() => {
         setSubmitted(false);
         setEmail("");
+        setPhone("");
+        setShowModal(false);
       }, 3000);
     }
   };
@@ -128,14 +93,14 @@ export default function Home() {
             <a href="#conteudo" className="text-gray-300 hover:text-yellow-400 transition">
               Conteúdo
             </a>
-            <a href="#professor" className="text-gray-300 hover:text-yellow-400 transition">
-              Professor
+            <a href="#diferenciais" className="text-gray-300 hover:text-yellow-400 transition">
+              Diferenciais
+            </a>
+            <a href="#resultados" className="text-gray-300 hover:text-yellow-400 transition">
+              Resultados
             </a>
             <a href="#faq" className="text-gray-300 hover:text-yellow-400 transition">
               FAQ
-            </a>
-            <a href="#depoimentos" className="text-gray-300 hover:text-yellow-400 transition">
-              Depoimentos
             </a>
           </nav>
         </div>
@@ -160,93 +125,93 @@ export default function Home() {
           </p>
 
           <p className="text-gray-400 mb-12 max-w-2xl leading-relaxed">
-            Do zero ao avançado: Bitcoin, DeFi, NFTs, Metaverso, Mercado de Futuros e Web3. Com suporte, comunidade ativa, mapa mental para airdrops e acesso vitalício.
+            Do zero ao avançado: Bitcoin, DeFi, NFTs, Mercado de Futuros, Web3 e Airdrops.<br/>
+            Com suporte 24h, comunidade ativa, mapa mental para organizar seus airdrops e mais
           </p>
 
-          {/* Countdown */}
-          <div className="bg-yellow-400/5 border border-yellow-400/20 rounded-lg p-8 mb-12 max-w-2xl">
-            <p className="text-gray-400 mb-6">Lançamento em:</p>
-            <div className="grid grid-cols-4 gap-4">
-              <div className="text-center">
-                <div className="text-4xl font-black text-yellow-400">{countdown.days}</div>
-                <div className="text-sm text-gray-400 mt-2">Dias</div>
-              </div>
-              <div className="text-center">
-                <div className="text-4xl font-black text-yellow-400">{countdown.hours}</div>
-                <div className="text-sm text-gray-400 mt-2">Horas</div>
-              </div>
-              <div className="text-center">
-                <div className="text-4xl font-black text-yellow-400">{countdown.minutes}</div>
-                <div className="text-sm text-gray-400 mt-2">Minutos</div>
-              </div>
-              <div className="text-center">
-                <div className="text-4xl font-black text-yellow-400">{countdown.seconds}</div>
-                <div className="text-sm text-gray-400 mt-2">Segundos</div>
-              </div>
-            </div>
-          </div>
-
-          {/* Email Form */}
-          <form onSubmit={handleSubmit} className="flex flex-col md:flex-row gap-3 max-w-2xl mb-12">
-            <input
-              type="email"
-              placeholder="seu@email.com"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              className="flex-1 px-6 py-4 bg-yellow-400/10 border border-yellow-400/30 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-yellow-400 transition"
-              required
-            />
-            <button
-              type="submit"
-              className="px-8 py-4 bg-yellow-400 text-black font-black rounded-lg hover:bg-yellow-300 transition transform hover:scale-105 flex items-center gap-2"
-            >
-              ENTRAR NA LISTA DE ESPERA
-              <ArrowRight size={20} />
-            </button>
-          </form>
-
-          {submitted && referralCode && (
-            <div className="bg-yellow-400/10 border border-yellow-400/30 rounded-lg p-6 max-w-2xl mb-12">
-              <p className="text-yellow-400 font-bold mb-3">✓ Inscrição confirmada!</p>
-              <p className="text-gray-300 mb-4">Seu código de referência:</p>
-              <div className="flex items-center gap-3 bg-black/50 p-4 rounded">
-                <code className="text-yellow-400 font-mono font-bold flex-1">{referralCode}</code>
-                <button
-                  onClick={copyToClipboard}
-                  className="p-2 hover:bg-yellow-400/20 rounded transition"
-                >
-                  {copied ? <Check size={20} className="text-yellow-400" /> : <Copy size={20} />}
-                </button>
-              </div>
-            </div>
-          )}
-
-          {/* Stats */}
-          <div className="grid grid-cols-3 gap-8 max-w-2xl">
-            <div>
-              <div className="text-3xl font-black text-yellow-400">+{totalSignups}</div>
-              <div className="text-sm text-gray-400 mt-2">Pessoas na fila</div>
-            </div>
-            <div>
-              <div className="text-3xl font-black text-yellow-400">1.2K+</div>
-              <div className="text-sm text-gray-400 mt-2">Seguidores YouTube</div>
-            </div>
-            <div>
-              <div className="text-3xl font-black text-yellow-400">7</div>
-              <div className="text-sm text-gray-400 mt-2">Módulos Completos</div>
-            </div>
-          </div>
+          {/* Big CTA Button */}
+          <button
+            onClick={() => setShowModal(true)}
+            className="w-full md:w-auto px-12 py-6 bg-yellow-400 text-black font-black text-xl rounded-lg hover:bg-yellow-300 transition transform hover:scale-105 flex items-center justify-center gap-3"
+          >
+            ENTRAR NA LISTA DE ESPERA
+            <ArrowRight size={24} />
+          </button>
         </div>
       </section>
+
+      {/* Modal de Inscrição */}
+      {showModal && (
+        <div className="fixed inset-0 bg-black/80 flex items-center justify-center z-50 p-4">
+          <div className="bg-yellow-400 text-black rounded-lg p-8 max-w-md w-full relative">
+            <button
+              onClick={() => setShowModal(false)}
+              className="absolute top-4 right-4 p-2 hover:bg-black/10 rounded"
+            >
+              <X size={24} />
+            </button>
+
+            <h2 className="text-2xl font-black mb-6">ENTRE NA LISTA DE ESPERA</h2>
+
+            {submitted && referralCode ? (
+              <div className="space-y-4">
+                <p className="text-lg font-bold">✓ Inscrição confirmada!</p>
+                <p className="text-gray-700">Seu código de referência:</p>
+                <div className="flex items-center gap-3 bg-black/20 p-4 rounded">
+                  <code className="text-black font-mono font-bold flex-1 text-lg">{referralCode}</code>
+                  <button
+                    onClick={copyToClipboard}
+                    className="p-2 hover:bg-black/30 rounded transition"
+                  >
+                    {copied ? <Check size={20} /> : <Copy size={20} />}
+                  </button>
+                </div>
+                <p className="text-sm text-gray-700 mt-4">Compartilhe este código com seus amigos e ganhe benefícios!</p>
+              </div>
+            ) : (
+              <form onSubmit={handleSubmit} className="space-y-4">
+                <div>
+                  <label className="block text-sm font-bold mb-2">Email</label>
+                  <input
+                    type="email"
+                    placeholder="seu@email.com"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    className="w-full px-4 py-3 bg-black/20 border border-black/30 rounded text-black placeholder-gray-600 focus:outline-none focus:border-black/50"
+                    required
+                  />
+                </div>
+                <div>
+                  <label className="block text-sm font-bold mb-2">Telefone (WhatsApp)</label>
+                  <input
+                    type="tel"
+                    placeholder="(11) 99999-9999"
+                    value={phone}
+                    onChange={(e) => setPhone(e.target.value)}
+                    className="w-full px-4 py-3 bg-black/20 border border-black/30 rounded text-black placeholder-gray-600 focus:outline-none focus:border-black/50"
+                    required
+                  />
+                </div>
+                <button
+                  type="submit"
+                  className="w-full px-6 py-3 bg-black text-yellow-400 font-black rounded hover:bg-gray-900 transition"
+                >
+                  CONFIRMAR INSCRIÇÃO
+                </button>
+              </form>
+            )}
+          </div>
+        </div>
+      )}
 
       {/* Vagas Limitadas Section */}
       <section id="beneficios" className="w-full bg-yellow-400 text-black py-20 px-4">
         <div className="max-w-7xl mx-auto">
           <div className="mb-12">
             <h2 className="text-5xl md:text-6xl font-black mb-8">⚡ VAGAS LIMITADAS</h2>
-            <p className="text-2xl font-bold mb-8">Apenas 100 alunos na primeira turma</p>
+            <p className="text-2xl font-bold mb-8">Apenas 20 alunos na primeira turma</p>
             <p className="text-lg leading-relaxed mb-8 max-w-3xl">
-              Sabemos que qualidade exige dedicação. Por isso, limitamos a primeira turma a apenas <strong>100 alunos</strong> para garantir:
+              Sabemos que qualidade exige dedicação. Por isso, limitamos a primeira turma a apenas <strong>20 alunos</strong> para garantir:
             </p>
 
             <div className="space-y-4 max-w-3xl">
@@ -282,7 +247,7 @@ export default function Home() {
 
             <div className="mt-12 p-8 bg-black text-white rounded-lg border-2 border-yellow-400">
               <p className="text-gray-400 mb-2">⏰ Aja rápido</p>
-              <p className="text-2xl font-black mb-4">347 de 100 vagas já preenchidas</p>
+              <p className="text-2xl font-black mb-4">{totalSignups} de 20 vagas já preenchidas</p>
               <p className="text-lg">Não perca essa oportunidade. As vagas estão acabando rápido!</p>
             </div>
           </div>
@@ -336,139 +301,110 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Professor Section */}
-      <section id="professor" className="w-full bg-yellow-400 text-black py-20 px-4">
+      {/* Diferenciais Section */}
+      <section id="diferenciais" className="w-full bg-yellow-400 text-black py-20 px-4">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-5xl md:text-6xl font-black mb-12">CONHEÇA O PROFESSOR</h2>
-
-          <div className="max-w-3xl">
-            <h3 className="text-3xl font-black mb-2">Renan Mataveli</h3>
-            <p className="text-lg font-bold mb-6">Especialista em Criptomoedas</p>
-
-            <p className="text-lg leading-relaxed mb-6">
-              Especialista em criptomoedas com mais de 10 anos de experiência no mercado financeiro. Renan é criador do canal <strong>Level Cripto</strong>, com mais de 10k seguidores no YouTube e comunidade ativa no Instagram.
-            </p>
-
-            <p className="text-lg leading-relaxed mb-8">
-              Sua missão é democratizar o conhecimento sobre criptomoedas, explicando de forma clara e sem jargão desnecessário. No canal, você encontra:
-            </p>
-
-            <div className="space-y-3">
-              <div className="flex items-start gap-3">
-                <span className="font-black text-xl">✓</span>
-                <span className="text-lg">Análises profundas do mercado de criptomoedas</span>
-              </div>
-              <div className="flex items-start gap-3">
-                <span className="font-black text-xl">✓</span>
-                <span className="text-lg">Estratégias de investimento e farm de airdrops</span>
-              </div>
-              <div className="flex items-start gap-3">
-                <span className="font-black text-xl">✓</span>
-                <span className="text-lg">Conteúdo educativo sobre DeFi, NFTs e Web3</span>
-              </div>
-              <div className="flex items-start gap-3">
-                <span className="font-black text-xl">✓</span>
-                <span className="text-lg">Comunidade ativa e suporte direto aos alunos</span>
-              </div>
-            </div>
-
-            <div className="flex gap-4 mt-8">
-              <a
-                href="https://www.instagram.com/level_cripto/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="px-6 py-3 bg-black text-yellow-400 font-bold rounded-lg hover:bg-gray-900 transition"
-              >
-                Seguir no Instagram
-              </a>
-              <a
-                href="https://www.youtube.com/channel/UCCbpFaIRJkltWCbiFNiv2Bw"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="px-6 py-3 bg-black text-yellow-400 font-bold rounded-lg hover:bg-gray-900 transition"
-              >
-                Inscrever no YouTube
-              </a>
-            </div>
-          </div>
+          <h2 className="text-5xl md:text-6xl font-black mb-12">NOSSOS DIFERENCIAIS</h2>
+          <img src="/diferenciais.png" alt="Diferenciais" className="w-full max-w-4xl mx-auto rounded-lg" />
         </div>
       </section>
 
-      {/* Depoimentos Section */}
-      <section id="depoimentos" className="w-full bg-black py-20 px-4">
+      {/* Resultados Section */}
+      <section id="resultados" className="w-full bg-black py-20 px-4">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-5xl md:text-6xl font-black mb-4">O QUE DIZEM NOSSOS ALUNOS</h2>
-          <p className="text-gray-400 mb-12 text-lg">Histórias reais de sucesso no mercado de criptomoedas</p>
+          <h2 className="text-5xl md:text-6xl font-black mb-12">RESULTADOS DA COMUNIDADE</h2>
 
-          <div className="grid md:grid-cols-3 gap-8">
-            {[
-              {
-                name: "Carlos Silva",
-                role: "Investidor",
-                text: "Curso excelente! Saí do zero e consegui meu primeiro investimento com confiança. Renan explica de forma muito clara.",
-              },
-              {
-                name: "Marina Costa",
-                role: "Empreendedora",
-                text: "O melhor investimento que fiz. O conteúdo é prático e aplicável. Recomendo para quem quer entender cripto de verdade.",
-              },
-              {
-                name: "João Santos",
-                role: "Trader",
-                text: "Muito bom! Aprendi estratégias que não conhecia. O suporte e a comunidade são incríveis.",
-              },
-            ].map((testimonial, idx) => (
-              <div
-                key={idx}
-                className="bg-yellow-400/5 border border-yellow-400/20 rounded-lg p-8 hover:border-yellow-400/50 transition"
-              >
-                <div className="flex gap-1 mb-4">
-                  {[...Array(5)].map((_, i) => (
-                    <span key={i} className="text-yellow-400">
-                      ★
-                    </span>
-                  ))}
-                </div>
-                <p className="text-gray-300 mb-6 leading-relaxed">"{testimonial.text}"</p>
-                <p className="font-bold text-white">{testimonial.name}</p>
-                <p className="text-gray-400 text-sm">{testimonial.role}</p>
-              </div>
-            ))}
+          {/* Resultados de Trades */}
+          <div className="mb-16">
+            <h3 className="text-3xl font-black mb-6 text-yellow-400">📈 Resultados de Trades</h3>
+            <p className="text-gray-300 mb-8 leading-relaxed max-w-3xl">
+              Nossos alunos aplicam as estratégias ensinadas no curso e conseguem resultados consistentes no mercado. Alguns destaques:
+            </p>
+            <ul className="space-y-3 max-w-3xl mb-8">
+              <li className="flex items-start gap-3">
+                <span className="text-yellow-400 font-black">✓</span>
+                <span>Alunos que dobraram seu capital em 3 meses com estratégias de swing trading</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="text-yellow-400 font-black">✓</span>
+                <span>Comunidade que compartilha análises técnicas e oportunidades diárias</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="text-yellow-400 font-black">✓</span>
+                <span>Suporte 24h para ajudar em dúvidas sobre posições e estratégias</span>
+              </li>
+            </ul>
+            <div className="bg-yellow-400/10 border border-yellow-400/30 rounded-lg p-8 aspect-video flex items-center justify-center">
+              <p className="text-gray-400 text-center">Vídeo dos Resultados de Trades (em breve)</p>
+            </div>
+          </div>
+
+          {/* Resultados de Airdrops */}
+          <div>
+            <h3 className="text-3xl font-black mb-6 text-yellow-400">🎁 Resultados de Airdrops</h3>
+            <p className="text-gray-300 mb-8 leading-relaxed max-w-3xl">
+              Com o mapa mental e as estratégias de farm de airdrops ensinadas no curso, nossos alunos conseguem identificar e participar de airdrops lucrativos:
+            </p>
+            <ul className="space-y-3 max-w-3xl mb-8">
+              <li className="flex items-start gap-3">
+                <span className="text-yellow-400 font-black">✓</span>
+                <span>Alunos que ganharam mais de $5.000 em airdrops em 2 meses</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="text-yellow-400 font-black">✓</span>
+                <span>Mapa mental exclusivo para organizar e priorizar airdrops</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="text-yellow-400 font-black">✓</span>
+                <span>Comunidade que compartilha oportunidades de airdrops em tempo real</span>
+              </li>
+            </ul>
+            <div className="bg-yellow-400/10 border border-yellow-400/30 rounded-lg p-8 aspect-video flex items-center justify-center">
+              <p className="text-gray-400 text-center">Vídeo dos Resultados de Airdrops (em breve)</p>
+            </div>
           </div>
         </div>
       </section>
 
       {/* FAQ Section */}
       <section id="faq" className="w-full bg-yellow-400 text-black py-20 px-4">
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-7xl mx-auto">
           <h2 className="text-5xl md:text-6xl font-black mb-4">PERGUNTAS FREQUENTES</h2>
           <p className="text-lg mb-12">Tire suas dúvidas sobre o curso Level Cripto PRO</p>
 
-          <div className="space-y-4">
-            {faqItems.map((item, idx) => (
-              <div
-                key={idx}
-                className="border-2 border-black rounded-lg overflow-hidden"
-              >
-                <button
-                  onClick={() => setExpandedFAQ(expandedFAQ === idx ? null : idx)}
-                  className="w-full px-6 py-4 flex justify-between items-center hover:bg-black/10 transition font-bold text-lg"
+          <div className="grid md:grid-cols-2 gap-8">
+            {/* FAQ Image */}
+            <div>
+              <img src="/faq-defiverso.png" alt="FAQ" className="w-full rounded-lg" />
+            </div>
+
+            {/* FAQ Items */}
+            <div className="space-y-4">
+              {faqItems.map((item, idx) => (
+                <div
+                  key={idx}
+                  className="border-2 border-black rounded-lg overflow-hidden"
                 >
-                  <span>{item.question}</span>
-                  <ChevronDown
-                    size={24}
-                    className={`transition-transform ${
-                      expandedFAQ === idx ? "rotate-180" : ""
-                    }`}
-                  />
-                </button>
-                {expandedFAQ === idx && (
-                  <div className="px-6 py-4 bg-black/5 border-t-2 border-black text-gray-800">
-                    {item.answer}
-                  </div>
-                )}
-              </div>
-            ))}
+                  <button
+                    onClick={() => setExpandedFAQ(expandedFAQ === idx ? null : idx)}
+                    className="w-full px-6 py-4 flex justify-between items-center hover:bg-black/10 transition font-bold text-lg"
+                  >
+                    <span>{item.question}</span>
+                    <ChevronDown
+                      size={24}
+                      className={`transition-transform ${
+                        expandedFAQ === idx ? "rotate-180" : ""
+                      }`}
+                    />
+                  </button>
+                  {expandedFAQ === idx && (
+                    <div className="px-6 py-4 bg-black/5 border-t-2 border-black text-gray-800">
+                      {item.answer}
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -477,10 +413,14 @@ export default function Home() {
       <section className="w-full bg-black py-20 px-4">
         <div className="max-w-7xl mx-auto text-center">
           <h2 className="text-5xl md:text-6xl font-black mb-8">PRONTO PARA COMEÇAR?</h2>
-          <p className="text-xl text-gray-300 mb-12 max-w-2xl mx-auto">
-            Inscreva-se agora para acesso antecipado e receba um desconto exclusivo de lançamento.
+          <p className="text-xl text-gray-300 mb-12 max-w-2xl mx-auto leading-relaxed">
+            Se chegou até aqui tenho certeza que você está pronto e interessado para fazer parte da comunidade.<br/><br/>
+            Garanta a sua vaga entrando na lista de espera.
           </p>
-          <button className="px-10 py-5 bg-yellow-400 text-black font-black text-lg rounded-lg hover:bg-yellow-300 transition transform hover:scale-105">
+          <button
+            onClick={() => setShowModal(true)}
+            className="px-10 py-5 bg-yellow-400 text-black font-black text-lg rounded-lg hover:bg-yellow-300 transition transform hover:scale-105"
+          >
             ENTRAR NA LISTA DE ESPERA
           </button>
         </div>
@@ -492,7 +432,7 @@ export default function Home() {
           <div className="grid md:grid-cols-4 gap-8 mb-8">
             <div>
               <h3 className="font-black text-lg mb-4">Level Cripto PRO</h3>
-              <p className="text-gray-700">Domine o mercado de criptomoedas em 7 semanas</p>
+              <p className="text-gray-700">Domine o mercado de criptomoedas com profissionais</p>
             </div>
             <div>
               <h4 className="font-bold mb-4">Navegação</h4>
@@ -508,8 +448,8 @@ export default function Home() {
                   </a>
                 </li>
                 <li>
-                  <a href="#depoimentos" className="hover:text-black transition">
-                    Depoimentos
+                  <a href="#diferenciais" className="hover:text-black transition">
+                    Diferenciais
                   </a>
                 </li>
               </ul>
