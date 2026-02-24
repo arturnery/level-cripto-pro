@@ -305,7 +305,48 @@ export default function Home() {
       <section id="diferenciais" className="w-full bg-yellow-400 text-black py-20 px-4">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-5xl md:text-6xl font-black mb-12">NOSSOS DIFERENCIAIS</h2>
-          <img src="/diferenciais.png" alt="Diferenciais" className="w-full max-w-4xl mx-auto rounded-lg" />
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+            {/* Card 1 */}
+            <div className="bg-gray-900 rounded-lg p-6 border border-gray-800 hover:border-cyan-400 transition text-center">
+              <div className="text-5xl mb-4">📚</div>
+              <h3 className="font-black text-lg mb-2"><span className="text-cyan-400">Formação</span> Cripto<br/>Completa</h3>
+            </div>
+            {/* Card 2 */}
+            <div className="bg-gray-900 rounded-lg p-6 border border-gray-800 hover:border-cyan-400 transition text-center">
+              <div className="text-5xl mb-4">⏰</div>
+              <h3 className="font-black text-lg mb-2">12 meses de<br/><span className="text-cyan-400">Suporte</span><br/>Especializado</h3>
+            </div>
+            {/* Card 3 */}
+            <div className="bg-gray-900 rounded-lg p-6 border border-gray-800 hover:border-cyan-400 transition text-center">
+              <div className="text-5xl mb-4">👥</div>
+              <h3 className="font-black text-lg mb-2"><span className="text-cyan-400">Comunidade</span><br/>Exclusiva de<br/>Alunos</h3>
+            </div>
+            {/* Card 4 */}
+            <div className="bg-gray-900 rounded-lg p-6 border border-gray-800 hover:border-cyan-400 transition text-center">
+              <div className="text-5xl mb-4">💬</div>
+              <h3 className="font-black text-lg mb-2">Live <span className="text-cyan-400">tira dúvidas</span><br/>semanal</h3>
+            </div>
+            {/* Card 5 */}
+            <div className="bg-gray-900 rounded-lg p-6 border border-gray-800 hover:border-cyan-400 transition text-center">
+              <div className="text-5xl mb-4">📊</div>
+              <h3 className="font-black text-lg mb-2"><span className="text-cyan-400">Relatórios</span><br/>semanais<br/>completos</h3>
+            </div>
+            {/* Card 6 */}
+            <div className="bg-gray-900 rounded-lg p-6 border border-gray-800 hover:border-cyan-400 transition text-center">
+              <div className="text-5xl mb-4">🛠️</div>
+              <h3 className="font-black text-lg mb-2"><span className="text-cyan-400">Ferramentas</span><br/>Práticas de<br/>Análise</h3>
+            </div>
+            {/* Card 7 */}
+            <div className="bg-gray-900 rounded-lg p-6 border border-gray-800 hover:border-cyan-400 transition text-center">
+              <div className="text-5xl mb-4">🎁</div>
+              <h3 className="font-black text-lg mb-2"><span className="text-cyan-400">Guias para</span><br/>Airdrops</h3>
+            </div>
+            {/* Card 8 */}
+            <div className="bg-gray-900 rounded-lg p-6 border border-gray-800 hover:border-cyan-400 transition text-center">
+              <div className="text-5xl mb-4">💰</div>
+              <h3 className="font-black text-lg mb-2"><span className="text-cyan-400">Estratégias de</span><br/>Investimento DeFi</h3>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -372,33 +413,43 @@ export default function Home() {
           <h2 className="text-5xl md:text-6xl font-black mb-4">PERGUNTAS FREQUENTES</h2>
           <p className="text-lg mb-12">Tire suas dúvidas sobre o curso Level Cripto PRO</p>
 
-          <div className="grid md:grid-cols-2 gap-8">
-            {/* FAQ Image */}
-            <div>
-              <img src="/faq-defiverso.png" alt="FAQ" className="w-full rounded-lg" />
+          <div className="grid md:grid-cols-2 gap-12">
+            {/* CTA Section */}
+            <div className="bg-gray-900 rounded-lg p-8 flex flex-col justify-center h-full">
+              <h3 className="text-2xl font-black mb-4">Fale com nosso time</h3>
+              <p className="text-gray-300 mb-6 leading-relaxed">
+                Fale com um dos nossos consultores e tire todas as suas duvidas sobre o Level Cripto PRO, sua jornada, os numeros e muito mais.
+              </p>
+              <button className="bg-cyan-400 text-black font-black py-3 px-6 rounded-lg hover:bg-cyan-300 transition w-full mb-6">
+                FALE COM NOSSO WHATSAPP
+              </button>
+              <p className="text-xs text-gray-400 text-center">
+                Responderemos em ate 2 horas
+              </p>
             </div>
 
             {/* FAQ Items */}
-            <div className="space-y-4">
+            <div className="space-y-3">
+              <div className="text-lg font-black mb-6 text-cyan-400">Tem alguma duvida?</div>
               {faqItems.map((item, idx) => (
                 <div
                   key={idx}
-                  className="border-2 border-black rounded-lg overflow-hidden"
+                  className="bg-gray-900 rounded-lg border border-gray-800 overflow-hidden"
                 >
                   <button
                     onClick={() => setExpandedFAQ(expandedFAQ === idx ? null : idx)}
-                    className="w-full px-6 py-4 flex justify-between items-center hover:bg-black/10 transition font-bold text-lg"
+                    className="w-full px-6 py-4 flex justify-between items-center hover:bg-gray-800 transition font-bold text-white text-left"
                   >
-                    <span>{item.question}</span>
+                    <span className="text-sm">{item.question}</span>
                     <ChevronDown
-                      size={24}
-                      className={`transition-transform ${
+                      size={20}
+                      className={`transition-transform flex-shrink-0 ml-4 ${
                         expandedFAQ === idx ? "rotate-180" : ""
                       }`}
                     />
                   </button>
                   {expandedFAQ === idx && (
-                    <div className="px-6 py-4 bg-black/5 border-t-2 border-black text-gray-800">
+                    <div className="px-6 py-4 bg-gray-800 border-t border-gray-700 text-gray-300 text-sm">
                       {item.answer}
                     </div>
                   )}
