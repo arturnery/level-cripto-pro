@@ -16,8 +16,6 @@ export default function Home() {
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
   const [submitted, setSubmitted] = useState(false);
-  const [referralCode, setReferralCode] = useState("");
-  const [copied, setCopied] = useState(false);
   const [totalSignups, setTotalSignups] = useState(1);
   const [expandedFAQ, setExpandedFAQ] = useState<number | null>(null);
   const [showModal, setShowModal] = useState(false);
@@ -25,8 +23,6 @@ export default function Home() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (email && phone) {
-      const code = `LC${Math.random().toString(36).substring(2, 9).toUpperCase()}`;
-      setReferralCode(code);
       setTotalSignups(totalSignups + 1);
       setSubmitted(true);
       setTimeout(() => {
@@ -36,12 +32,6 @@ export default function Home() {
         setShowModal(false);
       }, 3000);
     }
-  };
-
-  const copyToClipboard = () => {
-    navigator.clipboard.writeText(referralCode);
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
   };
 
   const faqItems: FAQItem[] = [
@@ -176,18 +166,13 @@ export default function Home() {
                 CONFIRMAR INSCRIÇÃO
               </button>
             </form>
-            {submitted && referralCode && (
-              <div className="mt-6 p-4 bg-orange-600/10 border border-orange-600/30 rounded-lg">
-                <p className="text-sm text-gray-300 mb-3">Seu código de referência:</p>
-                <div className="flex items-center gap-2">
-                  <code className="flex-1 text-orange-600 font-bold">{referralCode}</code>
-                  <button
-                    onClick={copyToClipboard}
-                    className="text-orange-600 hover:text-orange-700 transition"
-                  >
-                    {copied ? <Check size={20} /> : <Copy size={20} />}
-                  </button>
-                </div>
+            {submitted && (
+              <div className="mt-6 p-6 bg-gradient-to-br from-orange-600/20 to-orange-600/5 border border-orange-600/40 rounded-lg text-center">
+                <div className="text-4xl mb-4">✓</div>
+                <h3 className="text-xl font-black text-orange-600 mb-3">Inscrição Confirmada!</h3>
+                <p className="text-gray-300 leading-relaxed">
+                  Obrigado em querer fazer parte da Comunidade Level Cripto Pro. Em breve um de nossos representantes entrará em contato!
+                </p>
               </div>
             )}
           </div>
@@ -576,16 +561,16 @@ export default function Home() {
       {/* Footer */}
       <footer className="bg-black border-t border-orange-600/20 py-12 px-4 md:px-8">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 mb-8 items-start">
-            <div className="flex flex-col">
+          <div className="flex flex-col md:flex-row justify-between items-start gap-8 mb-8">
+            <div className="flex flex-col max-w-md">
               <h3 className="font-black mb-4 text-lg">Level Cripto PRO</h3>
               <p className="text-gray-400 text-sm leading-relaxed">
                 Aprenda criptomoedas com os melhores profissionais do mercado.
               </p>
             </div>
-            <div className="flex flex-col">
+            <div className="flex flex-col items-end">
               <h4 className="font-black mb-4 text-lg">Redes Sociais</h4>
-              <ul className="space-y-2 text-sm text-gray-400">
+              <ul className="space-y-2 text-sm text-gray-400 text-right">
                 <li><a href="https://instagram.com/level_cripto" target="_blank" rel="noopener noreferrer" className="hover:text-orange-600 transition">Instagram</a></li>
                 <li><a href="https://youtube.com/@levelcripto" target="_blank" rel="noopener noreferrer" className="hover:text-orange-600 transition">YouTube</a></li>
                 <li><a href="https://x.com/LevelCripto" target="_blank" rel="noopener noreferrer" className="hover:text-orange-600 transition">X (Twitter)</a></li>
