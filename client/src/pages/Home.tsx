@@ -5,6 +5,9 @@ import {
   Check,
   X,
   ChevronDown,
+  Instagram,
+  Youtube,
+  Twitter,
 } from "lucide-react";
 
 interface FAQItem {
@@ -20,17 +23,20 @@ export default function Home() {
   const [expandedFAQ, setExpandedFAQ] = useState<number | null>(null);
   const [showModal, setShowModal] = useState(false);
 
+  const validatePhone = (phoneNumber: string) => {
+    // Validar formato de telefone brasileiro: (XX) XXXXX-XXXX ou similar
+    const phoneRegex = /^\(?\d{2}\)?\s?9?\d{4}-?\d{4}$/;
+    return phoneRegex.test(phoneNumber.replace(/\s/g, ''));
+  };
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (email && phone) {
+    if (email && phone && validatePhone(phone)) {
       setTotalSignups(totalSignups + 1);
       setSubmitted(true);
-      setTimeout(() => {
-        setSubmitted(false);
-        setEmail("");
-        setPhone("");
-        setShowModal(false);
-      }, 3000);
+      // Não fechar automaticamente - deixar até clicar
+    } else if (!validatePhone(phone)) {
+      alert('Por favor, insira um telefone válido. Exemplo: (11) 99999-9999');
     }
   };
 
@@ -153,7 +159,7 @@ export default function Home() {
               />
               <input
                 type="tel"
-                placeholder="Seu telefone"
+                placeholder="Seu telefone (11) 99999-9999"
                 value={phone}
                 onChange={(e) => setPhone(e.target.value)}
                 className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-orange-600"
@@ -170,9 +176,20 @@ export default function Home() {
               <div className="mt-6 p-6 bg-gradient-to-br from-orange-600/20 to-orange-600/5 border border-orange-600/40 rounded-lg text-center">
                 <div className="text-4xl mb-4">✓</div>
                 <h3 className="text-xl font-black text-orange-600 mb-3">Inscrição Confirmada!</h3>
-                <p className="text-gray-300 leading-relaxed">
+                <p className="text-gray-300 leading-relaxed mb-6">
                   Obrigado em querer fazer parte da Comunidade Level Cripto Pro. Em breve um de nossos representantes entrará em contato!
                 </p>
+                <button
+                  onClick={() => {
+                    setSubmitted(false);
+                    setEmail("");
+                    setPhone("");
+                    setShowModal(false);
+                  }}
+                  className="w-full bg-orange-600 text-black font-black py-2 rounded-lg hover:bg-orange-700 transition"
+                >
+                  Fechar
+                </button>
               </div>
             )}
           </div>
@@ -570,11 +587,17 @@ export default function Home() {
             </div>
             <div className="flex flex-col items-end">
               <h4 className="font-black mb-4 text-lg">Redes Sociais</h4>
-              <ul className="space-y-2 text-sm text-gray-400 text-right">
-                <li><a href="https://instagram.com/level_cripto" target="_blank" rel="noopener noreferrer" className="hover:text-orange-600 transition">Instagram</a></li>
-                <li><a href="https://youtube.com/@levelcripto" target="_blank" rel="noopener noreferrer" className="hover:text-orange-600 transition">YouTube</a></li>
-                <li><a href="https://x.com/LevelCripto" target="_blank" rel="noopener noreferrer" className="hover:text-orange-600 transition">X (Twitter)</a></li>
-              </ul>
+              <div className="flex gap-4">
+                <a href="https://instagram.com/level_cripto" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-orange-600 transition">
+                  <Instagram size={24} />
+                </a>
+                <a href="https://youtube.com/@levelcripto" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-orange-600 transition">
+                  <Youtube size={24} />
+                </a>
+                <a href="https://x.com/LevelCripto" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-orange-600 transition">
+                  <Twitter size={24} />
+                </a>
+              </div>
             </div>
           </div>
           <div className="border-t border-gray-800 pt-8 text-center text-gray-400 text-sm">
