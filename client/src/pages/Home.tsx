@@ -232,13 +232,7 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <div className="mt-12 p-6 bg-black rounded-lg border-2 border-black">
-            <p className="text-orange-600 font-bold mb-2">⏰ Aja rápido</p>
-            <p className="text-white text-lg font-bold">
-              {totalSignups} de 20 vagas já preenchidas
-            </p>
-            <p className="text-gray-300 mt-2">Não perca essa oportunidade. As vagas estão acabando rápido!</p>
-          </div>
+
         </div>
       </section>
 
@@ -324,47 +318,68 @@ export default function Home() {
       {/* Diferenciais Section */}
       <section id="diferenciais" className="py-20 px-4 md:px-8 bg-black">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-5xl md:text-6xl font-black mb-12">NOSSOS DIFERENCIAIS</h2>
-          <div className="grid md:grid-cols-4 gap-6">
-            <div className="bg-gradient-to-br from-orange-600/20 to-orange-600/5 border border-orange-600/30 rounded-lg p-8 hover:border-orange-600/60 transition">
-              <div className="text-4xl mb-4">📚</div>
-              <h3 className="text-lg font-black mb-2 text-orange-600">Formação Cripto Completa</h3>
-              <p className="text-sm text-gray-400">Tudo que você precisa saber sobre criptomoedas em um só lugar</p>
+          <h2 className="text-5xl md:text-6xl font-black mb-4">NOSSOS DIFERENCIAIS</h2>
+          <p className="text-xl text-gray-400 mb-16">O que torna o Level Cripto PRO diferente de qualquer outro curso</p>
+          
+          <div className="space-y-6">
+            <div className="bg-gradient-to-r from-orange-600/20 to-transparent border-l-4 border-orange-600 p-8 rounded-r-lg hover:border-orange-500 transition">
+              <div className="flex gap-6 items-start">
+                <div className="text-5xl flex-shrink-0">🎓</div>
+                <div>
+                  <h3 className="text-2xl font-black mb-2 text-orange-600">Conteúdo Estruturado e Prático</h3>
+                  <p className="text-gray-300 leading-relaxed">Módulos bem organizados que você pode acompanhar no seu próprio ritmo, com exemplos reais do mercado e estratégias que funcionam.</p>
+                </div>
+              </div>
             </div>
-            <div className="bg-gradient-to-br from-orange-600/20 to-orange-600/5 border border-orange-600/30 rounded-lg p-8 hover:border-orange-600/60 transition">
-              <div className="text-4xl mb-4">⏰</div>
-              <h3 className="text-lg font-black mb-2 text-orange-600">12 meses de Suporte</h3>
-              <p className="text-sm text-gray-400">Suporte especializado durante todo o primeiro ano</p>
+
+            <div className="bg-gradient-to-r from-orange-600/20 to-transparent border-l-4 border-orange-600 p-8 rounded-r-lg hover:border-orange-500 transition">
+              <div className="flex gap-6 items-start">
+                <div className="text-5xl flex-shrink-0">👨‍🏫</div>
+                <div>
+                  <h3 className="text-2xl font-black mb-2 text-orange-600">Mentorado por Renan Mataveli</h3>
+                  <p className="text-gray-300 leading-relaxed">Aprenda diretamente com um profissional que vive do mercado cripto há mais de 5 anos. Renan responde suas dúvidas e compartilha suas estratégias reais.</p>
+                </div>
+              </div>
             </div>
-            <div className="bg-gradient-to-br from-orange-600/20 to-orange-600/5 border border-orange-600/30 rounded-lg p-8 hover:border-orange-600/60 transition">
-              <div className="text-4xl mb-4">👥</div>
-              <h3 className="text-lg font-black mb-2 text-orange-600">Comunidade Exclusiva</h3>
-              <p className="text-sm text-gray-400">Networking com alunos e oportunidades reais</p>
+
+            <div className="bg-gradient-to-r from-orange-600/20 to-transparent border-l-4 border-orange-600 p-8 rounded-r-lg hover:border-orange-500 transition">
+              <div className="flex gap-6 items-start">
+                <div className="text-5xl flex-shrink-0">👥</div>
+                <div>
+                  <h3 className="text-2xl font-black mb-2 text-orange-600">Comunidade Ativa e Engajada</h3>
+                  <p className="text-gray-300 leading-relaxed">Faça parte de uma comunidade de alunos que compartilham análises, oportunidades e resultados. Networking real com profissionais do mercado.</p>
+                </div>
+              </div>
             </div>
-            <div className="bg-gradient-to-br from-orange-600/20 to-orange-600/5 border border-orange-600/30 rounded-lg p-8 hover:border-orange-600/60 transition">
-              <div className="text-4xl mb-4">💬</div>
-              <h3 className="text-lg font-black mb-2 text-orange-600">Lives Semanais</h3>
-              <p className="text-sm text-gray-400">Tire dúvidas ao vivo com Renan toda semana</p>
+
+            <div className="bg-gradient-to-r from-orange-600/20 to-transparent border-l-4 border-orange-600 p-8 rounded-r-lg hover:border-orange-500 transition">
+              <div className="flex gap-6 items-start">
+                <div className="text-5xl flex-shrink-0">💬</div>
+                <div>
+                  <h3 className="text-2xl font-black mb-2 text-orange-600">Suporte 24h Personalizado</h3>
+                  <p className="text-gray-300 leading-relaxed">Dúvidas sobre o curso? Suporte direto do time Level Cripto. Lives semanais com Renan para tirar dúvidas em tempo real.</p>
+                </div>
+              </div>
             </div>
-            <div className="bg-gradient-to-br from-orange-600/20 to-orange-600/5 border border-orange-600/30 rounded-lg p-8 hover:border-orange-600/60 transition">
-              <div className="text-4xl mb-4">📊</div>
-              <h3 className="text-lg font-black mb-2 text-orange-600">Relatórios Semanais</h3>
-              <p className="text-sm text-gray-400">Análises técnicas e oportunidades de mercado</p>
+
+            <div className="bg-gradient-to-r from-orange-600/20 to-transparent border-l-4 border-orange-600 p-8 rounded-r-lg hover:border-orange-500 transition">
+              <div className="flex gap-6 items-start">
+                <div className="text-5xl flex-shrink-0">🎁</div>
+                <div>
+                  <h3 className="text-2xl font-black mb-2 text-orange-600">Bônus Exclusivos e Atualizações</h3>
+                  <p className="text-gray-300 leading-relaxed">Mapa mental para airdrops, guias práticos, ferramentas de análise, relatórios semanais e muito mais. Tudo incluído no curso.</p>
+                </div>
+              </div>
             </div>
-            <div className="bg-gradient-to-br from-orange-600/20 to-orange-600/5 border border-orange-600/30 rounded-lg p-8 hover:border-orange-600/60 transition">
-              <div className="text-4xl mb-4">🛠️</div>
-              <h3 className="text-lg font-black mb-2 text-orange-600">Ferramentas Práticas</h3>
-              <p className="text-sm text-gray-400">Acesso a ferramentas de análise e trading</p>
-            </div>
-            <div className="bg-gradient-to-br from-orange-600/20 to-orange-600/5 border border-orange-600/30 rounded-lg p-8 hover:border-orange-600/60 transition">
-              <div className="text-4xl mb-4">🎁</div>
-              <h3 className="text-lg font-black mb-2 text-orange-600">Guias para Airdrops</h3>
-              <p className="text-sm text-gray-400">Mapa mental e estratégias de farm de airdrops</p>
-            </div>
-            <div className="bg-gradient-to-br from-orange-600/20 to-orange-600/5 border border-orange-600/30 rounded-lg p-8 hover:border-orange-600/60 transition">
-              <div className="text-4xl mb-4">💰</div>
-              <h3 className="text-lg font-black mb-2 text-orange-600">Estratégias DeFi</h3>
-              <p className="text-sm text-gray-400">Estratégias de investimento em DeFi com segurança</p>
+
+            <div className="bg-gradient-to-r from-orange-600/20 to-transparent border-l-4 border-orange-600 p-8 rounded-r-lg hover:border-orange-500 transition">
+              <div className="flex gap-6 items-start">
+                <div className="text-5xl flex-shrink-0">♾️</div>
+                <div>
+                  <h3 className="text-2xl font-black mb-2 text-orange-600">Acesso Vitalício</h3>
+                  <p className="text-gray-300 leading-relaxed">Uma vez inscrito, você tem acesso ao curso para sempre. Novas atualizações, novos módulos, tudo sem custo adicional.</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
