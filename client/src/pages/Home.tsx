@@ -8,6 +8,7 @@ import {
   Instagram,
   Youtube,
   Twitter,
+  AlertCircle,
 } from "lucide-react";
 
 interface FAQItem {
@@ -22,22 +23,47 @@ export default function Home() {
   const [totalSignups, setTotalSignups] = useState(1);
   const [expandedFAQ, setExpandedFAQ] = useState<number | null>(null);
   const [showModal, setShowModal] = useState(false);
+  const [phoneError, setPhoneError] = useState("");
+
+  const formatPhone = (value: string) => {
+    // Remove tudo que não é número
+    const numbers = value.replace(/\D/g, '');
+    
+    if (numbers.length === 0) return '';
+    if (numbers.length <= 2) return `(${numbers}`;
+    if (numbers.length <= 7) return `(${numbers.slice(0, 2)}) ${numbers.slice(2)}`;
+    return `(${numbers.slice(0, 2)}) ${numbers.slice(2, 7)}-${numbers.slice(7, 11)}`;
+  };
 
   const validatePhone = (phoneNumber: string) => {
-    // Validar formato de telefone brasileiro: (XX) XXXXX-XXXX ou similar
-    const phoneRegex = /^\(?\d{2}\)?\s?9?\d{4}-?\d{4}$/;
-    return phoneRegex.test(phoneNumber.replace(/\s/g, ''));
+    // Validar se tem 11 dígitos (2 de DDD + 9 dígitos)
+    const numbers = phoneNumber.replace(/\D/g, '');
+    return numbers.length === 11 && numbers[2] === '9';
+  };
+
+  const handlePhoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const formatted = formatPhone(e.target.value);
+    setPhone(formatted);
+    setPhoneError('');
   };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (email && phone && validatePhone(phone)) {
-      setTotalSignups(totalSignups + 1);
-      setSubmitted(true);
-      // Não fechar automaticamente - deixar até clicar
-    } else if (!validatePhone(phone)) {
-      alert('Por favor, insira um telefone válido. Exemplo: (11) 99999-9999');
+    if (!email) {
+      setPhoneError('Por favor, insira seu email');
+      return;
     }
+    if (!phone) {
+      setPhoneError('Por favor, insira seu telefone');
+      return;
+    }
+    if (!validatePhone(phone)) {
+      setPhoneError('Telefone inválido. Use o formato: (XX) 9XXXX-XXXX');
+      return;
+    }
+    setTotalSignups(totalSignups + 1);
+    setSubmitted(true);
+    setPhoneError('');
   };
 
   const faqItems: FAQItem[] = [
@@ -157,14 +183,26 @@ export default function Home() {
                 className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-orange-600"
                 required
               />
-              <input
-                type="tel"
-                placeholder="Seu telefone (11) 99999-9999"
-                value={phone}
-                onChange={(e) => setPhone(e.target.value)}
-                className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-orange-600"
-                required
-              />
+              <div>
+                <input
+                  type="tel"
+                  placeholder="Seu telefone (11) 99999-9999"
+                  value={phone}
+                  onChange={handlePhoneChange}
+                  className={`w-full px-4 py-3 bg-gray-800 border rounded-lg text-white placeholder-gray-500 focus:outline-none transition ${
+                    phoneError
+                      ? 'border-red-500 focus:border-red-500'
+                      : 'border-gray-700 focus:border-orange-600'
+                  }`}
+                  required
+                />
+                {phoneError && (
+                  <div className="mt-2 flex items-center gap-2 text-red-400 text-sm">
+                    <AlertCircle size={16} />
+                    <span>{phoneError}</span>
+                  </div>
+                )}
+              </div>
               <button
                 type="submit"
                 className="w-full bg-orange-600 text-black font-black py-3 rounded-lg hover:bg-orange-700 transition"
