@@ -194,8 +194,8 @@ export default function Home() {
         </div>
       )}
 
-      {/* Vagas Limitadas Section */}
-      <section className="py-20 px-4 md:px-8 bg-orange-600">
+      {/* Vagas Limitadas Section - Benefícios */}
+      <section id="beneficios" className="py-20 px-4 md:px-8 bg-orange-600">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-5xl md:text-6xl font-black mb-8 text-black">⚡ VAGAS LIMITADAS</h2>
           <p className="text-2xl font-bold text-black mb-6">Apenas 20 alunos na primeira turma</p>
@@ -301,6 +301,10 @@ export default function Home() {
                 <a href="https://youtube.com/@levelcripto" target="_blank" rel="noopener noreferrer"
                    className="px-6 py-3 bg-orange-600 text-black font-black rounded-lg hover:bg-orange-700 transition">
                   YouTube
+                </a>
+                <a href="https://x.com/LevelCripto" target="_blank" rel="noopener noreferrer"
+                   className="px-6 py-3 bg-orange-600 text-black font-black rounded-lg hover:bg-orange-700 transition">
+                  X
                 </a>
               </div>
             </div>
@@ -572,7 +576,7 @@ export default function Home() {
       {/* Footer */}
       <footer className="bg-black border-t border-orange-600/20 py-12 px-4 md:px-8">
         <div className="max-w-7xl mx-auto">
-          <div className="grid md:grid-cols-4 gap-8 mb-8">
+          <div className="grid md:grid-cols-2 gap-8 mb-8">
             <div>
               <h3 className="font-black mb-4">Level Cripto PRO</h3>
               <p className="text-gray-400 text-sm">
@@ -580,25 +584,11 @@ export default function Home() {
               </p>
             </div>
             <div>
-              <h4 className="font-black mb-4">Links</h4>
-              <ul className="space-y-2 text-sm text-gray-400">
-                <li><a href="#beneficios" className="hover:text-orange-600 transition">Benefícios</a></li>
-                <li><a href="#conteudo" className="hover:text-orange-600 transition">Conteúdo</a></li>
-                <li><a href="#diferenciais" className="hover:text-orange-600 transition">Diferenciais</a></li>
-              </ul>
-            </div>
-            <div>
               <h4 className="font-black mb-4">Redes Sociais</h4>
               <ul className="space-y-2 text-sm text-gray-400">
                 <li><a href="https://instagram.com/level_cripto" target="_blank" rel="noopener noreferrer" className="hover:text-orange-600 transition">Instagram</a></li>
                 <li><a href="https://youtube.com/@levelcripto" target="_blank" rel="noopener noreferrer" className="hover:text-orange-600 transition">YouTube</a></li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-black mb-4">Legal</h4>
-              <ul className="space-y-2 text-sm text-gray-400">
-                <li><a href="#" className="hover:text-orange-600 transition">Termos de Uso</a></li>
-                <li><a href="#" className="hover:text-orange-600 transition">Privacidade</a></li>
+                <li><a href="https://x.com/LevelCripto" target="_blank" rel="noopener noreferrer" className="hover:text-orange-600 transition">X (Twitter)</a></li>
               </ul>
             </div>
           </div>
