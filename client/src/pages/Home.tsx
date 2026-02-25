@@ -335,16 +335,16 @@ export default function Home() {
               </p>
               <div className="flex gap-4">
                 <a href="https://instagram.com/level_cripto" target="_blank" rel="noopener noreferrer" 
-                   className="px-6 py-3 bg-orange-600 text-black font-black rounded-lg hover:bg-orange-700 transition">
-                  Instagram
+                   className="p-3 bg-orange-600 text-black rounded-lg hover:bg-orange-700 transition">
+                  <Instagram size={24} />
                 </a>
                 <a href="https://youtube.com/@levelcripto" target="_blank" rel="noopener noreferrer"
-                   className="px-6 py-3 bg-orange-600 text-black font-black rounded-lg hover:bg-orange-700 transition">
-                  YouTube
+                   className="p-3 bg-orange-600 text-black rounded-lg hover:bg-orange-700 transition">
+                  <Youtube size={24} />
                 </a>
                 <a href="https://x.com/LevelCripto" target="_blank" rel="noopener noreferrer"
-                   className="px-6 py-3 bg-orange-600 text-black font-black rounded-lg hover:bg-orange-700 transition">
-                  X
+                   className="p-3 bg-orange-600 text-black rounded-lg hover:bg-orange-700 transition">
+                  <Twitter size={24} />
                 </a>
               </div>
             </div>
