@@ -576,15 +576,15 @@ export default function Home() {
       {/* Footer */}
       <footer className="bg-black border-t border-orange-600/20 py-12 px-4 md:px-8">
         <div className="max-w-7xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-8 mb-8">
-            <div>
-              <h3 className="font-black mb-4">Level Cripto PRO</h3>
-              <p className="text-gray-400 text-sm">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 mb-8 items-start">
+            <div className="flex flex-col">
+              <h3 className="font-black mb-4 text-lg">Level Cripto PRO</h3>
+              <p className="text-gray-400 text-sm leading-relaxed">
                 Aprenda criptomoedas com os melhores profissionais do mercado.
               </p>
             </div>
-            <div>
-              <h4 className="font-black mb-4">Redes Sociais</h4>
+            <div className="flex flex-col">
+              <h4 className="font-black mb-4 text-lg">Redes Sociais</h4>
               <ul className="space-y-2 text-sm text-gray-400">
                 <li><a href="https://instagram.com/level_cripto" target="_blank" rel="noopener noreferrer" className="hover:text-orange-600 transition">Instagram</a></li>
                 <li><a href="https://youtube.com/@levelcripto" target="_blank" rel="noopener noreferrer" className="hover:text-orange-600 transition">YouTube</a></li>
