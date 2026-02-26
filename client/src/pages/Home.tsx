@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { useAuth } from "@/_core/hooks/useAuth";
+import { trpc } from "@/lib/trpc";
 import {
   ArrowRight,
   Copy,
@@ -17,6 +19,10 @@ interface FAQItem {
 }
 
 export default function Home() {
+  // The userAuth hooks provides authentication state
+  // To implement login/logout functionality, simply call logout() or redirect to getLoginUrl()
+  let { user, loading, error, isAuthenticated, logout } = useAuth();
+
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
   const [submitted, setSubmitted] = useState(false);
@@ -36,9 +42,13 @@ export default function Home() {
   };
 
   const validatePhone = (phoneNumber: string) => {
-    // Validar se tem 11 dígitos (2 de DDD + 9 dígitos)
     const numbers = phoneNumber.replace(/\D/g, '');
     return numbers.length === 11 && numbers[2] === '9';
+  };
+
+  const validateEmail = (emailValue: string) => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(emailValue);
   };
 
   const handlePhoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -47,10 +57,33 @@ export default function Home() {
     setPhoneError('');
   };
 
+  const criarInscricao = trpc.inscricoes.criar.useMutation({
+    onSuccess: () => {
+      setTotalSignups(totalSignups + 1);
+      setSubmitted(true);
+      setPhoneError('');
+      setEmail('');
+      setPhone('');
+    },
+    onError: (error) => {
+      let mensagemErro = 'Erro ao criar inscrição. Tente novamente.';
+      if (error.message?.includes('already exists')) {
+        mensagemErro = 'Este email já foi inscrito. Obrigado pelo interesse!';
+      } else if (error.message) {
+        mensagemErro = 'Email ou telefone inválido. Verifique os dados.';
+      }
+      setPhoneError(mensagemErro);
+    },
+  });
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!email) {
       setPhoneError('Por favor, insira seu email');
+      return;
+    }
+    if (!validateEmail(email)) {
+      setPhoneError('Email invalido. Verifique e tente novamente.');
       return;
     }
     if (!phone) {
@@ -61,9 +94,10 @@ export default function Home() {
       setPhoneError('Telefone inválido. Use o formato: (XX) 9XXXX-XXXX');
       return;
     }
-    setTotalSignups(totalSignups + 1);
-    setSubmitted(true);
-    setPhoneError('');
+    criarInscricao.mutate({
+      email,
+      telefone: phone,
+    });
   };
 
   const faqItems: FAQItem[] = [
