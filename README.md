@@ -2,6 +2,29 @@
 
 Uma landing page moderna para um curso de criptomoedas, desenvolvida com tecnologias full-stack. O projeto demonstra integração completa entre frontend React, backend Express com tRPC, e banco de dados MySQL, implementando boas práticas de desenvolvimento profissional.
 
+## 📚 Processo de Desenvolvimento
+
+Este projeto foi desenvolvido como estudo de caso para portfólio, com assistência de IA para estrutura e documentação. O objetivo era aprender e demonstrar conhecimento em desenvolvimento full-stack.
+
+**Aprendizados principais:**
+- ✅ Integração full-stack: React + Express + MySQL
+- ✅ Type-safety end-to-end com TypeScript e tRPC
+- ✅ Validação robusta em múltiplas camadas
+- ✅ Segurança de dados e prevenção de SQL injection
+- ✅ Arquitetura escalável e manutenível
+- ✅ Boas práticas de desenvolvimento profissional
+- ✅ Documentação técnica detalhada
+
+**Tecnologias dominadas durante o desenvolvimento:**
+- tRPC para APIs type-safe
+- Drizzle ORM para gerenciamento de banco de dados
+- React 19 com hooks modernos
+- Express.js para backend
+- Zod para validação de dados
+- Tailwind CSS 4 para styling
+
+> **Nota:** Este projeto demonstra capacidade de usar ferramentas modernas (IA) de forma eficaz, entender código profundo, implementar boas práticas e ser transparente sobre o processo. Todos os conceitos foram estudados, entendidos e testados em detalhe.
+
 ## 🎯 Visão Geral do Projeto
 
 **Level Cripto PRO** é uma plataforma de educação em criptomoedas que oferece:
