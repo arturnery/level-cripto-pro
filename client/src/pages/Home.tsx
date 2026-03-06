@@ -169,8 +169,18 @@ export default function Home() {
       </header>
 
       {/* Hero Section */}
-      <section className="pt-32 pb-20 px-4 md:px-8 bg-black">
-        <div className="max-w-7xl mx-auto">
+      <section 
+        className="pt-32 pb-20 px-4 md:px-8 bg-black relative overflow-hidden"
+        style={{
+          backgroundImage: 'url(https://files.manuscdn.com/user_upload_by_module/session_file/310519663190783268/NmAhCesFoDyuNJFb.webp)',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center right',
+          backgroundAttachment: 'fixed'
+        }}
+      >
+        {/* Overlay escuro para legibilidade */}
+        <div className="absolute inset-0 bg-gradient-to-r from-black via-black/80 to-black/40"></div>
+        <div className="max-w-7xl mx-auto relative z-10">
           <div className="inline-block mb-6 px-4 py-2 bg-orange-600/10 border border-orange-600/30 rounded-full">
             <span className="text-orange-600 text-sm font-bold">✨ Lançamento Exclusivo</span>
           </div>
