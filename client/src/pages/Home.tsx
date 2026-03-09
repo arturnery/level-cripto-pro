@@ -181,27 +181,37 @@ export default function Home() {
         {/* Overlay escuro para legibilidade */}
         <div className="absolute inset-0 bg-gradient-to-r from-black via-black/80 to-black/40"></div>
         <div className="max-w-7xl mx-auto relative z-10">
-          <div className="inline-block mb-6 px-4 py-2 bg-orange-600/10 border border-orange-600/30 rounded-full">
-            <span className="text-orange-600 text-sm font-bold">✨ Lançamento Exclusivo</span>
+          <div className="bg-black/40 backdrop-blur-sm border-2 border-orange-600/50 rounded-3xl p-8 md:p-12 max-w-2xl">
+            <div className="inline-block mb-6 px-4 py-2 bg-orange-600/10 border border-orange-600/30 rounded-full">
+              <span className="text-orange-600 text-sm font-bold">✨ Lançamento Exclusivo</span>
+            </div>
+            <h1 className="text-4xl md:text-5xl font-black mb-6 leading-tight">
+              VOCÊ ESTÁ PRONTO PARA<br />
+              <span className="text-orange-600">DOMINAR O MERCADO CRIPTO?</span>
+            </h1>
+            <p className="text-gray-300 mb-8 leading-relaxed">
+              Aprenda com <span className="text-orange-400 font-bold">profissionais que vivem do mercado cripto</span> todos os dias. Domine Bitcoin, DeFi, Airdrops, Análise Técnica e as estratégias que realmente funcionam.
+            </p>
+            
+            <p className="text-gray-300 mb-8 leading-relaxed">
+              Enquanto a maioria continua perdendo dinheiro em trades aleatórios e caindo em golpes das próximas gemas que vão fazer 10x, nossos alunos estão tendo <span className="text-orange-400 font-bold">ganhos consistentes em todas as áreas do mercado</span>.
+            </p>
+            
+            <p className="text-gray-300 mb-8 leading-relaxed">
+              A diferença? <span className="text-orange-400 font-bold">Conhecimento + Comunidade + Mentorado por pessoas que vivem do mercado</span>.
+            </p>
+            
+            <p className="text-gray-300 mb-8 leading-relaxed">
+              Com suporte 24h, comunidade ativa, mapa mental para organizar seus airdrops e mais.
+            </p>
+            
+            <button
+              onClick={() => setShowModal(true)}
+              className="w-full bg-orange-600 text-black font-black py-3 px-6 rounded-lg hover:bg-orange-700 transition transform hover:scale-105 text-base flex items-center justify-center gap-2"
+            >
+              ENTRAR NA LISTA DE ESPERA <ArrowRight size={18} />
+            </button>
           </div>
-          <h1 className="text-5xl md:text-7xl font-black mb-6">
-            SE TORNE UM<br />
-            <span className="text-orange-600">LEVEL CRIPTO PRO</span>
-          </h1>
-          <p className="text-xl text-gray-300 mb-8 max-w-2xl">
-            Domine o mercado cripto com a ajuda de profissionais que vivem desse mercado.
-          </p>
-          <p className="text-gray-400 mb-12 max-w-2xl leading-relaxed">
-            Do zero ao avançado: Bitcoin, DeFi, NFTs, Mercado de Futuros, Web3 e Airdrops.
-            <br />
-            Com suporte 24h, comunidade ativa, mapa mental para organizar seus airdrops e mais
-          </p>
-          <button
-            onClick={() => setShowModal(true)}
-            className="bg-orange-600 text-black font-black py-4 px-8 rounded-lg hover:bg-orange-700 transition transform hover:scale-105 text-lg flex items-center gap-2"
-          >
-            ENTRAR NA LISTA DE ESPERA <ArrowRight size={20} />
-          </button>
         </div>
       </section>
 
