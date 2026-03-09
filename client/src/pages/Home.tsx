@@ -181,29 +181,44 @@ export default function Home() {
         {/* Overlay escuro para legibilidade */}
         <div className="absolute inset-0 bg-gradient-to-r from-black via-black/80 to-black/40"></div>
         <div className="max-w-7xl mx-auto relative z-10">
-          <div className="bg-black/40 backdrop-blur-sm border-2 border-orange-600/50 rounded-3xl p-8 md:p-12 max-w-2xl">
+          <div className="bg-black/40 backdrop-blur-sm border-2 border-orange-600/50 rounded-3xl p-6 md:p-8 max-w-2xl">
             <div className="inline-block mb-6 px-4 py-2 bg-orange-600/10 border border-orange-600/30 rounded-full">
               <span className="text-orange-600 text-sm font-bold">✨ Lançamento Exclusivo</span>
             </div>
-            <h1 className="text-4xl md:text-5xl font-black mb-6 leading-tight">
-              VOCÊ ESTÁ PRONTO PARA<br />
-              <span className="text-orange-600">DOMINAR O MERCADO CRIPTO?</span>
+            <h1 className="text-3xl md:text-4xl font-black mb-4 leading-tight">
+              <span className="text-orange-600">DOMINE O MERCADO DE CRIPTOMOEDAS</span><br />
+              DO ZERO AO AVANÇADO
             </h1>
-            <p className="text-gray-300 mb-8 leading-relaxed">
-              Aprenda com <span className="text-orange-400 font-bold">profissionais que vivem do mercado cripto</span> todos os dias. Domine Bitcoin, DeFi, Airdrops, Análise Técnica e as estratégias que realmente funcionam.
+            <p className="text-gray-300 mb-6 leading-relaxed">
+              Aprenda análise de mercado, estratégias e oportunidades no mundo cripto, mesmo começando do zero.
             </p>
             
-            <p className="text-gray-300 mb-8 leading-relaxed">
-              Enquanto a maioria continua perdendo dinheiro em trades aleatórios e caindo em golpes das próximas gemas que vão fazer 10x, nossos alunos estão tendo <span className="text-orange-400 font-bold">ganhos consistentes em todas as áreas do mercado</span>.
-            </p>
-            
-            <p className="text-gray-300 mb-8 leading-relaxed">
-              A diferença? <span className="text-orange-400 font-bold">Conhecimento + Comunidade + Mentorado por pessoas que vivem do mercado</span>.
-            </p>
-            
-            <p className="text-gray-300 mb-8 leading-relaxed">
-              Com suporte 24h, comunidade ativa, mapa mental para organizar seus airdrops e mais.
-            </p>
+            <div className="space-y-3 mb-8">
+              <div className="flex items-start gap-3">
+                <span className="text-orange-400 font-bold text-lg mt-1">✔</span>
+                <span className="text-gray-300">Estratégias usadas no mercado</span>
+              </div>
+              <div className="flex items-start gap-3">
+                <span className="text-orange-400 font-bold text-lg mt-1">✔</span>
+                <span className="text-gray-300">Identificação de oportunidades</span>
+              </div>
+              <div className="flex items-start gap-3">
+                <span className="text-orange-400 font-bold text-lg mt-1">✔</span>
+                <span className="text-gray-300">DeFi, Web3 e Airdrops</span>
+              </div>
+              <div className="flex items-start gap-3">
+                <span className="text-orange-400 font-bold text-lg mt-1">✔</span>
+                <span className="text-gray-300">Comunidade ativa e suporte</span>
+              </div>
+              <div className="flex items-start gap-3">
+                <span className="text-orange-400 font-bold text-lg mt-1">✔</span>
+                <span className="text-gray-300">Análises técnicas frequentes e conteúdos atualizados</span>
+              </div>
+              <div className="flex items-start gap-3">
+                <span className="text-orange-400 font-bold text-lg mt-1">✔</span>
+                <span className="text-gray-300">Lives semanais com nossos professores</span>
+              </div>
+            </div>
             
             <button
               onClick={() => setShowModal(true)}
