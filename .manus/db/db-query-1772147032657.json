@@ -1,9 +1,0 @@
-{
-  "query": "TRUNCATE TABLE inscricoes;",
-  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 4BRCe4BuBhZX7PA.cf4d08a65a67 --database U83KkfBRbFSedDHoLmymnt --execute TRUNCATE TABLE inscricoes;",
-  "rows": [],
-  "messages": [],
-  "stdout": "",
-  "stderr": "",
-  "execution_time_ms": 337
-}
