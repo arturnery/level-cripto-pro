@@ -172,10 +172,11 @@ export default function Home() {
       <section 
         className="pt-32 pb-20 px-4 md:px-8 bg-black relative overflow-hidden"
         style={{
-          backgroundImage: 'url(https://files.manuscdn.com/user_upload_by_module/session_file/310519663190783268/NmAhCesFoDyuNJFb.webp)',
+          backgroundImage: 'url(https://d2xsxph8kpxj0f.cloudfront.net/310519663190783268/U83KkfBRbFSedDHoLmymnt/BN_01_HD_574b48c5.webp)',
           backgroundSize: 'cover',
           backgroundPosition: 'center right',
-          backgroundAttachment: 'fixed'
+          backgroundRepeat: 'no-repeat',
+          imageRendering: 'crisp-edges' as any,
         }}
       >
         {/* Overlay escuro para legibilidade */}
