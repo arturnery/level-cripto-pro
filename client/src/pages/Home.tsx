@@ -674,9 +674,9 @@ export default function Home() {
           </p>
           <button
             onClick={() => setShowModal(true)}
-            className="bg-black text-orange-600 font-black py-4 px-8 rounded-lg hover:bg-gray-900 transition transform hover:scale-105 text-lg flex items-center gap-2 mx-auto"
+            className="bg-green-600 text-white font-black py-3 px-6 rounded-lg hover:bg-green-700 transition transform hover:scale-105 text-base flex items-center justify-center gap-2 mx-auto"
           >
-            ENTRAR NA LISTA DE ESPERA <ArrowRight size={20} />
+            ENTRAR NA LISTA DE ESPERA <ArrowRight size={18} />
           </button>
         </div>
       </section>
