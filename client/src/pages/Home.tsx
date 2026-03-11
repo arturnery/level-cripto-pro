@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useAuth } from "@/_core/hooks/useAuth";
 import { trpc } from "@/lib/trpc";
 import {
@@ -30,6 +30,41 @@ export default function Home() {
   const [expandedFAQ, setExpandedFAQ] = useState<number | null>(null);
   const [showModal, setShowModal] = useState(false);
   const [phoneError, setPhoneError] = useState("");
+  const [timeLeft, setTimeLeft] = useState({
+    days: 19,
+    hours: 22,
+    minutes: 10,
+    seconds: 55
+  });
+
+  // Cronômetro funcional
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setTimeLeft(prev => {
+        let { days, hours, minutes, seconds } = prev;
+        
+        if (seconds > 0) {
+          seconds--;
+        } else if (minutes > 0) {
+          minutes--;
+          seconds = 59;
+        } else if (hours > 0) {
+          hours--;
+          minutes = 59;
+          seconds = 59;
+        } else if (days > 0) {
+          days--;
+          hours = 23;
+          minutes = 59;
+          seconds = 59;
+        }
+        
+        return { days, hours, minutes, seconds };
+      });
+    }, 1000);
+    
+    return () => clearInterval(timer);
+  }, []);
 
   const formatPhone = (value: string) => {
     // Remove tudo que não é número
@@ -368,36 +403,44 @@ export default function Home() {
       </section>
 
       {/* Cronômetro Section */}
-      <section id="cronometro" className="py-20 px-4 md:px-8 bg-gradient-to-r from-yellow-600 to-yellow-500">
+      <section id="cronometro" className="py-24 px-4 md:px-8 bg-gradient-to-br from-blue-900/30 via-black to-black border-y border-blue-900/40">
         <div className="max-w-7xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
+          <div className="grid md:grid-cols-2 gap-16 items-center">
             <div>
-              <p className="text-sm font-bold text-yellow-900 mb-4">Inscrições abertas para a turma 55</p>
-              <h2 className="text-4xl md:text-5xl font-black text-white mb-8">A primeira aula começa em</h2>
+              <p className="text-sm font-bold text-blue-400 mb-4 uppercase tracking-wider">Inscrições abertas para a turma 55</p>
+              <h2 className="text-4xl md:text-5xl font-black text-white mb-12 leading-tight">A primeira aula começa em</h2>
               
-              <div className="flex gap-6 md:gap-8">
-                <div className="text-center">
-                  <div className="text-5xl md:text-6xl font-black text-white mb-2">19</div>
-                  <p className="text-sm font-bold text-yellow-900">Dias</p>
+              <div className="flex gap-4 md:gap-6">
+                <div className="flex-1 bg-gradient-to-br from-blue-900/40 to-blue-900/10 border border-blue-900/40 rounded-xl p-6 hover:border-blue-900/60 transition">
+                  <div className="text-4xl md:text-5xl font-black text-blue-400 mb-3 text-center">
+                    {String(timeLeft.days).padStart(2, '0')}
+                  </div>
+                  <p className="text-xs font-bold text-gray-400 uppercase tracking-wider text-center">Dias</p>
                 </div>
-                <div className="text-center">
-                  <div className="text-5xl md:text-6xl font-black text-white mb-2">22</div>
-                  <p className="text-sm font-bold text-yellow-900">Horas</p>
+                <div className="flex-1 bg-gradient-to-br from-blue-900/40 to-blue-900/10 border border-blue-900/40 rounded-xl p-6 hover:border-blue-900/60 transition">
+                  <div className="text-4xl md:text-5xl font-black text-blue-400 mb-3 text-center">
+                    {String(timeLeft.hours).padStart(2, '0')}
+                  </div>
+                  <p className="text-xs font-bold text-gray-400 uppercase tracking-wider text-center">Horas</p>
                 </div>
-                <div className="text-center">
-                  <div className="text-5xl md:text-6xl font-black text-white mb-2">10</div>
-                  <p className="text-sm font-bold text-yellow-900">Minutos</p>
+                <div className="flex-1 bg-gradient-to-br from-blue-900/40 to-blue-900/10 border border-blue-900/40 rounded-xl p-6 hover:border-blue-900/60 transition">
+                  <div className="text-4xl md:text-5xl font-black text-blue-400 mb-3 text-center">
+                    {String(timeLeft.minutes).padStart(2, '0')}
+                  </div>
+                  <p className="text-xs font-bold text-gray-400 uppercase tracking-wider text-center">Minutos</p>
                 </div>
-                <div className="text-center">
-                  <div className="text-5xl md:text-6xl font-black text-white mb-2">55</div>
-                  <p className="text-sm font-bold text-yellow-900">Segundos</p>
+                <div className="flex-1 bg-gradient-to-br from-blue-900/40 to-blue-900/10 border border-blue-900/40 rounded-xl p-6 hover:border-blue-900/60 transition">
+                  <div className="text-4xl md:text-5xl font-black text-blue-400 mb-3 text-center">
+                    {String(timeLeft.seconds).padStart(2, '0')}
+                  </div>
+                  <p className="text-xs font-bold text-gray-400 uppercase tracking-wider text-center">Segundos</p>
                 </div>
               </div>
             </div>
             
             <div className="flex justify-center">
-              <div className="bg-gray-900 rounded-lg overflow-hidden shadow-2xl border-4 border-yellow-400 p-4 max-w-sm">
-                <div className="bg-gray-800 rounded h-64 flex items-center justify-center">
+              <div className="bg-gradient-to-br from-blue-900/20 to-blue-900/5 rounded-2xl overflow-hidden shadow-2xl border-2 border-blue-900/40 p-6 max-w-sm w-full hover:border-blue-900/60 transition">
+                <div className="bg-gray-800 rounded-lg h-64 flex items-center justify-center">
                   <span className="text-gray-500 text-center px-6">
                     Espaço para foto do exemplo
                     <br />
