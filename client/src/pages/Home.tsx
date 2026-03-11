@@ -441,7 +441,15 @@ export default function Home() {
                 </a>
               </div>
             </div>
-
+            <div className="bg-gray-800 rounded-lg overflow-hidden h-96 md:h-full flex items-center justify-center">
+              <div className="w-full h-full bg-gradient-to-br from-blue-900/20 to-blue-900/5 flex items-center justify-center">
+                <span className="text-gray-500 text-center px-6">
+                  Espaço para foto do Renan
+                  <br />
+                  <span className="text-sm text-gray-600 mt-2 block">Dimensão recomendada: 400x500px</span>
+                </span>
+              </div>
+            </div>
           </div>
         </div>
       </section>
