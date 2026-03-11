@@ -174,8 +174,8 @@ export default function Home() {
         <img
           src={`https://files.manuscdn.com/user_upload_by_module/session_file/310519663190783268/BatSLnAipWpTfZPM.webp?t=${Date.now()}`}
           alt="Hero Background"
-          className="absolute inset-0 w-full h-full object-cover object-right"
-          style={{ zIndex: 1 }}
+          className="absolute inset-0 w-full h-full object-contain lg:object-cover object-right"
+          style={{ zIndex: 1, backgroundColor: '#000' }}
         />
         {/* Overlay escuro para legibilidade */}
         <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/40 to-transparent" style={{ zIndex: 2 }}></div>
