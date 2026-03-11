@@ -306,7 +306,7 @@ export default function Home() {
           <div className="bg-gradient-to-br from-orange-600/20 via-black to-black border-2 border-orange-600/40 rounded-3xl p-12 md:p-16 max-w-5xl mx-auto">
             <h2 className="text-4xl md:text-5xl font-black mb-6 text-orange-600 flex items-center gap-3"><span>⚡</span> VAGAS LIMITADAS POR TURMA</h2>
             <p className="text-lg text-gray-300 mb-8 leading-relaxed max-w-3xl">
-            Sabemos que qualidade exige dedicação. Por isso, limitamos nossas turmas a <strong>20 alunos</strong> para garantir:
+            Sabemos que qualidade exige dedicação. Por isso, limitamos as vagas as nossas turmas para garantirmos:
           </p>
             <div className="grid md:grid-cols-2 gap-8 mb-10">
               <div className="flex gap-4">
