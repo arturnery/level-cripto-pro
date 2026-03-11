@@ -169,17 +169,16 @@ export default function Home() {
       </header>
 
       {/* Hero Section */}
-      <section 
-        className="pt-32 pb-20 px-4 md:px-8 bg-black relative overflow-hidden"
-        style={{
-          backgroundImage: 'url(https://files.manuscdn.com/user_upload_by_module/session_file/310519663190783268/BatSLnAipWpTfZPM.webp)',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center right',
-          backgroundRepeat: 'no-repeat',
-        }}
-      >
+      <section className="pt-32 pb-20 px-4 md:px-8 bg-black relative overflow-hidden">
+        {/* Background Image */}
+        <img
+          src={`https://files.manuscdn.com/user_upload_by_module/session_file/310519663190783268/BatSLnAipWpTfZPM.webp?t=${Date.now()}`}
+          alt="Hero Background"
+          className="absolute inset-0 w-full h-full object-cover object-right"
+          style={{ zIndex: 1 }}
+        />
         {/* Overlay escuro para legibilidade */}
-        <div className="absolute inset-0 bg-gradient-to-r from-black via-black/80 to-black/40"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-black via-black/80 to-black/40" style={{ zIndex: 2 }}></div>
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="bg-black/40 backdrop-blur-sm rounded-3xl p-4 md:p-6 max-w-xl">
             <h1 className="text-2xl md:text-3xl font-black mb-4 leading-tight text-center">
