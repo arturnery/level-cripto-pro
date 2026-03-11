@@ -414,7 +414,7 @@ export default function Home() {
       {/* Professor Section */}
       <section id="professor" className="py-20 px-4 md:px-8 bg-gray-900">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-5xl md:text-6xl font-black mb-12">CONHEÇA O PROFESSOR</h2>
+          <p className="text-lg text-gray-400 mb-12 font-normal">Conheça Renan Mataveli</p>
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
               <h3 className="text-3xl font-black mb-4 text-blue-900">Renan Mataveli</h3>
