@@ -136,32 +136,32 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-black text-white">
       {/* Header */}
-      <header className="fixed top-0 w-full bg-black/95 backdrop-blur border-b border-orange-600/20 z-50">
+      <header className="fixed top-0 w-full bg-black/95 backdrop-blur border-b border-blue-900/20 z-50">
         <div className="max-w-7xl mx-auto px-4 md:px-8 py-4 flex justify-between items-center">
           <div className="flex items-center gap-2">
-            <span className="text-2xl font-bold text-orange-600">₿</span>
+            <span className="text-2xl font-bold text-blue-900">₿</span>
             <span className="text-xl font-bold">Level Cripto PRO</span>
           </div>
           <nav className="hidden md:flex gap-8">
-            <a href="#beneficios" className="text-gray-300 hover:text-orange-600 transition">
+            <a href="#beneficios" className="text-gray-300 hover:text-blue-900 transition">
               Benefícios
             </a>
-            <a href="#conteudo" className="text-gray-300 hover:text-orange-600 transition">
+            <a href="#conteudo" className="text-gray-300 hover:text-blue-900 transition">
               Conteúdo
             </a>
-            <a href="#professor" className="text-gray-300 hover:text-orange-600 transition">
+            <a href="#professor" className="text-gray-300 hover:text-blue-900 transition">
               Professor
             </a>
-            <a href="#diferenciais" className="text-gray-300 hover:text-orange-600 transition">
+            <a href="#diferenciais" className="text-gray-300 hover:text-blue-900 transition">
               Diferenciais
             </a>
-            <a href="#resultados" className="text-gray-300 hover:text-orange-600 transition">
+            <a href="#resultados" className="text-gray-300 hover:text-blue-900 transition">
               Resultados
             </a>
-            <a href="#depoimentos" className="text-gray-300 hover:text-orange-600 transition">
+            <a href="#depoimentos" className="text-gray-300 hover:text-blue-900 transition">
               Depoimentos
             </a>
-            <a href="#faq" className="text-gray-300 hover:text-orange-600 transition">
+            <a href="#faq" className="text-gray-300 hover:text-blue-900 transition">
               FAQ
             </a>
           </nav>
@@ -184,7 +184,7 @@ export default function Home() {
             <h1 className="text-2xl md:text-3xl font-black mb-4 leading-tight text-center">
               <span className="text-white">DOMINE O MERCADO DE</span><br />
               <span className="text-white">CRIPTOMOEDAS</span><br />
-              <span className="text-orange-600">DO ZERO AO AVANÇADO</span>
+              <span className="text-blue-900">DO ZERO AO AVANÇADO</span>
             </h1>
             <p className="text-gray-300 mb-6 leading-relaxed">
               Aprenda análise de mercado, estratégias e oportunidades no mundo cripto, mesmo começando do zero.
@@ -192,27 +192,27 @@ export default function Home() {
             
             <div className="space-y-3 mb-8">
               <div className="flex items-start gap-3">
-                <span className="text-orange-400 font-bold text-lg mt-1">✔</span>
+                <span className="text-blue-900 font-bold text-lg mt-1">✔</span>
                 <span className="text-gray-300">Estratégias usadas no mercado</span>
               </div>
               <div className="flex items-start gap-3">
-                <span className="text-orange-400 font-bold text-lg mt-1">✔</span>
+                <span className="text-blue-900 font-bold text-lg mt-1">✔</span>
                 <span className="text-gray-300">Identificação de oportunidades</span>
               </div>
               <div className="flex items-start gap-3">
-                <span className="text-orange-400 font-bold text-lg mt-1">✔</span>
+                <span className="text-blue-900 font-bold text-lg mt-1">✔</span>
                 <span className="text-gray-300">DeFi, Web3 e Airdrops</span>
               </div>
               <div className="flex items-start gap-3">
-                <span className="text-orange-400 font-bold text-lg mt-1">✔</span>
+                <span className="text-blue-900 font-bold text-lg mt-1">✔</span>
                 <span className="text-gray-300">Comunidade ativa e suporte</span>
               </div>
               <div className="flex items-start gap-3">
-                <span className="text-orange-400 font-bold text-lg mt-1">✔</span>
+                <span className="text-blue-900 font-bold text-lg mt-1">✔</span>
                 <span className="text-gray-300">Análises técnicas frequentes e conteúdos atualizados</span>
               </div>
               <div className="flex items-start gap-3">
-                <span className="text-orange-400 font-bold text-lg mt-1">✔</span>
+                <span className="text-blue-900 font-bold text-lg mt-1">✔</span>
                 <span className="text-gray-300">Lives semanais com nossos professores</span>
               </div>
             </div>
@@ -230,7 +230,7 @@ export default function Home() {
       {/* Modal */}
       {showModal && (
         <div className="fixed inset-0 bg-black/80 flex items-center justify-center z-50 p-4">
-          <div className="bg-gray-900 rounded-lg p-8 max-w-md w-full border border-orange-600/30">
+          <div className="bg-gray-900 rounded-lg p-8 max-w-md w-full border border-blue-900/30">
             <div className="flex justify-between items-center mb-6">
               <h2 className="text-2xl font-black">INSCREVER-SE</h2>
               <button
@@ -246,7 +246,7 @@ export default function Home() {
                 placeholder="Seu email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-orange-600"
+                className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-blue-900"
                 required
               />
               <div>
@@ -258,7 +258,7 @@ export default function Home() {
                   className={`w-full px-4 py-3 bg-gray-800 border rounded-lg text-white placeholder-gray-500 focus:outline-none transition ${
                     phoneError
                       ? 'border-red-500 focus:border-red-500'
-                      : 'border-gray-700 focus:border-orange-600'
+                      : 'border-gray-700 focus:border-blue-900'
                   }`}
                   required
                 />
@@ -271,15 +271,15 @@ export default function Home() {
               </div>
               <button
                 type="submit"
-                className="w-full bg-orange-600 text-black font-black py-3 rounded-lg hover:bg-orange-700 transition"
+                className="w-full bg-blue-900 text-black font-black py-3 rounded-lg hover:bg-blue-950 transition"
               >
                 CONFIRMAR INSCRIÇÃO
               </button>
             </form>
             {submitted && (
-              <div className="mt-6 p-6 bg-gradient-to-br from-orange-600/20 to-orange-600/5 border border-orange-600/40 rounded-lg text-center">
+              <div className="mt-6 p-6 bg-gradient-to-br from-blue-900/20 to-blue-900/5 border border-blue-900/40 rounded-lg text-center">
                 <div className="text-4xl mb-4">✓</div>
-                <h3 className="text-xl font-black text-orange-600 mb-3">Inscrição Confirmada!</h3>
+                <h3 className="text-xl font-black text-blue-900 mb-3">Inscrição Confirmada!</h3>
                 <p className="text-gray-300 leading-relaxed mb-6">
                   Obrigado em querer fazer parte da Comunidade Level Cripto Pro. Em breve um de nossos representantes entrará em contato!
                 </p>
@@ -290,7 +290,7 @@ export default function Home() {
                     setPhone("");
                     setShowModal(false);
                   }}
-                  className="w-full bg-orange-600 text-black font-black py-2 rounded-lg hover:bg-orange-700 transition"
+                  className="w-full bg-blue-900 text-black font-black py-2 rounded-lg hover:bg-blue-950 transition"
                 >
                   Fechar
                 </button>
@@ -303,16 +303,16 @@ export default function Home() {
       {/* Vagas Limitadas Section - Benefícios */}
       <section id="beneficios" className="py-20 px-4 md:px-8 bg-black">
         <div className="max-w-7xl mx-auto">
-          <div className="bg-gradient-to-br from-orange-600/20 via-black to-black border-2 border-orange-600/40 rounded-3xl p-12 md:p-16 max-w-5xl mx-auto">
-            <h2 className="text-4xl md:text-5xl font-black mb-6 text-orange-600 flex items-center gap-3"><span>⚡</span> VAGAS LIMITADAS POR TURMA</h2>
+          <div className="bg-gradient-to-br from-blue-900/20 via-black to-black border-2 border-blue-900/40 rounded-3xl p-12 md:p-16 max-w-5xl mx-auto">
+            <h2 className="text-4xl md:text-5xl font-black mb-6 text-blue-900 flex items-center gap-3"><span>⚡</span> VAGAS LIMITADAS POR TURMA</h2>
             <p className="text-lg text-gray-300 mb-8 leading-relaxed max-w-3xl">
             Sabemos que qualidade exige dedicação. Por isso, limitamos as vagas as nossas turmas para garantirmos:
           </p>
             <div className="grid md:grid-cols-2 gap-8 mb-10">
               <div className="flex gap-4">
                 <div className="flex-shrink-0">
-                  <div className="flex items-center justify-center h-10 w-10 rounded-lg bg-orange-600/20 border border-orange-600/40">
-                    <span className="text-orange-600 font-black">✓</span>
+                  <div className="flex items-center justify-center h-10 w-10 rounded-lg bg-blue-900/20 border border-blue-900/40">
+                    <span className="text-blue-900 font-black">✓</span>
                   </div>
                 </div>
                 <div>
@@ -322,8 +322,8 @@ export default function Home() {
               </div>
               <div className="flex gap-4">
                 <div className="flex-shrink-0">
-                  <div className="flex items-center justify-center h-10 w-10 rounded-lg bg-orange-600/20 border border-orange-600/40">
-                    <span className="text-orange-600 font-black">✓</span>
+                  <div className="flex items-center justify-center h-10 w-10 rounded-lg bg-blue-900/20 border border-blue-900/40">
+                    <span className="text-blue-900 font-black">✓</span>
                   </div>
                 </div>
                 <div>
@@ -333,8 +333,8 @@ export default function Home() {
               </div>
               <div className="flex gap-4">
                 <div className="flex-shrink-0">
-                  <div className="flex items-center justify-center h-10 w-10 rounded-lg bg-orange-600/20 border border-orange-600/40">
-                    <span className="text-orange-600 font-black">✓</span>
+                  <div className="flex items-center justify-center h-10 w-10 rounded-lg bg-blue-900/20 border border-blue-900/40">
+                    <span className="text-blue-900 font-black">✓</span>
                   </div>
                 </div>
                 <div>
@@ -344,8 +344,8 @@ export default function Home() {
               </div>
               <div className="flex gap-4">
                 <div className="flex-shrink-0">
-                  <div className="flex items-center justify-center h-10 w-10 rounded-lg bg-orange-600/20 border border-orange-600/40">
-                    <span className="text-orange-600 font-black">✓</span>
+                  <div className="flex items-center justify-center h-10 w-10 rounded-lg bg-blue-900/20 border border-blue-900/40">
+                    <span className="text-blue-900 font-black">✓</span>
                   </div>
                 </div>
                 <div>
@@ -354,7 +354,7 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            <div className="pt-8 border-t border-orange-600/20">
+            <div className="pt-8 border-t border-blue-900/20">
               <p className="text-center text-gray-400 mb-6">Não perca esta oportunidade exclusiva</p>
               <button
                 onClick={() => setShowModal(true)}
@@ -368,7 +368,7 @@ export default function Home() {
       </section>
 
       {/* Divisor fluido */}
-      <div className="h-px bg-gradient-to-r from-transparent via-orange-600/40 to-transparent"></div>
+      <div className="h-px bg-gradient-to-r from-transparent via-blue-900/40 to-transparent"></div>
 
       {/* Conteúdo Section */}
       <section id="conteudo" className="py-20 px-4 md:px-8 bg-black">
@@ -376,35 +376,35 @@ export default function Home() {
           <h2 className="text-5xl md:text-6xl font-black mb-12">O QUE VOCÊ VAI APRENDER</h2>
           <div className="grid md:grid-cols-2 gap-6">
             <div className="flex gap-4">
-              <span className="text-orange-600 font-black">•</span>
+              <span className="text-blue-900 font-black">•</span>
               <span>Origem e história do Bitcoin</span>
             </div>
             <div className="flex gap-4">
-              <span className="text-orange-600 font-black">•</span>
+              <span className="text-blue-900 font-black">•</span>
               <span>Como funciona a blockchain</span>
             </div>
             <div className="flex gap-4">
-              <span className="text-orange-600 font-black">•</span>
+              <span className="text-blue-900 font-black">•</span>
               <span>Estratégias de investimento seguro</span>
             </div>
             <div className="flex gap-4">
-              <span className="text-orange-600 font-black">•</span>
+              <span className="text-blue-900 font-black">•</span>
               <span>DeFi e finanças descentralizadas</span>
             </div>
             <div className="flex gap-4">
-              <span className="text-orange-600 font-black">•</span>
+              <span className="text-blue-900 font-black">•</span>
               <span>NFTs e ativos digitais</span>
             </div>
             <div className="flex gap-4">
-              <span className="text-orange-600 font-black">•</span>
+              <span className="text-blue-900 font-black">•</span>
               <span>Airdrops: Mapa Mental e Farm Estratégico</span>
             </div>
             <div className="flex gap-4">
-              <span className="text-orange-600 font-black">•</span>
+              <span className="text-blue-900 font-black">•</span>
               <span>Análise técnica e fundamental</span>
             </div>
             <div className="flex gap-4">
-              <span className="text-orange-600 font-black">•</span>
+              <span className="text-blue-900 font-black">•</span>
               <span>Segurança, Suporte e Comunidade</span>
             </div>
           </div>
@@ -417,7 +417,7 @@ export default function Home() {
           <h2 className="text-5xl md:text-6xl font-black mb-12">CONHEÇA O PROFESSOR</h2>
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
-              <h3 className="text-3xl font-black mb-4 text-orange-600">Renan Mataveli</h3>
+              <h3 className="text-3xl font-black mb-4 text-blue-900">Renan Mataveli</h3>
               <p className="text-gray-300 mb-6 leading-relaxed">
                 Renan é um especialista em criptomoedas com mais de 5 anos de experiência no mercado. 
                 Ele fundou a comunidade Level Cripto para compartilhar seu conhecimento e ajudar outras pessoas 
@@ -429,25 +429,25 @@ export default function Home() {
               </p>
               <div className="flex gap-4">
                 <a href="https://instagram.com/level_cripto" target="_blank" rel="noopener noreferrer" 
-                   className="p-3 bg-orange-600 text-black rounded-lg hover:bg-orange-700 transition">
+                   className="p-3 bg-blue-900 text-black rounded-lg hover:bg-blue-950 transition">
                   <Instagram size={24} />
                 </a>
                 <a href="https://youtube.com/@levelcripto" target="_blank" rel="noopener noreferrer"
-                   className="p-3 bg-orange-600 text-black rounded-lg hover:bg-orange-700 transition">
+                   className="p-3 bg-blue-900 text-black rounded-lg hover:bg-blue-950 transition">
                   <Youtube size={24} />
                 </a>
                 <a href="https://x.com/LevelCripto" target="_blank" rel="noopener noreferrer"
-                   className="p-3 bg-orange-600 text-black rounded-lg hover:bg-orange-700 transition">
+                   className="p-3 bg-blue-900 text-black rounded-lg hover:bg-blue-950 transition">
                   <Twitter size={24} />
                 </a>
               </div>
             </div>
             <div className="bg-gray-800 rounded-lg p-8 text-center">
-              <div className="w-32 h-32 bg-orange-600/20 rounded-full mx-auto mb-6 flex items-center justify-center">
+              <div className="w-32 h-32 bg-blue-900/20 rounded-full mx-auto mb-6 flex items-center justify-center">
                 <span className="text-6xl">👨‍🏫</span>
               </div>
               <h4 className="text-xl font-black mb-2">Renan Mataveli</h4>
-              <p className="text-orange-600 font-bold">Especialista em Criptomoedas</p>
+              <p className="text-blue-900 font-bold">Especialista em Criptomoedas</p>
             </div>
           </div>
         </div>
@@ -460,61 +460,61 @@ export default function Home() {
           <p className="text-xl text-gray-400 mb-16">O que torna o Level Cripto PRO diferente de qualquer outro curso</p>
           
           <div className="space-y-6">
-            <div className="bg-gradient-to-r from-orange-600/20 to-transparent border-l-4 border-orange-600 p-8 rounded-r-lg hover:border-orange-500 transition">
+            <div className="bg-gradient-to-r from-blue-900/20 to-transparent border-l-4 border-blue-900 p-8 rounded-r-lg hover:border-blue-500 transition">
               <div className="flex gap-6 items-start">
                 <div className="text-5xl flex-shrink-0">🎓</div>
                 <div>
-                  <h3 className="text-2xl font-black mb-2 text-orange-600">Conteúdo Estruturado e Prático</h3>
+                  <h3 className="text-2xl font-black mb-2 text-blue-900">Conteúdo Estruturado e Prático</h3>
                   <p className="text-gray-300 leading-relaxed">Módulos bem organizados que você pode acompanhar no seu próprio ritmo, com exemplos reais do mercado e estratégias que funcionam.</p>
                 </div>
               </div>
             </div>
 
-            <div className="bg-gradient-to-r from-orange-600/20 to-transparent border-l-4 border-orange-600 p-8 rounded-r-lg hover:border-orange-500 transition">
+            <div className="bg-gradient-to-r from-blue-900/20 to-transparent border-l-4 border-blue-900 p-8 rounded-r-lg hover:border-blue-500 transition">
               <div className="flex gap-6 items-start">
                 <div className="text-5xl flex-shrink-0">👨‍🏫</div>
                 <div>
-                  <h3 className="text-2xl font-black mb-2 text-orange-600">Mentorado por Renan Mataveli</h3>
+                  <h3 className="text-2xl font-black mb-2 text-blue-900">Mentorado por Renan Mataveli</h3>
                   <p className="text-gray-300 leading-relaxed">Aprenda diretamente com um profissional que vive do mercado cripto há mais de 5 anos. Renan responde suas dúvidas e compartilha suas estratégias reais.</p>
                 </div>
               </div>
             </div>
 
-            <div className="bg-gradient-to-r from-orange-600/20 to-transparent border-l-4 border-orange-600 p-8 rounded-r-lg hover:border-orange-500 transition">
+            <div className="bg-gradient-to-r from-blue-900/20 to-transparent border-l-4 border-blue-900 p-8 rounded-r-lg hover:border-blue-500 transition">
               <div className="flex gap-6 items-start">
                 <div className="text-5xl flex-shrink-0">👥</div>
                 <div>
-                  <h3 className="text-2xl font-black mb-2 text-orange-600">Comunidade Ativa e Engajada</h3>
+                  <h3 className="text-2xl font-black mb-2 text-blue-900">Comunidade Ativa e Engajada</h3>
                   <p className="text-gray-300 leading-relaxed">Faça parte de uma comunidade de alunos que compartilham análises, oportunidades e resultados. Networking real com profissionais do mercado.</p>
                 </div>
               </div>
             </div>
 
-            <div className="bg-gradient-to-r from-orange-600/20 to-transparent border-l-4 border-orange-600 p-8 rounded-r-lg hover:border-orange-500 transition">
+            <div className="bg-gradient-to-r from-blue-900/20 to-transparent border-l-4 border-blue-900 p-8 rounded-r-lg hover:border-blue-500 transition">
               <div className="flex gap-6 items-start">
                 <div className="text-5xl flex-shrink-0">💬</div>
                 <div>
-                  <h3 className="text-2xl font-black mb-2 text-orange-600">Suporte 24h Personalizado</h3>
+                  <h3 className="text-2xl font-black mb-2 text-blue-900">Suporte 24h Personalizado</h3>
                   <p className="text-gray-300 leading-relaxed">Dúvidas sobre o curso? Suporte direto do time Level Cripto. Lives semanais com Renan para tirar dúvidas em tempo real.</p>
                 </div>
               </div>
             </div>
 
-            <div className="bg-gradient-to-r from-orange-600/20 to-transparent border-l-4 border-orange-600 p-8 rounded-r-lg hover:border-orange-500 transition">
+            <div className="bg-gradient-to-r from-blue-900/20 to-transparent border-l-4 border-blue-900 p-8 rounded-r-lg hover:border-blue-500 transition">
               <div className="flex gap-6 items-start">
                 <div className="text-5xl flex-shrink-0">🎁</div>
                 <div>
-                  <h3 className="text-2xl font-black mb-2 text-orange-600">Bônus Exclusivos e Atualizações</h3>
+                  <h3 className="text-2xl font-black mb-2 text-blue-900">Bônus Exclusivos e Atualizações</h3>
                   <p className="text-gray-300 leading-relaxed">Mapa mental para airdrops, guias práticos, ferramentas de análise, relatórios semanais e muito mais. Tudo incluído no curso.</p>
                 </div>
               </div>
             </div>
 
-            <div className="bg-gradient-to-r from-orange-600/20 to-transparent border-l-4 border-orange-600 p-8 rounded-r-lg hover:border-orange-500 transition">
+            <div className="bg-gradient-to-r from-blue-900/20 to-transparent border-l-4 border-blue-900 p-8 rounded-r-lg hover:border-blue-500 transition">
               <div className="flex gap-6 items-start">
                 <div className="text-5xl flex-shrink-0">♾️</div>
                 <div>
-                  <h3 className="text-2xl font-black mb-2 text-orange-600">Acesso Vitalício</h3>
+                  <h3 className="text-2xl font-black mb-2 text-blue-900">Acesso Vitalício</h3>
                   <p className="text-gray-300 leading-relaxed">Uma vez inscrito, você tem acesso ao curso para sempre. Novas atualizações, novos módulos, tudo sem custo adicional.</p>
                 </div>
               </div>
@@ -532,7 +532,7 @@ export default function Home() {
           <div className="mb-16">
             <div className="flex items-center gap-3 mb-8">
               <span className="text-3xl">📈</span>
-              <h3 className="text-3xl font-black text-orange-600">Resultados de Trades</h3>
+              <h3 className="text-3xl font-black text-blue-900">Resultados de Trades</h3>
             </div>
             <div className="grid md:grid-cols-2 gap-12 items-start">
               <div>
@@ -541,15 +541,15 @@ export default function Home() {
                 </p>
                 <ul className="space-y-3">
                   <li className="flex gap-3">
-                    <span className="text-orange-600 font-black">✓</span>
+                    <span className="text-blue-900 font-black">✓</span>
                     <span className="text-gray-300">Alunos que dobraram seu capital em 3 meses com estratégias de swing trading</span>
                   </li>
                   <li className="flex gap-3">
-                    <span className="text-orange-600 font-black">✓</span>
+                    <span className="text-blue-900 font-black">✓</span>
                     <span className="text-gray-300">Comunidade que compartilha análises técnicas e oportunidades diárias</span>
                   </li>
                   <li className="flex gap-3">
-                    <span className="text-orange-600 font-black">✓</span>
+                    <span className="text-blue-900 font-black">✓</span>
                     <span className="text-gray-300">Suporte 24h para ajudar em dúvidas sobre posições e estratégias</span>
                   </li>
                 </ul>
@@ -570,7 +570,7 @@ export default function Home() {
           <div>
             <div className="flex items-center gap-3 mb-8">
               <span className="text-3xl">🎁</span>
-              <h3 className="text-3xl font-black text-orange-600">Resultados de Airdrops</h3>
+              <h3 className="text-3xl font-black text-blue-900">Resultados de Airdrops</h3>
             </div>
             <div className="grid md:grid-cols-2 gap-12 items-start">
               <div>
@@ -579,15 +579,15 @@ export default function Home() {
                 </p>
                 <ul className="space-y-3">
                   <li className="flex gap-3">
-                    <span className="text-orange-600 font-black">✓</span>
+                    <span className="text-blue-900 font-black">✓</span>
                     <span className="text-gray-300">Alunos que ganharam mais de $5.000 em airdrops em 2 meses</span>
                   </li>
                   <li className="flex gap-3">
-                    <span className="text-orange-600 font-black">✓</span>
+                    <span className="text-blue-900 font-black">✓</span>
                     <span className="text-gray-300">Mapa mental exclusivo para organizar e priorizar airdrops</span>
                   </li>
                   <li className="flex gap-3">
-                    <span className="text-orange-600 font-black">✓</span>
+                    <span className="text-blue-900 font-black">✓</span>
                     <span className="text-gray-300">Comunidade que compartilha oportunidades de airdrops em tempo real</span>
                   </li>
                 </ul>
@@ -611,7 +611,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto">
           <h2 className="text-5xl md:text-6xl font-black mb-4 text-center">O QUE DIZEM NOSSOS ALUNOS</h2>
           <p className="text-center text-gray-400 mb-12 text-lg">Depoimentos autênticos de alunos que transformaram suas vidas com o Level Cripto PRO</p>
-          <div className="bg-gradient-to-br from-orange-600/10 to-transparent border-2 border-orange-600/30 rounded-2xl p-12 text-center">
+          <div className="bg-gradient-to-br from-blue-900/10 to-transparent border-2 border-blue-900/30 rounded-2xl p-12 text-center">
             <p className="text-gray-300 text-lg mb-6 italic leading-relaxed">
               Estamos coletando depoimentos autênticos de nossos alunos. Em breve, você verá histórias reais de transformação e resultados concretos.
             </p>
@@ -620,7 +620,7 @@ export default function Home() {
             </p>
             <button
               onClick={() => setShowModal(true)}
-              className="bg-orange-600 text-white font-black py-3 px-8 rounded-lg hover:bg-orange-700 transition transform hover:scale-105"
+              className="bg-blue-900 text-white font-black py-3 px-8 rounded-lg hover:bg-blue-950 transition transform hover:scale-105"
             >
               QUERO FAZER PARTE DESSA COMUNIDADE
             </button>
@@ -651,7 +651,7 @@ export default function Home() {
 
             {/* FAQ Items */}
             <div className="space-y-3">
-              <div className="text-lg font-black mb-6 text-orange-600">Tem alguma duvida?</div>
+              <div className="text-lg font-black mb-6 text-blue-900">Tem alguma duvida?</div>
               {faqItems.map((item, idx) => (
                 <div
                   key={idx}
@@ -682,7 +682,7 @@ export default function Home() {
       </section>
 
       {/* CTA Final Section */}
-      <section className="py-20 px-4 md:px-8 bg-orange-600">
+      <section className="py-20 px-4 md:px-8 bg-blue-900">
         <div className="max-w-7xl mx-auto text-center">
           <h2 className="text-5xl md:text-6xl font-black mb-6 text-black">PRONTO PARA COMEÇAR?</h2>
           <p className="text-xl text-black mb-12 max-w-2xl mx-auto leading-relaxed">
@@ -700,7 +700,7 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-black border-t border-orange-600/20 py-12 px-4 md:px-8">
+      <footer className="bg-black border-t border-blue-900/20 py-12 px-4 md:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col md:flex-row justify-between items-start gap-8 mb-8">
             <div className="flex flex-col max-w-md">
@@ -712,13 +712,13 @@ export default function Home() {
             <div className="flex flex-col items-end">
               <h4 className="font-black mb-4 text-lg">Redes Sociais</h4>
               <div className="flex gap-4">
-                <a href="https://instagram.com/level_cripto" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-orange-600 transition">
+                <a href="https://instagram.com/level_cripto" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-blue-900 transition">
                   <Instagram size={24} />
                 </a>
-                <a href="https://youtube.com/@levelcripto" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-orange-600 transition">
+                <a href="https://youtube.com/@levelcripto" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-blue-900 transition">
                   <Youtube size={24} />
                 </a>
-                <a href="https://x.com/LevelCripto" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-orange-600 transition">
+                <a href="https://x.com/LevelCripto" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-blue-900 transition">
                   <Twitter size={24} />
                 </a>
               </div>
