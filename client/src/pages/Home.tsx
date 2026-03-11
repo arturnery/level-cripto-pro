@@ -182,13 +182,11 @@ export default function Home() {
         {/* Overlay escuro para legibilidade */}
         <div className="absolute inset-0 bg-gradient-to-r from-black via-black/80 to-black/40"></div>
         <div className="max-w-7xl mx-auto relative z-10">
-          <div className="bg-black/40 backdrop-blur-sm border-2 border-orange-600/50 rounded-3xl p-6 md:p-8 max-w-2xl">
-            <div className="inline-block mb-6 px-4 py-2 bg-orange-600/10 border border-orange-600/30 rounded-full">
-              <span className="text-orange-600 text-sm font-bold">✨ Lançamento Exclusivo</span>
-            </div>
-            <h1 className="text-3xl md:text-4xl font-black mb-4 leading-tight">
-              <span className="text-orange-600">DOMINE O MERCADO DE CRIPTOMOEDAS</span><br />
-              DO ZERO AO AVANÇADO
+          <div className="bg-black/40 backdrop-blur-sm rounded-3xl p-4 md:p-6 max-w-xl">
+            <h1 className="text-2xl md:text-3xl font-black mb-4 leading-tight text-center">
+              <span className="text-white">DOMINE O MERCADO DE</span><br />
+              <span className="text-orange-600">CRIPTOMOEDAS</span><br />
+              <span className="text-white">DO ZERO AO AVANÇADO</span>
             </h1>
             <p className="text-gray-300 mb-6 leading-relaxed">
               Aprenda análise de mercado, estratégias e oportunidades no mundo cripto, mesmo começando do zero.
@@ -223,7 +221,7 @@ export default function Home() {
             
             <button
               onClick={() => setShowModal(true)}
-              className="w-full bg-orange-600 text-black font-black py-3 px-6 rounded-lg hover:bg-orange-700 transition transform hover:scale-105 text-base flex items-center justify-center gap-2"
+              className="w-full bg-green-600 text-white font-black py-3 px-6 rounded-lg hover:bg-green-700 transition transform hover:scale-105 text-base flex items-center justify-center gap-2"
             >
               ENTRAR NA LISTA DE ESPERA <ArrowRight size={18} />
             </button>
@@ -625,7 +623,7 @@ export default function Home() {
               <p className="text-gray-300 mb-6 leading-relaxed">
                 Fale com um dos nossos consultores e tire todas as suas duvidas sobre o Level Cripto PRO, sua jornada, os numeros e muito mais.
               </p>
-              <button className="bg-orange-600 text-black font-black py-3 px-6 rounded-lg hover:bg-orange-700 transition w-full mb-6">
+              <button className="bg-green-600 text-white font-black py-3 px-6 rounded-lg hover:bg-green-700 transition w-full mb-6">
                 FALE COM NOSSO WHATSAPP
               </button>
               <p className="text-xs text-gray-400 text-center">
