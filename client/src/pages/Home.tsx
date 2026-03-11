@@ -183,8 +183,8 @@ export default function Home() {
           <div className="bg-black/40 backdrop-blur-sm rounded-3xl p-4 md:p-6 max-w-xl">
             <h1 className="text-2xl md:text-3xl font-black mb-4 leading-tight text-center">
               <span className="text-white">DOMINE O MERCADO DE</span><br />
-              <span className="text-orange-600">CRIPTOMOEDAS</span><br />
-              <span className="text-white">DO ZERO AO AVANÇADO</span>
+              <span className="text-white">CRIPTOMOEDAS</span><br />
+              <span className="text-orange-600">DO ZERO AO AVANÇADO</span>
             </h1>
             <p className="text-gray-300 mb-6 leading-relaxed">
               Aprenda análise de mercado, estratégias e oportunidades no mundo cripto, mesmo começando do zero.
@@ -304,10 +304,9 @@ export default function Home() {
       <section id="beneficios" className="py-20 px-4 md:px-8 bg-black">
         <div className="max-w-7xl mx-auto">
           <div className="bg-gradient-to-br from-orange-600/20 via-black to-black border-2 border-orange-600/40 rounded-3xl p-12 md:p-16 max-w-5xl mx-auto">
-            <h2 className="text-4xl md:text-5xl font-black mb-4 text-orange-600 flex items-center gap-3"><span>⚡</span> VAGAS LIMITADAS</h2>
-            <p className="text-2xl font-bold text-white mb-4">Apenas 20 alunos na primeira turma</p>
+            <h2 className="text-4xl md:text-5xl font-black mb-6 text-orange-600 flex items-center gap-3"><span>⚡</span> VAGAS LIMITADAS POR TURMA</h2>
             <p className="text-lg text-gray-300 mb-8 leading-relaxed max-w-3xl">
-            Sabemos que qualidade exige dedicação. Por isso, limitamos a primeira turma a apenas <strong>20 alunos</strong> para garantir:
+            Sabemos que qualidade exige dedicação. Por isso, limitamos nossas turmas a <strong>20 alunos</strong> para garantir:
           </p>
             <div className="grid md:grid-cols-2 gap-8 mb-10">
               <div className="flex gap-4">
@@ -339,8 +338,8 @@ export default function Home() {
                   </div>
                 </div>
                 <div>
-                  <h3 className="font-black text-white mb-2">Mentoria de Qualidade</h3>
-                  <p className="text-gray-400">Renan pode dedicar tempo real para suas dúvidas e desafios</p>
+                  <h3 className="font-black text-white mb-2">Moderadores</h3>
+                  <p className="text-gray-400">Moderadores podem dedicar tempo real para suas dúvidas e desafios</p>
                 </div>
               </div>
               <div className="flex gap-4">
@@ -351,7 +350,7 @@ export default function Home() {
                 </div>
                 <div>
                   <h3 className="font-black text-white mb-2">Conteúdo Exclusivo</h3>
-                  <p className="text-gray-400">Bônus e atualizações que só os primeiros recebem</p>
+                  <p className="text-gray-400">Bônus e atualizações que todos os alunos recebem</p>
                 </div>
               </div>
             </div>
@@ -359,7 +358,7 @@ export default function Home() {
               <p className="text-center text-gray-400 mb-6">Não perca esta oportunidade exclusiva</p>
               <button
                 onClick={() => setShowModal(true)}
-                className="w-full md:w-auto mx-auto block bg-orange-600 text-white font-black py-4 px-10 rounded-lg hover:bg-orange-700 transition transform hover:scale-105 shadow-lg"
+                className="w-full md:w-auto mx-auto block bg-green-600 text-white font-black py-4 px-10 rounded-lg hover:bg-green-700 transition transform hover:scale-105 shadow-lg"
               >
                 GARANTIR MINHA VAGA AGORA
               </button>
@@ -367,6 +366,9 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* Divisor fluido */}
+      <div className="h-px bg-gradient-to-r from-transparent via-orange-600/40 to-transparent"></div>
 
       {/* Conteúdo Section */}
       <section id="conteudo" className="py-20 px-4 md:px-8 bg-black">
