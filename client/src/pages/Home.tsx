@@ -172,7 +172,7 @@ export default function Home() {
       <section 
         className="pt-32 pb-20 px-4 md:px-8 bg-black relative overflow-hidden"
         style={{
-          backgroundImage: 'url(https://files.manuscdn.com/user_upload_by_module/session_file/310519663190783268/mwdNnpVLvlnaOpfd.webp)',
+          backgroundImage: 'url(https://files.manuscdn.com/user_upload_by_module/session_file/310519663190783268/BatSLnAipWpTfZPM.webp)',
           backgroundSize: 'cover',
           backgroundPosition: 'center right',
           backgroundRepeat: 'no-repeat',
