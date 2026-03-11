@@ -373,39 +373,97 @@ export default function Home() {
       {/* Conteúdo Section */}
       <section id="conteudo" className="py-20 px-4 md:px-8 bg-black">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-5xl md:text-6xl font-black mb-12">O QUE VOCÊ VAI APRENDER</h2>
-          <div className="grid md:grid-cols-2 gap-6">
-            <div className="flex gap-4">
-              <span className="text-blue-900 font-black">•</span>
-              <span>Origem e história do Bitcoin</span>
+          <h2 className="text-5xl md:text-6xl font-black mb-4">O QUE VOCÊ VAI APRENDER</h2>
+          <p className="text-xl text-gray-400 mb-16">Conteúdo estruturado e prático para você dominar o mercado de criptomoedas</p>
+          <div className="grid md:grid-cols-3 gap-8">
+            {/* MÓDULO 1 */}
+            <div className="bg-gray-900 rounded-lg overflow-hidden border border-gray-800 hover:border-blue-900 transition group">
+              <div className="h-48 bg-gradient-to-br from-blue-900/20 to-blue-900/5 flex items-center justify-center relative overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-900/30 to-transparent opacity-0 group-hover:opacity-100 transition"></div>
+                <span className="text-6xl">1️⃣</span>
+              </div>
+              <div className="p-6">
+                <p className="text-blue-900 font-black text-sm mb-2">MÓDULO 1</p>
+                <h3 className="text-xl font-black mb-4 text-white">Título do Módulo</h3>
+                <p className="text-gray-400 leading-relaxed text-sm">
+                  Descrição do conteúdo do módulo 1. Aqui você aprenderá os conceitos fundamentais e as estratégias práticas para dominar este tópico.
+                </p>
+              </div>
             </div>
-            <div className="flex gap-4">
-              <span className="text-blue-900 font-black">•</span>
-              <span>Como funciona a blockchain</span>
+
+            {/* MÓDULO 2 */}
+            <div className="bg-gray-900 rounded-lg overflow-hidden border border-gray-800 hover:border-blue-900 transition group">
+              <div className="h-48 bg-gradient-to-br from-blue-900/20 to-blue-900/5 flex items-center justify-center relative overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-900/30 to-transparent opacity-0 group-hover:opacity-100 transition"></div>
+                <span className="text-6xl">2️⃣</span>
+              </div>
+              <div className="p-6">
+                <p className="text-blue-900 font-black text-sm mb-2">MÓDULO 2</p>
+                <h3 className="text-xl font-black mb-4 text-white">Título do Módulo</h3>
+                <p className="text-gray-400 leading-relaxed text-sm">
+                  Descrição do conteúdo do módulo 2. Aqui você aprenderá os conceitos fundamentais e as estratégias práticas para dominar este tópico.
+                </p>
+              </div>
             </div>
-            <div className="flex gap-4">
-              <span className="text-blue-900 font-black">•</span>
-              <span>Estratégias de investimento seguro</span>
+
+            {/* MÓDULO 3 */}
+            <div className="bg-gray-900 rounded-lg overflow-hidden border border-gray-800 hover:border-blue-900 transition group">
+              <div className="h-48 bg-gradient-to-br from-blue-900/20 to-blue-900/5 flex items-center justify-center relative overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-900/30 to-transparent opacity-0 group-hover:opacity-100 transition"></div>
+                <span className="text-6xl">3️⃣</span>
+              </div>
+              <div className="p-6">
+                <p className="text-blue-900 font-black text-sm mb-2">MÓDULO 3</p>
+                <h3 className="text-xl font-black mb-4 text-white">Título do Módulo</h3>
+                <p className="text-gray-400 leading-relaxed text-sm">
+                  Descrição do conteúdo do módulo 3. Aqui você aprenderá os conceitos fundamentais e as estratégias práticas para dominar este tópico.
+                </p>
+              </div>
             </div>
-            <div className="flex gap-4">
-              <span className="text-blue-900 font-black">•</span>
-              <span>DeFi e finanças descentralizadas</span>
+
+            {/* MÓDULO 4 */}
+            <div className="bg-gray-900 rounded-lg overflow-hidden border border-gray-800 hover:border-blue-900 transition group">
+              <div className="h-48 bg-gradient-to-br from-blue-900/20 to-blue-900/5 flex items-center justify-center relative overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-900/30 to-transparent opacity-0 group-hover:opacity-100 transition"></div>
+                <span className="text-6xl">4️⃣</span>
+              </div>
+              <div className="p-6">
+                <p className="text-blue-900 font-black text-sm mb-2">MÓDULO 4</p>
+                <h3 className="text-xl font-black mb-4 text-white">Título do Módulo</h3>
+                <p className="text-gray-400 leading-relaxed text-sm">
+                  Descrição do conteúdo do módulo 4. Aqui você aprenderá os conceitos fundamentais e as estratégias práticas para dominar este tópico.
+                </p>
+              </div>
             </div>
-            <div className="flex gap-4">
-              <span className="text-blue-900 font-black">•</span>
-              <span>NFTs e ativos digitais</span>
+
+            {/* MÓDULO 5 */}
+            <div className="bg-gray-900 rounded-lg overflow-hidden border border-gray-800 hover:border-blue-900 transition group">
+              <div className="h-48 bg-gradient-to-br from-blue-900/20 to-blue-900/5 flex items-center justify-center relative overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-900/30 to-transparent opacity-0 group-hover:opacity-100 transition"></div>
+                <span className="text-6xl">5️⃣</span>
+              </div>
+              <div className="p-6">
+                <p className="text-blue-900 font-black text-sm mb-2">MÓDULO 5</p>
+                <h3 className="text-xl font-black mb-4 text-white">Título do Módulo</h3>
+                <p className="text-gray-400 leading-relaxed text-sm">
+                  Descrição do conteúdo do módulo 5. Aqui você aprenderá os conceitos fundamentais e as estratégias práticas para dominar este tópico.
+                </p>
+              </div>
             </div>
-            <div className="flex gap-4">
-              <span className="text-blue-900 font-black">•</span>
-              <span>Airdrops: Mapa Mental e Farm Estratégico</span>
-            </div>
-            <div className="flex gap-4">
-              <span className="text-blue-900 font-black">•</span>
-              <span>Análise técnica e fundamental</span>
-            </div>
-            <div className="flex gap-4">
-              <span className="text-blue-900 font-black">•</span>
-              <span>Segurança, Suporte e Comunidade</span>
+
+            {/* MÓDULO 6 */}
+            <div className="bg-gray-900 rounded-lg overflow-hidden border border-gray-800 hover:border-blue-900 transition group">
+              <div className="h-48 bg-gradient-to-br from-blue-900/20 to-blue-900/5 flex items-center justify-center relative overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-900/30 to-transparent opacity-0 group-hover:opacity-100 transition"></div>
+                <span className="text-6xl">6️⃣</span>
+              </div>
+              <div className="p-6">
+                <p className="text-blue-900 font-black text-sm mb-2">MÓDULO 6</p>
+                <h3 className="text-xl font-black mb-4 text-white">Título do Módulo</h3>
+                <p className="text-gray-400 leading-relaxed text-sm">
+                  Descrição do conteúdo do módulo 6. Aqui você aprenderá os conceitos fundamentais e as estratégias práticas para dominar este tópico.
+                </p>
+              </div>
             </div>
           </div>
         </div>
