@@ -176,7 +176,6 @@ export default function Home() {
           backgroundSize: 'cover',
           backgroundPosition: 'center right',
           backgroundRepeat: 'no-repeat',
-          imageRendering: 'crisp-edges' as any,
         }}
       >
         {/* Overlay escuro para legibilidade */}
