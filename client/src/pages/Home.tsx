@@ -178,7 +178,7 @@ export default function Home() {
           style={{ zIndex: 1 }}
         />
         {/* Overlay escuro para legibilidade */}
-        <div className="absolute inset-0 bg-gradient-to-r from-black via-black/80 to-black/40" style={{ zIndex: 2 }}></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/40 to-transparent" style={{ zIndex: 2 }}></div>
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="bg-black/40 backdrop-blur-sm rounded-3xl p-4 md:p-6 max-w-xl">
             <h1 className="text-2xl md:text-3xl font-black mb-4 leading-tight text-center">
