@@ -516,66 +516,48 @@ export default function Home() {
       <section id="diferenciais" className="py-20 px-4 md:px-8 bg-black">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-5xl md:text-6xl font-black mb-4">NOSSOS DIFERENCIAIS</h2>
-          <p className="text-xl text-gray-400 mb-16">O que torna o Level Cripto PRO diferente de qualquer outro curso</p>
+          <p className="text-xl text-gray-400 mb-16">Ferramentas e estratégias exclusivas para dominar o mercado cripto</p>
           
-          <div className="space-y-6">
-            <div className="bg-gradient-to-r from-blue-900/20 to-transparent border-l-4 border-blue-900 p-8 rounded-r-lg hover:border-blue-500 transition">
-              <div className="flex gap-6 items-start">
-                <div className="text-5xl flex-shrink-0">🎓</div>
-                <div>
-                  <h3 className="text-2xl font-black mb-2 text-blue-900">Conteúdo Estruturado e Prático</h3>
-                  <p className="text-gray-300 leading-relaxed">Módulos bem organizados que você pode acompanhar no seu próprio ritmo, com exemplos reais do mercado e estratégias que funcionam.</p>
-                </div>
+          <div className="grid md:grid-cols-3 gap-8">
+            {/* Diferencial 1 - Mapa de Airdrops */}
+            <div className="bg-gray-900 rounded-lg overflow-hidden border border-gray-800 hover:border-blue-900 transition group">
+              <div className="h-64 bg-gradient-to-br from-blue-900/20 to-blue-900/5 flex items-center justify-center relative overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-900/30 to-transparent opacity-0 group-hover:opacity-100 transition"></div>
+                <span className="text-6xl">🗺️</span>
+              </div>
+              <div className="p-6">
+                <h3 className="text-2xl font-black mb-4 text-blue-900">Mapa de Airdrops</h3>
+                <p className="text-gray-400 leading-relaxed text-sm">
+                  Acesso exclusivo ao mapa mental e estratégia completa de farm de airdrops. Identifique oportunidades lucrativos e organize suas participações de forma profissional.
+                </p>
               </div>
             </div>
 
-            <div className="bg-gradient-to-r from-blue-900/20 to-transparent border-l-4 border-blue-900 p-8 rounded-r-lg hover:border-blue-500 transition">
-              <div className="flex gap-6 items-start">
-                <div className="text-5xl flex-shrink-0">👨‍🏫</div>
-                <div>
-                  <h3 className="text-2xl font-black mb-2 text-blue-900">Mentorado por Renan Mataveli</h3>
-                  <p className="text-gray-300 leading-relaxed">Aprenda diretamente com um profissional que vive do mercado cripto há mais de 5 anos. Renan responde suas dúvidas e compartilha suas estratégias reais.</p>
-                </div>
+            {/* Diferencial 2 - Melhores Pontos de Compra/Venda */}
+            <div className="bg-gray-900 rounded-lg overflow-hidden border border-gray-800 hover:border-blue-900 transition group">
+              <div className="h-64 bg-gradient-to-br from-blue-900/20 to-blue-900/5 flex items-center justify-center relative overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-900/30 to-transparent opacity-0 group-hover:opacity-100 transition"></div>
+                <span className="text-6xl">📊</span>
+              </div>
+              <div className="p-6">
+                <h3 className="text-2xl font-black mb-4 text-blue-900">Melhores Pontos de Compra/Venda</h3>
+                <p className="text-gray-400 leading-relaxed text-sm">
+                  Análise técnica e fundamental de ativos selecionados a dedo. Identifique os melhores pontos de entrada e saída para maximizar seus lucros com operações de hold.
+                </p>
               </div>
             </div>
 
-            <div className="bg-gradient-to-r from-blue-900/20 to-transparent border-l-4 border-blue-900 p-8 rounded-r-lg hover:border-blue-500 transition">
-              <div className="flex gap-6 items-start">
-                <div className="text-5xl flex-shrink-0">👥</div>
-                <div>
-                  <h3 className="text-2xl font-black mb-2 text-blue-900">Comunidade Ativa e Engajada</h3>
-                  <p className="text-gray-300 leading-relaxed">Faça parte de uma comunidade de alunos que compartilham análises, oportunidades e resultados. Networking real com profissionais do mercado.</p>
-                </div>
+            {/* Diferencial 3 - Estrutura de Long/Short */}
+            <div className="bg-gray-900 rounded-lg overflow-hidden border border-gray-800 hover:border-blue-900 transition group">
+              <div className="h-64 bg-gradient-to-br from-blue-900/20 to-blue-900/5 flex items-center justify-center relative overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-900/30 to-transparent opacity-0 group-hover:opacity-100 transition"></div>
+                <span className="text-6xl">⚡</span>
               </div>
-            </div>
-
-            <div className="bg-gradient-to-r from-blue-900/20 to-transparent border-l-4 border-blue-900 p-8 rounded-r-lg hover:border-blue-500 transition">
-              <div className="flex gap-6 items-start">
-                <div className="text-5xl flex-shrink-0">💬</div>
-                <div>
-                  <h3 className="text-2xl font-black mb-2 text-blue-900">Suporte 24h Personalizado</h3>
-                  <p className="text-gray-300 leading-relaxed">Dúvidas sobre o curso? Suporte direto do time Level Cripto. Lives semanais com Renan para tirar dúvidas em tempo real.</p>
-                </div>
-              </div>
-            </div>
-
-            <div className="bg-gradient-to-r from-blue-900/20 to-transparent border-l-4 border-blue-900 p-8 rounded-r-lg hover:border-blue-500 transition">
-              <div className="flex gap-6 items-start">
-                <div className="text-5xl flex-shrink-0">🎁</div>
-                <div>
-                  <h3 className="text-2xl font-black mb-2 text-blue-900">Bônus Exclusivos e Atualizações</h3>
-                  <p className="text-gray-300 leading-relaxed">Mapa mental para airdrops, guias práticos, ferramentas de análise, relatórios semanais e muito mais. Tudo incluído no curso.</p>
-                </div>
-              </div>
-            </div>
-
-            <div className="bg-gradient-to-r from-blue-900/20 to-transparent border-l-4 border-blue-900 p-8 rounded-r-lg hover:border-blue-500 transition">
-              <div className="flex gap-6 items-start">
-                <div className="text-5xl flex-shrink-0">♾️</div>
-                <div>
-                  <h3 className="text-2xl font-black mb-2 text-blue-900">Acesso Vitalício</h3>
-                  <p className="text-gray-300 leading-relaxed">Uma vez inscrito, você tem acesso ao curso para sempre. Novas atualizações, novos módulos, tudo sem custo adicional.</p>
-                </div>
+              <div className="p-6">
+                <h3 className="text-2xl font-black mb-4 text-blue-900">Estrutura de Long/Short</h3>
+                <p className="text-gray-400 leading-relaxed text-sm">
+                  Domine as operações de longo e curto prazo. Aprenda a estruturar posições para lucro rápido com estratégias comprovadas e gerenciamento de risco profissional.
+                </p>
               </div>
             </div>
           </div>
