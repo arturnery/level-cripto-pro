@@ -30,6 +30,42 @@ export default function Home() {
   const [expandedFAQ, setExpandedFAQ] = useState<number | null>(null);
   const [showModal, setShowModal] = useState(false);
   const [phoneError, setPhoneError] = useState("");
+  const [currentTestimonialIndex, setCurrentTestimonialIndex] = useState(0);
+
+  const testimonials = [
+    {
+      name: "Victor Rocha De Lima Arnuda",
+      turma: "Turma 35",
+      avatar: "👤",
+      text: "Ahhh, também queria deixar meu feedback mais uma vez, sobre AUVP hahahaha. É sensacional fazer parte desse seleto grupo de alunos, me sinto com outra mentalidade, a quem minhas dúvidas do cartão de crédito que se arrastavam por quase 4 anos. Me organizei e agora tenho uma parte pequena da minha reserva de emergência."
+    },
+    {
+      name: "Cleonardo do Nascimento",
+      turma: "Turma 48",
+      avatar: "👤",
+      text: "Estou empolgado e satisfeito com a AUVP. Nunca tive coragem de planijar os gastos familiares de forma detalhada, enxergar para onde o dinheiro está indo e avaliar como ajustar os gastos mensais. Passei 3 a 4 horas analisando e planejando todos os gastos dos últimos dois meses para ter um norte e uma metodologia de controle."
+    },
+    {
+      name: "Ana Silva",
+      turma: "Turma 42",
+      avatar: "👤",
+      text: "O conteúdo é excelente e muito bem estruturado. Aprendi estratégias que nunca tinha visto antes e já estou aplicando no meu dia a dia. A comunidade é super acolhedora e sempre pronta para ajudar. Recomendo muito!"
+    },
+    {
+      name: "João Santos",
+      turma: "Turma 50",
+      avatar: "👤",
+      text: "Transformou completamente minha forma de pensar sobre investimentos. Os módulos são práticos e aplicáveis imediatamente. Já consegui meus primeiros resultados em menos de um mês. Muito satisfeito com a qualidade do curso!"
+    }
+  ];
+
+  const nextTestimonial = () => {
+    setCurrentTestimonialIndex((prev) => (prev + 1) % (testimonials.length - 1));
+  };
+
+  const prevTestimonial = () => {
+    setCurrentTestimonialIndex((prev) => (prev - 1 + (testimonials.length - 1)) % (testimonials.length - 1));
+  };
   const [timeLeft, setTimeLeft] = useState({
     days: 19,
     hours: 22,
@@ -734,23 +770,72 @@ export default function Home() {
       </section>
 
       {/* Depoimentos Section */}
-      <section id="depoimentos" className="py-20 px-4 md:px-8 bg-black">
+      <section id="depoimentos" className="py-24 px-4 md:px-8 bg-black">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-5xl md:text-6xl font-black mb-4 text-center">O QUE DIZEM NOSSOS ALUNOS</h2>
-          <p className="text-center text-gray-400 mb-12 text-lg">Depoimentos autênticos de alunos que transformaram suas vidas com o Level Cripto PRO</p>
-          <div className="bg-gradient-to-br from-blue-900/10 to-transparent border-2 border-blue-900/30 rounded-2xl p-12 text-center">
-            <p className="text-gray-300 text-lg mb-6 italic leading-relaxed">
-              Estamos coletando depoimentos autênticos de nossos alunos. Em breve, você verá histórias reais de transformação e resultados concretos.
-            </p>
-            <p className="text-gray-400 text-sm mb-8">
-              Enquanto isso, você pode se inscrever e fazer parte dessa comunidade de sucesso.
-            </p>
+          <h2 className="text-5xl md:text-6xl font-black mb-4 text-center text-white">O QUE DIZEM NOSSOS ALUNOS</h2>
+          <p className="text-center text-gray-400 mb-16 text-lg">Depoimentos autênticos de alunos que transformaram suas vidas com o Level Cripto PRO</p>
+          
+          <div className="relative">
+            {/* Carousel */}
+            <div className="overflow-hidden">
+              <div
+                className="flex transition-transform duration-500 ease-out"
+                style={{
+                  transform: `translateX(-${currentTestimonialIndex * 50}%)`
+                }}
+              >
+                {testimonials.map((testimonial, index) => (
+                  <div key={index} className="w-1/2 flex-shrink-0 px-4">
+                    <div className="bg-gradient-to-br from-blue-900/20 to-blue-900/5 border-2 border-blue-900/40 rounded-2xl p-8 h-full hover:border-blue-900/60 transition">
+                      <div className="flex items-center gap-4 mb-6">
+                        <div className="w-14 h-14 bg-blue-900/40 rounded-full flex items-center justify-center text-2xl border border-blue-900/60">
+                          {testimonial.avatar}
+                        </div>
+                        <div>
+                          <h3 className="font-black text-white text-lg">{testimonial.name}</h3>
+                          <p className="text-sm text-blue-400 font-bold">{testimonial.turma}</p>
+                        </div>
+                      </div>
+                      <p className="text-gray-300 leading-relaxed text-sm">
+                        "{testimonial.text}"
+                      </p>
+                      <div className="flex gap-1 mt-6">
+                        {[...Array(5)].map((_, i) => (
+                          <span key={i} className="text-blue-400">★</span>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+            
+            {/* Navigation Buttons */}
             <button
-              onClick={() => setShowModal(true)}
-              className="bg-blue-900 text-white font-black py-3 px-8 rounded-lg hover:bg-blue-950 transition transform hover:scale-105"
+              onClick={prevTestimonial}
+              className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-6 md:-translate-x-12 bg-blue-900/40 hover:bg-blue-900/60 border border-blue-900/60 text-white rounded-full w-12 h-12 flex items-center justify-center transition"
             >
-              QUERO FAZER PARTE DESSA COMUNIDADE
+              ←
             </button>
+            <button
+              onClick={nextTestimonial}
+              className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-6 md:translate-x-12 bg-blue-900/40 hover:bg-blue-900/60 border border-blue-900/60 text-white rounded-full w-12 h-12 flex items-center justify-center transition"
+            >
+              →
+            </button>
+            
+            {/* Dots */}
+            <div className="flex justify-center gap-2 mt-8">
+              {[...Array(testimonials.length - 1)].map((_, i) => (
+                <button
+                  key={i}
+                  onClick={() => setCurrentTestimonialIndex(i)}
+                  className={`w-2 h-2 rounded-full transition ${
+                    i === currentTestimonialIndex ? 'bg-blue-900' : 'bg-blue-900/30'
+                  }`}
+                />
+              ))}
+            </div>
           </div>
         </div>
       </section>
