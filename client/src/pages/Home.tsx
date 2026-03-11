@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { useAuth } from "@/_core/hooks/useAuth";
-import { trpc } from "@/lib/trpc";
 import {
   ArrowRight,
   Copy,
@@ -42,13 +41,9 @@ export default function Home() {
   };
 
   const validatePhone = (phoneNumber: string) => {
+    // Validar se tem 11 dígitos (2 de DDD + 9 dígitos)
     const numbers = phoneNumber.replace(/\D/g, '');
     return numbers.length === 11 && numbers[2] === '9';
-  };
-
-  const validateEmail = (emailValue: string) => {
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return emailRegex.test(emailValue);
   };
 
   const handlePhoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -57,33 +52,10 @@ export default function Home() {
     setPhoneError('');
   };
 
-  const criarInscricao = trpc.inscricoes.criar.useMutation({
-    onSuccess: () => {
-      setTotalSignups(totalSignups + 1);
-      setSubmitted(true);
-      setPhoneError('');
-      setEmail('');
-      setPhone('');
-    },
-    onError: (error) => {
-      let mensagemErro = 'Erro ao criar inscrição. Tente novamente.';
-      if (error.message?.includes('already exists')) {
-        mensagemErro = 'Este email já foi inscrito. Obrigado pelo interesse!';
-      } else if (error.message) {
-        mensagemErro = 'Email ou telefone inválido. Verifique os dados.';
-      }
-      setPhoneError(mensagemErro);
-    },
-  });
-
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!email) {
       setPhoneError('Por favor, insira seu email');
-      return;
-    }
-    if (!validateEmail(email)) {
-      setPhoneError('Email invalido. Verifique e tente novamente.');
       return;
     }
     if (!phone) {
@@ -94,10 +66,9 @@ export default function Home() {
       setPhoneError('Telefone inválido. Use o formato: (XX) 9XXXX-XXXX');
       return;
     }
-    criarInscricao.mutate({
-      email,
-      telefone: phone,
-    });
+    setTotalSignups(totalSignups + 1);
+    setSubmitted(true);
+    setPhoneError('');
   };
 
   const faqItems: FAQItem[] = [
@@ -169,62 +140,40 @@ export default function Home() {
       </header>
 
       {/* Hero Section */}
-      <section 
-        className="pt-32 pb-20 px-4 md:px-8 bg-black relative overflow-hidden"
+      <section
+        className="pt-32 pb-20 px-4 md:px-8 relative overflow-hidden min-h-[600px]"
         style={{
-          backgroundImage: 'url(https://files.manuscdn.com/user_upload_by_module/session_file/310519663190783268/mwdNnpVLvlnaOpfd.webp)',
+          backgroundImage: 'url(/BN_02.webp)',
           backgroundSize: 'cover',
           backgroundPosition: 'center right',
           backgroundRepeat: 'no-repeat',
         }}
       >
-        {/* Overlay escuro para legibilidade */}
-        <div className="absolute inset-0 bg-gradient-to-r from-black via-black/80 to-black/40"></div>
+        {/* Overlay escuro para legibilidade do texto */}
+        <div className="absolute inset-0 bg-gradient-to-r from-black via-black/80 to-black/20 pointer-events-none" />
+
         <div className="max-w-7xl mx-auto relative z-10">
-          <div className="bg-black/40 backdrop-blur-sm rounded-3xl p-4 md:p-6 max-w-xl">
-            <h1 className="text-2xl md:text-3xl font-black mb-4 leading-tight text-center">
-              <span className="text-white">DOMINE O MERCADO DE</span><br />
-              <span className="text-orange-600">CRIPTOMOEDAS</span><br />
-              <span className="text-white">DO ZERO AO AVANÇADO</span>
-            </h1>
-            <p className="text-gray-300 mb-6 leading-relaxed">
-              Aprenda análise de mercado, estratégias e oportunidades no mundo cripto, mesmo começando do zero.
-            </p>
-            
-            <div className="space-y-3 mb-8">
-              <div className="flex items-start gap-3">
-                <span className="text-orange-400 font-bold text-lg mt-1">✔</span>
-                <span className="text-gray-300">Estratégias usadas no mercado</span>
-              </div>
-              <div className="flex items-start gap-3">
-                <span className="text-orange-400 font-bold text-lg mt-1">✔</span>
-                <span className="text-gray-300">Identificação de oportunidades</span>
-              </div>
-              <div className="flex items-start gap-3">
-                <span className="text-orange-400 font-bold text-lg mt-1">✔</span>
-                <span className="text-gray-300">DeFi, Web3 e Airdrops</span>
-              </div>
-              <div className="flex items-start gap-3">
-                <span className="text-orange-400 font-bold text-lg mt-1">✔</span>
-                <span className="text-gray-300">Comunidade ativa e suporte</span>
-              </div>
-              <div className="flex items-start gap-3">
-                <span className="text-orange-400 font-bold text-lg mt-1">✔</span>
-                <span className="text-gray-300">Análises técnicas frequentes e conteúdos atualizados</span>
-              </div>
-              <div className="flex items-start gap-3">
-                <span className="text-orange-400 font-bold text-lg mt-1">✔</span>
-                <span className="text-gray-300">Lives semanais com nossos professores</span>
-              </div>
-            </div>
-            
-            <button
-              onClick={() => setShowModal(true)}
-              className="w-full bg-green-600 text-white font-black py-3 px-6 rounded-lg hover:bg-green-700 transition transform hover:scale-105 text-base flex items-center justify-center gap-2"
-            >
-              ENTRAR NA LISTA DE ESPERA <ArrowRight size={18} />
-            </button>
+          <div className="inline-block mb-6 px-4 py-2 bg-orange-600/10 border border-orange-600/30 rounded-full">
+            <span className="text-orange-600 text-sm font-bold">✨ Lançamento Exclusivo</span>
           </div>
+          <h1 className="text-5xl md:text-7xl font-black mb-6">
+            SE TORNE UM<br />
+            <span className="text-orange-600">LEVEL CRIPTO PRO</span>
+          </h1>
+          <p className="text-xl text-gray-300 mb-8 max-w-2xl">
+            Domine o mercado cripto com a ajuda de profissionais que vivem desse mercado.
+          </p>
+          <p className="text-gray-400 mb-12 max-w-2xl leading-relaxed">
+            Do zero ao avançado: Bitcoin, DeFi, NFTs, Mercado de Futuros, Web3 e Airdrops.
+            <br />
+            Com suporte 24h, comunidade ativa, mapa mental para organizar seus airdrops e mais
+          </p>
+          <button
+            onClick={() => setShowModal(true)}
+            className="bg-orange-600 text-black font-black py-4 px-8 rounded-lg hover:bg-orange-700 transition transform hover:scale-105 text-lg flex items-center gap-2"
+          >
+            ENTRAR NA LISTA DE ESPERA <ArrowRight size={20} />
+          </button>
         </div>
       </section>
 
@@ -302,70 +251,44 @@ export default function Home() {
       )}
 
       {/* Vagas Limitadas Section - Benefícios */}
-      <section id="beneficios" className="py-20 px-4 md:px-8 bg-black">
+      <section id="beneficios" className="py-20 px-4 md:px-8 bg-orange-600">
         <div className="max-w-7xl mx-auto">
-          <div className="bg-gradient-to-br from-orange-600/20 via-black to-black border-2 border-orange-600/40 rounded-3xl p-12 md:p-16 max-w-5xl mx-auto">
-            <h2 className="text-4xl md:text-5xl font-black mb-4 text-orange-600 flex items-center gap-3"><span>⚡</span> VAGAS LIMITADAS</h2>
-            <p className="text-2xl font-bold text-white mb-4">Apenas 20 alunos na primeira turma</p>
-            <p className="text-lg text-gray-300 mb-8 leading-relaxed max-w-3xl">
+          <h2 className="text-5xl md:text-6xl font-black mb-8 text-black">⚡ VAGAS LIMITADAS</h2>
+          <p className="text-2xl font-bold text-black mb-6">Apenas 20 alunos na primeira turma</p>
+          <p className="text-lg text-black mb-8 leading-relaxed max-w-3xl">
             Sabemos que qualidade exige dedicação. Por isso, limitamos a primeira turma a apenas <strong>20 alunos</strong> para garantir:
           </p>
-            <div className="grid md:grid-cols-2 gap-8 mb-10">
-              <div className="flex gap-4">
-                <div className="flex-shrink-0">
-                  <div className="flex items-center justify-center h-10 w-10 rounded-lg bg-orange-600/20 border border-orange-600/40">
-                    <span className="text-orange-600 font-black">✓</span>
-                  </div>
-                </div>
-                <div>
-                  <h3 className="font-black text-white mb-2">Suporte Personalizado</h3>
-                  <p className="text-gray-400">Você não é apenas um número, é parte de uma comunidade genuína</p>
-                </div>
-              </div>
-              <div className="flex gap-4">
-                <div className="flex-shrink-0">
-                  <div className="flex items-center justify-center h-10 w-10 rounded-lg bg-orange-600/20 border border-orange-600/40">
-                    <span className="text-orange-600 font-black">✓</span>
-                  </div>
-                </div>
-                <div>
-                  <h3 className="font-black text-white mb-2">Comunidade Ativa</h3>
-                  <p className="text-gray-400">Networking real com outros alunos e oportunidades genuínas</p>
-                </div>
-              </div>
-              <div className="flex gap-4">
-                <div className="flex-shrink-0">
-                  <div className="flex items-center justify-center h-10 w-10 rounded-lg bg-orange-600/20 border border-orange-600/40">
-                    <span className="text-orange-600 font-black">✓</span>
-                  </div>
-                </div>
-                <div>
-                  <h3 className="font-black text-white mb-2">Mentoria de Qualidade</h3>
-                  <p className="text-gray-400">Renan pode dedicar tempo real para suas dúvidas e desafios</p>
-                </div>
-              </div>
-              <div className="flex gap-4">
-                <div className="flex-shrink-0">
-                  <div className="flex items-center justify-center h-10 w-10 rounded-lg bg-orange-600/20 border border-orange-600/40">
-                    <span className="text-orange-600 font-black">✓</span>
-                  </div>
-                </div>
-                <div>
-                  <h3 className="font-black text-white mb-2">Conteúdo Exclusivo</h3>
-                  <p className="text-gray-400">Bônus e atualizações que só os primeiros recebem</p>
-                </div>
+          <div className="grid md:grid-cols-2 gap-6">
+            <div className="flex gap-4">
+              <span className="text-2xl">✓</span>
+              <div>
+                <h3 className="font-black text-black mb-2">Suporte personalizado</h3>
+                <p className="text-black/80">Você não é apenas um número, é parte de uma comunidade</p>
               </div>
             </div>
-            <div className="pt-8 border-t border-orange-600/20">
-              <p className="text-center text-gray-400 mb-6">Não perca esta oportunidade exclusiva</p>
-              <button
-                onClick={() => setShowModal(true)}
-                className="w-full md:w-auto mx-auto block bg-orange-600 text-white font-black py-4 px-10 rounded-lg hover:bg-orange-700 transition transform hover:scale-105 shadow-lg"
-              >
-                GARANTIR MINHA VAGA AGORA
-              </button>
+            <div className="flex gap-4">
+              <span className="text-2xl">✓</span>
+              <div>
+                <h3 className="font-black text-black mb-2">Comunidade ativa</h3>
+                <p className="text-black/80">Networking real com outros alunos e oportunidades genuínas</p>
+              </div>
+            </div>
+            <div className="flex gap-4">
+              <span className="text-2xl">✓</span>
+              <div>
+                <h3 className="font-black text-black mb-2">Mentoria de qualidade</h3>
+                <p className="text-black/80">Renan pode dedicar tempo real para suas dúvidas</p>
+              </div>
+            </div>
+            <div className="flex gap-4">
+              <span className="text-2xl">✓</span>
+              <div>
+                <h3 className="font-black text-black mb-2">Conteúdo exclusivo</h3>
+                <p className="text-black/80">Bônus e atualizações que só os primeiros recebem</p>
+              </div>
             </div>
           </div>
+
         </div>
       </section>
 
@@ -608,21 +531,29 @@ export default function Home() {
       {/* Depoimentos Section */}
       <section id="depoimentos" className="py-20 px-4 md:px-8 bg-black">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-5xl md:text-6xl font-black mb-4 text-center">O QUE DIZEM NOSSOS ALUNOS</h2>
-          <p className="text-center text-gray-400 mb-12 text-lg">Depoimentos autênticos de alunos que transformaram suas vidas com o Level Cripto PRO</p>
-          <div className="bg-gradient-to-br from-orange-600/10 to-transparent border-2 border-orange-600/30 rounded-2xl p-12 text-center">
-            <p className="text-gray-300 text-lg mb-6 italic leading-relaxed">
-              Estamos coletando depoimentos autênticos de nossos alunos. Em breve, você verá histórias reais de transformação e resultados concretos.
-            </p>
-            <p className="text-gray-400 text-sm mb-8">
-              Enquanto isso, você pode se inscrever e fazer parte dessa comunidade de sucesso.
-            </p>
-            <button
-              onClick={() => setShowModal(true)}
-              className="bg-orange-600 text-white font-black py-3 px-8 rounded-lg hover:bg-orange-700 transition transform hover:scale-105"
-            >
-              QUERO FAZER PARTE DESSA COMUNIDADE
-            </button>
+          <h2 className="text-5xl md:text-6xl font-black mb-12">O QUE DIZEM NOSSOS ALUNOS</h2>
+          <div className="grid md:grid-cols-3 gap-8">
+            {[1, 2, 3].map((i) => (
+              <div key={i} className="bg-gray-900 rounded-lg p-8 border border-gray-800">
+                <div className="flex gap-1 mb-4">
+                  {[...Array(5)].map((_, j) => (
+                    <span key={j} className="text-orange-600">★</span>
+                  ))}
+                </div>
+                <p className="text-gray-300 mb-6 italic">
+                  "Espaço para depoimento do aluno {i}. Este é um placeholder que será preenchido com um depoimento real em breve."
+                </p>
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 bg-orange-600/20 rounded-full flex items-center justify-center">
+                    <span className="text-xl">👤</span>
+                  </div>
+                  <div>
+                    <p className="font-black">Nome do Aluno {i}</p>
+                    <p className="text-sm text-gray-400">Aluno do Level Cripto PRO</p>
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -640,7 +571,7 @@ export default function Home() {
               <p className="text-gray-300 mb-6 leading-relaxed">
                 Fale com um dos nossos consultores e tire todas as suas duvidas sobre o Level Cripto PRO, sua jornada, os numeros e muito mais.
               </p>
-              <button className="bg-green-600 text-white font-black py-3 px-6 rounded-lg hover:bg-green-700 transition w-full mb-6">
+              <button className="bg-orange-600 text-black font-black py-3 px-6 rounded-lg hover:bg-orange-700 transition w-full mb-6">
                 FALE COM NOSSO WHATSAPP
               </button>
               <p className="text-xs text-gray-400 text-center">
@@ -691,9 +622,9 @@ export default function Home() {
           </p>
           <button
             onClick={() => setShowModal(true)}
-            className="bg-green-600 text-white font-black py-3 px-6 rounded-lg hover:bg-green-700 transition transform hover:scale-105 text-base flex items-center justify-center gap-2 mx-auto"
+            className="bg-black text-orange-600 font-black py-4 px-8 rounded-lg hover:bg-gray-900 transition transform hover:scale-105 text-lg flex items-center gap-2 mx-auto"
           >
-            ENTRAR NA LISTA DE ESPERA <ArrowRight size={18} />
+            ENTRAR NA LISTA DE ESPERA <ArrowRight size={20} />
           </button>
         </div>
       </section>
