@@ -367,6 +367,49 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Cronômetro Section */}
+      <section id="cronometro" className="py-20 px-4 md:px-8 bg-gradient-to-r from-yellow-600 to-yellow-500">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div>
+              <p className="text-sm font-bold text-yellow-900 mb-4">Inscrições abertas para a turma 55</p>
+              <h2 className="text-4xl md:text-5xl font-black text-white mb-8">A primeira aula começa em</h2>
+              
+              <div className="flex gap-6 md:gap-8">
+                <div className="text-center">
+                  <div className="text-5xl md:text-6xl font-black text-white mb-2">19</div>
+                  <p className="text-sm font-bold text-yellow-900">Dias</p>
+                </div>
+                <div className="text-center">
+                  <div className="text-5xl md:text-6xl font-black text-white mb-2">22</div>
+                  <p className="text-sm font-bold text-yellow-900">Horas</p>
+                </div>
+                <div className="text-center">
+                  <div className="text-5xl md:text-6xl font-black text-white mb-2">10</div>
+                  <p className="text-sm font-bold text-yellow-900">Minutos</p>
+                </div>
+                <div className="text-center">
+                  <div className="text-5xl md:text-6xl font-black text-white mb-2">55</div>
+                  <p className="text-sm font-bold text-yellow-900">Segundos</p>
+                </div>
+              </div>
+            </div>
+            
+            <div className="flex justify-center">
+              <div className="bg-gray-900 rounded-lg overflow-hidden shadow-2xl border-4 border-yellow-400 p-4 max-w-sm">
+                <div className="bg-gray-800 rounded h-64 flex items-center justify-center">
+                  <span className="text-gray-500 text-center px-6">
+                    Espaço para foto do exemplo
+                    <br />
+                    <span className="text-sm text-gray-600 mt-2 block">Dimensão recomendada: 400x300px</span>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Divisor fluido */}
       <div className="h-px bg-gradient-to-r from-transparent via-blue-900/40 to-transparent"></div>
 
