@@ -414,10 +414,9 @@ export default function Home() {
       {/* Professor Section */}
       <section id="professor" className="py-20 px-4 md:px-8 bg-gray-900">
         <div className="max-w-7xl mx-auto">
-          <p className="text-lg text-gray-400 mb-12 font-normal">Conheça Renan Mataveli</p>
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
-              <h3 className="text-3xl font-black mb-4 text-blue-900">Renan Mataveli</h3>
+              <h3 className="text-2xl font-black mb-4 text-blue-900">Conheça Renan Mataveli</h3>
               <p className="text-gray-300 mb-6 leading-relaxed">
                 Renan é um especialista em criptomoedas com mais de 5 anos de experiência no mercado. 
                 Ele fundou a comunidade Level Cripto para compartilhar seu conhecimento e ajudar outras pessoas 
@@ -442,13 +441,7 @@ export default function Home() {
                 </a>
               </div>
             </div>
-            <div className="bg-gray-800 rounded-lg p-8 text-center">
-              <div className="w-32 h-32 bg-blue-900/20 rounded-full mx-auto mb-6 flex items-center justify-center">
-                <span className="text-6xl">👨‍🏫</span>
-              </div>
-              <h4 className="text-xl font-black mb-2">Renan Mataveli</h4>
-              <p className="text-blue-900 font-bold">Especialista em Criptomoedas</p>
-            </div>
+
           </div>
         </div>
       </section>
