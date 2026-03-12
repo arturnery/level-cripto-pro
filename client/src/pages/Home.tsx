@@ -62,6 +62,12 @@ export default function Home() {
       turma: "Turma 50",
       avatar: "👤",
       text: "Transformou completamente minha forma de pensar sobre investimentos. Os módulos são práticos e aplicáveis imediatamente. Já consegui meus primeiros resultados em menos de um mês. Muito satisfeito com a qualidade do curso!"
+    },
+    {
+      name: "Leonardo",
+      turma: "",
+      avatar: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663190783268/jHKEmeybxfyvsKId.jpg",
+      text: "Cara que aula inicial contextualizando toda a criação do BTC e Subprime foi essa, foda demais. Curso muito completo mesmo. Gostei, não fica só na teoria. Tem parte de como operar em corretora, análise gráfica, altcoins, DeFi... até mineração eu aprendi o básico. Sem falar na comunidade, que é top. Sempre tem alguém comentando oportunidades e se ajudando, bom pra quem está começando e também já tem conhecimento."
     }
   ];
 
