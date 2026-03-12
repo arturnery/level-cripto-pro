@@ -894,20 +894,61 @@ export default function Home() {
       </section>
 
       {/* CTA Final Section */}
-      <section className="py-20 px-4 md:px-8 bg-blue-900">
-        <div className="max-w-7xl mx-auto text-center">
-          <h2 className="text-5xl md:text-6xl font-black mb-6 text-black">PRONTO PARA COMEÇAR?</h2>
-          <p className="text-xl text-black mb-12 max-w-2xl mx-auto leading-relaxed">
-            Se chegou até aqui tenho certeza que você está pronto e interessado para fazer parte da comunidade.
-            <br /><br />
-            Garanta a sua vaga entrando na lista de espera.
-          </p>
-          <button
-            onClick={() => setShowModal(true)}
-            className="bg-green-600 text-white font-black py-3 px-6 rounded-lg hover:bg-green-700 transition transform hover:scale-105 text-base flex items-center justify-center gap-2 mx-auto"
-          >
-            ENTRAR NA LISTA DE ESPERA <ArrowRight size={18} />
-          </button>
+      <section className="py-20 px-4 md:px-8 bg-gray-900">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-5xl md:text-6xl font-black mb-12 text-center text-white">EVENTOS E PARTICIPAÇÃO ESPECIAL</h2>
+          
+          <div className="grid md:grid-cols-3 gap-8 mb-16">
+            {/* Event Card 1 */}
+            <div className="bg-gradient-to-br from-blue-900/30 to-blue-900/10 border-2 border-blue-900/40 rounded-2xl p-8 hover:border-blue-900/60 transition">
+              <div className="h-48 bg-blue-900/20 rounded-xl mb-6 flex items-center justify-center text-gray-400">
+                🏀 Espaço para Logo/Imagem
+              </div>
+              <h3 className="text-xl font-black text-blue-400 mb-3">Evento 1</h3>
+              <p className="text-gray-300 text-sm leading-relaxed mb-4">
+                Descrição do evento ou participação especial de Renan Mataveli
+              </p>
+              <p className="text-xs text-blue-400 font-bold">Adicione data/detalhes aqui</p>
+            </div>
+
+            {/* Event Card 2 */}
+            <div className="bg-gradient-to-br from-blue-900/30 to-blue-900/10 border-2 border-blue-900/40 rounded-2xl p-8 hover:border-blue-900/60 transition">
+              <div className="h-48 bg-blue-900/20 rounded-xl mb-6 flex items-center justify-center text-gray-400">
+                🎓 Espaço para Logo/Imagem
+              </div>
+              <h3 className="text-xl font-black text-blue-400 mb-3">Evento 2</h3>
+              <p className="text-gray-300 text-sm leading-relaxed mb-4">
+                Descrição do evento ou participação especial de Renan Mataveli
+              </p>
+              <p className="text-xs text-blue-400 font-bold">Adicione data/detalhes aqui</p>
+            </div>
+
+            {/* Event Card 3 */}
+            <div className="bg-gradient-to-br from-blue-900/30 to-blue-900/10 border-2 border-blue-900/40 rounded-2xl p-8 hover:border-blue-900/60 transition">
+              <div className="h-48 bg-blue-900/20 rounded-xl mb-6 flex items-center justify-center text-gray-400">
+                🎤 Espaço para Logo/Imagem
+              </div>
+              <h3 className="text-xl font-black text-blue-400 mb-3">Evento 3</h3>
+              <p className="text-gray-300 text-sm leading-relaxed mb-4">
+                Descrição do evento ou participação especial de Renan Mataveli
+              </p>
+              <p className="text-xs text-blue-400 font-bold">Adicione data/detalhes aqui</p>
+            </div>
+          </div>
+
+          {/* CTA Section */}
+          <div className="text-center bg-gradient-to-r from-blue-900/20 to-blue-900/10 border-2 border-blue-900/40 rounded-2xl p-12">
+            <h3 className="text-3xl font-black text-white mb-4">Pronto para começar?</h3>
+            <p className="text-lg text-gray-300 mb-8 max-w-2xl mx-auto">
+              Se chegou até aqui, tenho certeza que você está pronto para fazer parte desta comunidade de elite.
+            </p>
+            <button
+              onClick={() => setShowModal(true)}
+              className="bg-gradient-to-r from-green-600 to-green-700 text-white font-black py-4 px-8 rounded-xl hover:from-green-700 hover:to-green-800 transition transform hover:scale-105 text-base flex items-center justify-center gap-2 mx-auto border border-green-500/60"
+            >
+              GARANTIR MINHA VAGA <ArrowRight size={20} />
+            </button>
+          </div>
         </div>
       </section>
 
