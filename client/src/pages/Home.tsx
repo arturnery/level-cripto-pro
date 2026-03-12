@@ -148,9 +148,9 @@ export default function Home() {
 
       {/* Hero Section */}
       <section className="pt-32 pb-20 px-4 relative overflow-hidden" style={{backgroundImage: 'url(https://files.manuscdn.com/user_upload_by_module/session_file/310519663190783268/UixRSfBxbuIjTGdA.webp)', backgroundSize: 'cover', backgroundPosition: 'center'}}>
-        <div className="absolute inset-0 bg-gradient-to-b from-blue-900/10 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/60 to-transparent" />
         <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center relative z-10">
-          <div>
+          <div className="bg-black/40 backdrop-blur-sm p-8 rounded-lg">
             <h1 className="text-5xl md:text-6xl font-black mb-4">
               DOMINE O MERCADO DE <br />
               <span className="text-blue-400">CRIPTOMOEDAS</span> <br />
@@ -189,7 +189,13 @@ export default function Home() {
               ENTRAR NA LISTA DE ESPERA <ArrowRight size={20} />
             </button>
           </div>
-
+          <div className="relative h-96 md:h-full">
+            <img 
+              src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663190783268/BN_02_HD.webp" 
+              alt="" 
+              className="w-full h-full object-cover rounded-2xl"
+            />
+          </div>
         </div>
       </section>
 
