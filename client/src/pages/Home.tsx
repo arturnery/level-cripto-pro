@@ -35,31 +35,26 @@ export default function Home() {
   const testimonials = [
     {
       name: "loratsm",
-      turma: "Turma 55",
       avatar: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663190783268/BxtooNIozBGsEYps.jpg",
       text: "Parabéns pelo curso, muito top. entrei no Level Pro sem saber praticamente nada além de comprar, haha. O módulo q fala sobre autocustódia já valeu o curso inteiro pra mim. Hoje sei praticamente todas as áreas do mercado e até comecei a analisar alts por conta própria. Recomendo demais pra quem quer realmente aprender cripto de verdade na prática. Vlw"
     },
     {
       name: "Victor Rocha De Lima Arnuda",
-      turma: "Turma 35",
       avatar: "👤",
       text: "Ahhh, também queria deixar meu feedback mais uma vez, sobre AUVP hahahaha. É sensacional fazer parte desse seleto grupo de alunos, me sinto com outra mentalidade, a quem minhas dúvidas do cartão de crédito que se arrastavam por quase 4 anos. Me organizei e agora tenho uma parte pequena da minha reserva de emergência."
     },
     {
       name: "Cleonardo do Nascimento",
-      turma: "Turma 48",
       avatar: "👤",
       text: "Estou empolgado e satisfeito com a AUVP. Nunca tive coragem de planijar os gastos familiares de forma detalhada, enxergar para onde o dinheiro está indo e avaliar como ajustar os gastos mensais. Passei 3 a 4 horas analisando e planejando todos os gastos dos últimos dois meses para ter um norte e uma metodologia de controle."
     },
     {
       name: "Ana Silva",
-      turma: "Turma 42",
       avatar: "👤",
       text: "O conteúdo é excelente e muito bem estruturado. Aprendi estratégias que nunca tinha visto antes e já estou aplicando no meu dia a dia. A comunidade é super acolhedora e sempre pronta para ajudar. Recomendo muito!"
     },
     {
       name: "João Santos",
-      turma: "Turma 50",
       avatar: "👤",
       text: "Transformou completamente minha forma de pensar sobre investimentos. Os módulos são práticos e aplicáveis imediatamente. Já consegui meus primeiros resultados em menos de um mês. Muito satisfeito com a qualidade do curso!"
     }
@@ -799,7 +794,6 @@ export default function Home() {
                         </div>
                         <div>
                           <h3 className="font-black text-white text-lg">{testimonial.name}</h3>
-                          <p className="text-sm text-blue-400 font-bold">{testimonial.turma}</p>
                         </div>
                       </div>
                       <p className="text-gray-300 leading-relaxed text-sm">
