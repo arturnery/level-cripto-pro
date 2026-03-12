@@ -189,13 +189,7 @@ export default function Home() {
               ENTRAR NA LISTA DE ESPERA <ArrowRight size={20} />
             </button>
           </div>
-          <div className="relative h-96 md:h-full">
-            <img 
-              src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663190783268/BN_02_HD.webp" 
-              alt="Bitcoin Hero" 
-              className="w-full h-full object-cover rounded-2xl"
-            />
-          </div>
+
         </div>
       </section>
 
