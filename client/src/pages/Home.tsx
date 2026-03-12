@@ -57,6 +57,11 @@ export default function Home() {
       name: "João Santos",
       avatar: "👤",
       text: "Transformou completamente minha forma de pensar sobre investimentos. Os módulos são práticos e aplicáveis imediatamente. Já consegui meus primeiros resultados em menos de um mês. Muito satisfeito com a qualidade do curso!"
+    },
+    {
+      name: "Elikaq22",
+      avatar: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663190783268/QfhQqLdVaBrpGvLU.jpg",
+      text: "Eu já estava no mercado cripto há um tempo, mas percebi que não estava evoluindo. Aqui junto de vcs no Level Pro finalmente entendi várias coisas que ninguém explica direito: como surgiu o Bitcoin, como funcionam os ciclos do mercado e principalmente análise gráfica. Agradeço aos professores pela paciência e dedicação. Outro ponto que gostei muito foi a parte de airdrops e DeFi, que abriu minha cabeça para novas oportunidades. A comunidade fechada ajuda muito, sempre tem gente trocando ideia e tirando dúvidas. Pra mim que estava sozinho nesse mercado foi um divisor de águas. Vocês são fera!"
     }
   ];
 
