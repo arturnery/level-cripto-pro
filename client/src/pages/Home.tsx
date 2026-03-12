@@ -292,11 +292,15 @@ export default function Home() {
           
           <div className="grid md:grid-cols-3 gap-8">
             {[1, 2, 3, 4, 5, 6].map((num) => (
-              <div key={num} className="bg-gradient-to-br from-blue-900/20 to-blue-900/5 border-2 border-blue-900/40 rounded-2xl p-8 hover:border-blue-900/60 transition">
-                <div className="text-5xl mb-6">{"1️⃣2️⃣3️⃣4️⃣5️⃣6️⃣"[num - 1]}</div>
-                <p className="text-blue-400 font-bold mb-2">MÓDULO {num}</p>
-                <h3 className="text-2xl font-black text-white mb-4">Título do Módulo</h3>
-                <p className="text-gray-400">Descrição do conteúdo do módulo {num}. Aqui você aprenderá os conceitos fundamentais e as estratégias práticas para dominar este tópico.</p>
+              <div key={num} className="bg-gradient-to-br from-blue-900/20 to-blue-900/5 border-2 border-blue-900/40 rounded-2xl overflow-hidden hover:border-blue-900/60 transition">
+                <div className="w-full h-48 bg-gradient-to-br from-blue-900/30 to-blue-900/10 flex items-center justify-center text-6xl">
+                  {"1️⃣2️⃣3️⃣4️⃣5️⃣6️⃣"[num - 1]}
+                </div>
+                <div className="p-8">
+                  <p className="text-blue-400 font-bold mb-2">MÓDULO {num}</p>
+                  <h3 className="text-2xl font-black text-white mb-4">Título do Módulo</h3>
+                  <p className="text-gray-400">Descrição do conteúdo do módulo {num}. Aqui você aprenderá os conceitos fundamentais e as estratégias práticas para dominar este tópico.</p>
+                </div>
               </div>
             ))}
           </div>
