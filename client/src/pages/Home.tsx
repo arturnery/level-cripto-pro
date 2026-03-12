@@ -699,27 +699,27 @@ export default function Home() {
           
           {/* Resultados de Trades */}
           <div className="mb-16">
-            <div className="flex items-center gap-3 mb-8">
-              <span className="text-3xl">📈</span>
-              <h3 className="text-3xl font-black text-blue-900">Resultados de Trades</h3>
+            <div className="flex items-center gap-3 mb-12">
+              <span className="text-4xl">📈</span>
+              <h3 className="text-4xl font-black text-white">Resultados de Trades</h3>
             </div>
             <div className="grid md:grid-cols-2 gap-12 items-start">
               <div>
-                <p className="text-gray-300 mb-6 leading-relaxed">
+                <p className="text-white text-lg mb-8 leading-relaxed font-semibold">
                   Nossos alunos aplicam as estratégias ensinadas no curso e conseguem resultados consistentes no mercado. Alguns destaques:
                 </p>
-                <ul className="space-y-3">
-                  <li className="flex gap-3">
-                    <span className="text-blue-900 font-black">✓</span>
-                    <span className="text-gray-300">Alunos que dobraram seu capital em 3 meses com estratégias de swing trading</span>
+                <ul className="space-y-4">
+                  <li className="flex gap-4">
+                    <span className="text-blue-400 font-black text-xl flex-shrink-0">✓</span>
+                    <span className="text-gray-200 text-base leading-relaxed">Alunos que dobraram seu capital em 3 meses com estratégias de swing trading</span>
                   </li>
-                  <li className="flex gap-3">
-                    <span className="text-blue-900 font-black">✓</span>
-                    <span className="text-gray-300">Comunidade que compartilha análises técnicas e oportunidades diárias</span>
+                  <li className="flex gap-4">
+                    <span className="text-blue-400 font-black text-xl flex-shrink-0">✓</span>
+                    <span className="text-gray-200 text-base leading-relaxed">Comunidade que compartilha análises técnicas e oportunidades diárias</span>
                   </li>
-                  <li className="flex gap-3">
-                    <span className="text-blue-900 font-black">✓</span>
-                    <span className="text-gray-300">Suporte 24h para ajudar em dúvidas sobre posições e estratégias</span>
+                  <li className="flex gap-4">
+                    <span className="text-blue-400 font-black text-xl flex-shrink-0">✓</span>
+                    <span className="text-gray-200 text-base leading-relaxed">Suporte 24h para ajudar em dúvidas sobre posições e estratégias</span>
                   </li>
                 </ul>
               </div>
@@ -737,27 +737,27 @@ export default function Home() {
 
           {/* Resultados de Airdrops */}
           <div>
-            <div className="flex items-center gap-3 mb-8">
-              <span className="text-3xl">🎁</span>
-              <h3 className="text-3xl font-black text-blue-900">Resultados de Airdrops</h3>
+            <div className="flex items-center gap-3 mb-12">
+              <span className="text-4xl">🎁</span>
+              <h3 className="text-4xl font-black text-white">Resultados de Airdrops</h3>
             </div>
             <div className="grid md:grid-cols-2 gap-12 items-start">
               <div>
-                <p className="text-gray-300 mb-6 leading-relaxed">
+                <p className="text-white text-lg mb-8 leading-relaxed font-semibold">
                   Com o mapa mental e as estratégias de farm de airdrops ensinadas no curso, nossos alunos conseguem identificar e participar de airdrops lucrativos:
                 </p>
-                <ul className="space-y-3">
-                  <li className="flex gap-3">
-                    <span className="text-blue-900 font-black">✓</span>
-                    <span className="text-gray-300">Alunos que ganharam mais de $5.000 em airdrops em 2 meses</span>
+                <ul className="space-y-4">
+                  <li className="flex gap-4">
+                    <span className="text-blue-400 font-black text-xl flex-shrink-0">✓</span>
+                    <span className="text-gray-200 text-base leading-relaxed">Alunos que ganharam mais de $5.000 em airdrops em 2 meses</span>
                   </li>
-                  <li className="flex gap-3">
-                    <span className="text-blue-900 font-black">✓</span>
-                    <span className="text-gray-300">Mapa mental exclusivo para organizar e priorizar airdrops</span>
+                  <li className="flex gap-4">
+                    <span className="text-blue-400 font-black text-xl flex-shrink-0">✓</span>
+                    <span className="text-gray-200 text-base leading-relaxed">Mapa mental exclusivo para organizar e priorizar airdrops</span>
                   </li>
-                  <li className="flex gap-3">
-                    <span className="text-blue-900 font-black">✓</span>
-                    <span className="text-gray-300">Comunidade que compartilha oportunidades de airdrops em tempo real</span>
+                  <li className="flex gap-4">
+                    <span className="text-blue-400 font-black text-xl flex-shrink-0">✓</span>
+                    <span className="text-gray-200 text-base leading-relaxed">Comunidade que compartilha oportunidades de airdrops em tempo real</span>
                   </li>
                 </ul>
               </div>
