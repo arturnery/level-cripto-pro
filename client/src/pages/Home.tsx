@@ -794,8 +794,12 @@ export default function Home() {
                   <div key={index} className="w-1/2 flex-shrink-0 px-4">
                     <div className="bg-gradient-to-br from-blue-900/20 to-blue-900/5 border-2 border-blue-900/40 rounded-2xl p-8 h-full hover:border-blue-900/60 transition">
                       <div className="flex items-center gap-4 mb-6">
-                        <div className="w-14 h-14 bg-blue-900/40 rounded-full flex items-center justify-center text-2xl border border-blue-900/60">
-                          {testimonial.avatar}
+                        <div className="w-14 h-14 bg-blue-900/40 rounded-full flex items-center justify-center text-2xl border border-blue-900/60 overflow-hidden">
+                          {testimonial.avatar.startsWith('http') ? (
+                            <img src={testimonial.avatar} alt={testimonial.name} className="w-full h-full object-cover" />
+                          ) : (
+                            testimonial.avatar
+                          )}
                         </div>
                         <div>
                           <h3 className="font-black text-white text-lg">{testimonial.name}</h3>
