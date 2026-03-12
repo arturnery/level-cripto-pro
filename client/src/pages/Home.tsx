@@ -848,16 +848,16 @@ export default function Home() {
 
           <div className="grid md:grid-cols-2 gap-12">
             {/* CTA Section */}
-            <div className="bg-black rounded-lg p-8 flex flex-col justify-center h-full">
-              <h3 className="text-2xl font-black mb-4">Fale com nosso time</h3>
-              <p className="text-gray-300 mb-6 leading-relaxed">
-                Fale com um dos nossos consultores e tire todas as suas duvidas sobre o Level Cripto PRO, sua jornada, os numeros e muito mais.
+            <div className="bg-gradient-to-br from-blue-900/30 to-blue-900/10 border-2 border-blue-900/40 rounded-2xl p-10 flex flex-col justify-center h-full hover:border-blue-900/60 transition">
+              <h3 className="text-3xl font-black mb-6 text-white">Fale com nosso time</h3>
+              <p className="text-gray-300 mb-8 leading-relaxed text-lg">
+                Fale com um dos nossos consultores e tire todas as suas dúvidas sobre o Level Cripto PRO
               </p>
-              <button className="bg-green-600 text-white font-black py-3 px-6 rounded-lg hover:bg-green-700 transition w-full mb-6">
+              <button className="bg-gradient-to-r from-blue-900 to-blue-950 text-white font-black py-4 px-8 rounded-xl hover:from-blue-950 hover:to-blue-900 transition w-full mb-6 border border-blue-900/60 transform hover:scale-105">
                 FALE COM NOSSO WHATSAPP
               </button>
-              <p className="text-xs text-gray-400 text-center">
-                Responderemos em ate 2 horas
+              <p className="text-xs text-blue-400 text-center font-bold">
+                ⏱️ Responderemos em até 2 horas
               </p>
             </div>
 
