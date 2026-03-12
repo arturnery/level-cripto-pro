@@ -922,10 +922,9 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Divider */}
-      <div className="h-1 bg-gradient-to-r from-transparent via-blue-900 to-transparent"></div>
+      <WaveDivider />
 
-      {/* CTA Final Section */}
+      {/* EVENTOS E PARTICIPAÇÃO ESPECIAL Section */}
       <section className="py-20 px-4 md:px-8 bg-gray-900">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-5xl md:text-6xl font-black mb-12 text-center text-white">EVENTOS E PARTICIPAÇÃO ESPECIAL</h2>
@@ -967,8 +966,14 @@ export default function Home() {
               <p className="text-xs text-blue-400 font-bold">Adicione data/detalhes aqui</p>
             </div>
           </div>
+        </div>
+      </section>
 
-          {/* CTA Section */}
+      <WaveDivider />
+
+      {/* CTA Final Section */}
+      <section className="py-20 px-4 md:px-8 bg-gray-900">
+        <div className="max-w-7xl mx-auto">
           <div className="text-center bg-gradient-to-r from-blue-900/20 to-blue-900/10 border-2 border-blue-900/40 rounded-2xl p-12">
             <h3 className="text-3xl font-black text-white mb-4">Pronto para começar?</h3>
             <p className="text-lg text-gray-300 mb-8 max-w-2xl mx-auto">
