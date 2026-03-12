@@ -68,6 +68,12 @@ export default function Home() {
       turma: "",
       avatar: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663190783268/jHKEmeybxfyvsKId.jpg",
       text: "Cara que aula inicial contextualizando toda a criação do BTC e Subprime foi essa, foda demais. Curso muito completo mesmo. Gostei, não fica só na teoria. Tem parte de como operar em corretora, análise gráfica, altcoins, DeFi... até mineração eu aprendi o básico. Sem falar na comunidade, que é top. Sempre tem alguém comentando oportunidades e se ajudando, bom pra quem está começando e também já tem conhecimento."
+    },
+    {
+      name: "Elikaq22",
+      turma: "",
+      avatar: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663190783268/FIyXgwOpWRGIUDDu.jpg",
+      text: "Eu já estava no mercado cripto há um tempo, mas percebi que não estava evoluindo. Aqui junto de vcs no Level Pro finalmente entendi várias coisas que ninguém explica direito: como surgiu o Bitcoin, como funcionam os ciclos do mercado e principalmente análise gráfica, agraço aos professores pela paciência e dedicação. Outro ponto que gostei muito foi a parte de airdrops e DeFi, que abriu minha cabeça para novas oportunidades. E a comunidade fechada ajuda muito, sempre tem gente trocando ideia e tirando dúvidas. Pra mim que estava sozinho nesse mercado foi um divisor de águas. Vocês são fera"
     }
   ];
 
