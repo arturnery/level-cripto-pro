@@ -56,6 +56,12 @@ export default function Home() {
       turma: "",
       avatar: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663190783268/oYuXOgSyTXVIQrBn.jpg",
       text: "Já fiz outros cursos de cripto antes, mas nenhum explicou tão bem a lógica do mercado e os ciclos. A parte de análise gráfica é muito clara e me ajudou demais nas minhas operações, aprendi a montar uma carteira equilibrada e administrar os meus ativos. Vlw pessoal 👊"
+    },
+    {
+      name: "JuniorP",
+      turma: "",
+      avatar: "👤",
+      text: "Irmão que treinão foi esse, kkkkk ... está valendo muito mais a pena do que uns cursos caros que tem por aí, conteúdo de primeira, informações valiosas. O Level Cripto Pro me ajudou muito, muito grato a vcs. Pra quem quer entrar no mundo cripto com o pé direito, vale muito a pena."
     }
   ];
 
