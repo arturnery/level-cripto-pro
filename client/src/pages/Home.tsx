@@ -50,6 +50,12 @@ export default function Home() {
       turma: "",
       avatar: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663190783268/FIyXgwOpWRGIUDDu.jpg",
       text: "Eu já estava no mercado cripto há um tempo, mas percebi que não estava evoluindo. Aqui junto de vcs no Level Pro finalmente entendi várias coisas que ninguém explica direito: como surgiu o Bitcoin, como funcionam os ciclos do mercado e principalmente análise gráfica, agraço aos professores pela paciência e dedicação. Outro ponto que gostei muito foi a parte de airdrops e DeFi, que abriu minha cabeça para novas oportunidades. E a comunidade fechada ajuda muito, sempre tem gente trocando ideia e tirando dúvidas. Pra mim que estava sozinho nesse mercado foi um divisor de águas. Vocês são fera"
+    },
+    {
+      name: "Carlos S.",
+      turma: "",
+      avatar: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663190783268/oYuXOgSyTXVIQrBn.jpg",
+      text: "Já fiz outros cursos de cripto antes, mas nenhum explicou tão bem a lógica do mercado e os ciclos. A parte de análise gráfica é muito clara e me ajudou demais nas minhas operações, aprendi a montar uma carteira equilibrada e administrar os meus ativos. Vlw pessoal 👊"
     }
   ];
 
