@@ -903,6 +903,9 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Divider */}
+      <div className="h-1 bg-gradient-to-r from-transparent via-blue-900 to-transparent"></div>
+
       {/* CTA Final Section */}
       <section className="py-20 px-4 md:px-8 bg-gray-900">
         <div className="max-w-7xl mx-auto">
