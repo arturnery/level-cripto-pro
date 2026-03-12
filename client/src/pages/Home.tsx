@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useAuth } from "@/_core/hooks/useAuth";
 import { trpc } from "@/lib/trpc";
+import { WaveDivider } from "@/components/WaveDivider";
 import {
   ArrowRight,
   Copy,
@@ -377,6 +378,9 @@ export default function Home() {
         </div>
       )}
 
+      {/* Wave Divider */}
+      <WaveDivider />
+
       {/* Vagas Limitadas Section - Benefícios */}
       <section id="beneficios" className="py-20 px-4 md:px-8 bg-black">
         <div className="max-w-7xl mx-auto">
@@ -495,8 +499,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Divisor fluido */}
-      <div className="h-px bg-gradient-to-r from-transparent via-blue-900/40 to-transparent"></div>
+      {/* Wave Divider */}
+      <WaveDivider />
 
       {/* Conteúdo Section */}
       <section id="conteudo" className="py-20 px-4 md:px-8 bg-black">
@@ -597,6 +601,9 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Wave Divider */}
+      <WaveDivider />
+
       {/* Professor Section */}
       <section id="professor" className="py-20 px-4 md:px-8 bg-gray-900">
         <div className="max-w-7xl mx-auto">
@@ -639,6 +646,9 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* Wave Divider */}
+      <WaveDivider />
 
       {/* Diferenciais Section */}
       <section id="diferenciais" className="py-20 px-4 md:px-8 bg-black">
@@ -691,6 +701,9 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* Wave Divider */}
+      <WaveDivider />
 
       {/* Resultados Section */}
       <section id="resultados" className="py-20 px-4 md:px-8 bg-gray-900">
@@ -775,6 +788,9 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Wave Divider */}
+      <WaveDivider />
+
       {/* Depoimentos Section */}
       <section id="depoimentos" className="py-24 px-4 md:px-8 bg-black">
         <div className="max-w-7xl mx-auto">
@@ -849,6 +865,9 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* Wave Divider */}
+      <WaveDivider />
 
       {/* FAQ Section */}
       <section id="faq" className="py-20 px-4 md:px-8 bg-gray-900">
