@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useAuth } from "@/_core/hooks/useAuth";
 import { trpc } from "@/lib/trpc";
-import { WaveDivider } from "@/components/WaveDivider";
+
 import {
   ArrowRight,
   Copy,
@@ -378,8 +378,7 @@ export default function Home() {
         </div>
       )}
 
-      {/* Wave Divider */}
-      <WaveDivider />
+
 
       {/* Vagas Limitadas Section - Benefícios */}
       <section id="beneficios" className="py-20 px-4 md:px-8 bg-black">
@@ -499,8 +498,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Wave Divider */}
-      <WaveDivider />
+
 
       {/* Conteúdo Section */}
       <section id="conteudo" className="py-20 px-4 md:px-8 bg-black">
@@ -601,8 +599,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Wave Divider */}
-      <WaveDivider />
+
 
       {/* Professor Section */}
       <section id="professor" className="py-20 px-4 md:px-8 bg-gray-900">
@@ -647,8 +644,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Wave Divider */}
-      <WaveDivider />
+
 
       {/* Diferenciais Section */}
       <section id="diferenciais" className="py-20 px-4 md:px-8 bg-black">
@@ -702,8 +698,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Wave Divider */}
-      <WaveDivider />
+
 
       {/* Resultados Section */}
       <section id="resultados" className="py-20 px-4 md:px-8 bg-gray-900">
@@ -788,8 +783,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Wave Divider */}
-      <WaveDivider />
+
 
       {/* Depoimentos Section */}
       <section id="depoimentos" className="py-24 px-4 md:px-8 bg-black">
@@ -866,8 +860,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Wave Divider */}
-      <WaveDivider />
+
 
       {/* FAQ Section */}
       <section id="faq" className="py-20 px-4 md:px-8 bg-gray-900">
@@ -922,8 +915,6 @@ export default function Home() {
         </div>
       </section>
 
-      <WaveDivider />
-
       {/* EVENTOS E PARTICIPAÇÃO ESPECIAL Section */}
       <section className="py-20 px-4 md:px-8 bg-gray-900">
         <div className="max-w-7xl mx-auto">
@@ -969,9 +960,7 @@ export default function Home() {
         </div>
       </section>
 
-      <WaveDivider />
-
-      {/* CTA Final Section */}
+      {/* Pronto para começar */}
       <section className="py-20 px-4 md:px-8 bg-gray-900">
         <div className="max-w-7xl mx-auto">
           <div className="text-center bg-gradient-to-r from-blue-900/20 to-blue-900/10 border-2 border-blue-900/40 rounded-2xl p-12">
