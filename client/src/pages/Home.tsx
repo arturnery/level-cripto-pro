@@ -501,8 +501,8 @@ export default function Home() {
       {/* Conteúdo Section */}
       <section id="conteudo" className="py-20 px-4 md:px-8 bg-black">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-5xl md:text-6xl font-black mb-4">O QUE VOCÊ VAI APRENDER</h2>
-          <p className="text-xl text-gray-400 mb-16">Conteúdo estruturado e prático para você dominar o mercado de criptomoedas</p>
+          <h2 className="text-5xl md:text-6xl font-black mb-4 text-center">O QUE VOCÊ VAI APRENDER</h2>
+          <p className="text-center text-gray-400 mb-16 text-lg">Conteúdo estruturado e prático para você dominar o mercado de criptomoedas</p>
           <div className="grid md:grid-cols-3 gap-8">
             {/* MÓDULO 1 */}
             <div className="bg-gray-900 rounded-lg overflow-hidden border border-gray-800 hover:border-blue-900 transition group">
@@ -643,8 +643,8 @@ export default function Home() {
       {/* Diferenciais Section */}
       <section id="diferenciais" className="py-20 px-4 md:px-8 bg-black">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-5xl md:text-6xl font-black mb-4">NOSSOS DIFERENCIAIS</h2>
-          <p className="text-xl text-gray-400 mb-16">Ferramentas e estratégias exclusivas para dominar o mercado cripto</p>
+          <h2 className="text-5xl md:text-6xl font-black mb-4 text-center">NOSSOS DIFERENCIAIS</h2>
+          <p className="text-center text-gray-400 mb-16 text-lg">Ferramentas e estratégias exclusivas para dominar o mercado cripto</p>
           
           <div className="grid md:grid-cols-3 gap-8">
             {/* Diferencial 1 - Mapa de Airdrops */}
@@ -695,7 +695,7 @@ export default function Home() {
       {/* Resultados Section */}
       <section id="resultados" className="py-20 px-4 md:px-8 bg-gray-900">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-5xl md:text-6xl font-black mb-12">RESULTADOS DA COMUNIDADE</h2>
+          <h2 className="text-5xl md:text-6xl font-black mb-12 text-center">RESULTADOS DA COMUNIDADE</h2>
           
           {/* Resultados de Trades */}
           <div className="mb-16">
@@ -853,8 +853,8 @@ export default function Home() {
       {/* FAQ Section */}
       <section id="faq" className="py-20 px-4 md:px-8 bg-gray-900">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-5xl md:text-6xl font-black mb-4">PERGUNTAS FREQUENTES</h2>
-          <p className="text-lg mb-12">Tire suas dúvidas sobre o curso Level Cripto PRO</p>
+          <h2 className="text-5xl md:text-6xl font-black mb-4 text-center">PERGUNTAS FREQUENTES</h2>
+          <p className="text-center text-gray-400 mb-12 text-lg">Tire suas dúvidas sobre o curso Level Cripto PRO</p>
 
           <div className="grid md:grid-cols-2 gap-12">
             {/* CTA Section */}
