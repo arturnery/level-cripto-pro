@@ -35,7 +35,7 @@ export default function Home() {
   const testimonials = [
     {
       name: "loratsm",
-      turma: "Turma 55",
+      turma: "",
       avatar: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663190783268/BxtooNIozBGsEYps.jpg",
       text: "Parabéns pelo curso, muito top. entrei no Level Pro sem saber praticamente nada além de comprar, haha. O módulo q fala sobre autocustódia já valeu o curso inteiro pra mim. Hoje sei praticamente todas as áreas do mercado e até comecei a analisar alts por conta própria. Recomendo demais pra quem quer realmente aprender cripto de verdade na prática. Vlw"
     },
