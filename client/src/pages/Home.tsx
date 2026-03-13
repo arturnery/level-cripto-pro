@@ -605,22 +605,17 @@ export default function Home() {
       <section id="professor" className="py-20 px-4 md:px-8 bg-gray-900">
         <div className="max-w-7xl mx-auto">
           {/* Badge */}
-          <div className="inline-block mb-8 px-4 py-2 border border-yellow-500 rounded-full">
-            <span className="text-yellow-500 font-black text-sm">■ QUEM ESTÁ POR TRÁS DA LEVEL CRIPTO</span>
+          <div className="inline-block mb-8 px-4 py-2 border border-blue-500 rounded-full">
+            <span className="text-blue-500 font-black text-sm">■ QUEM ESTÁ POR TRÁS DA LEVEL CRIPTO</span>
           </div>
 
           <div className="grid md:grid-cols-2 gap-12 items-start">
             {/* Left Column - Text Content */}
             <div>
               {/* Avatar and Name */}
-              <div className="flex items-center gap-4 mb-8">
-                <div className="w-20 h-20 bg-yellow-500 rounded-full flex items-center justify-center flex-shrink-0">
-                  <span className="text-2xl font-black text-black">RM</span>
-                </div>
-                <div>
-                  <h3 className="text-2xl font-black text-white">Renan Mataveli</h3>
-                  <p className="text-gray-400 text-sm">No mercado de cripto desde 2017</p>
-                </div>
+              <div className="mb-8">
+                <h3 className="text-2xl font-black text-white">Renan Mataveli</h3>
+                <p className="text-gray-400 text-sm">No mercado de cripto desde 2017</p>
               </div>
 
               {/* Main Text Content */}
@@ -659,11 +654,12 @@ export default function Home() {
                 </div>
                 <div className="bg-gray-800 rounded-lg p-5 border border-gray-700 text-center">
                   <div className="text-2xl font-black text-yellow-500 mb-1">+30x</div>
-                  <p className="text-gray-400 text-xs">Rentabilidade</p>
+                  <p className="text-gray-400 text-xs">Rentabilidade <span className="block">(na carteira)</span></p>
                 </div>
                 <div className="bg-gray-800 rounded-lg p-5 border border-gray-700 text-center">
                   <div className="text-2xl font-black text-yellow-500 mb-1">desde</div>
                   <p className="text-gray-400 text-xs">2017</p>
+                  <p className="text-gray-400 text-xs">No mercado cripto</p>
                 </div>
               </div>
             </div>
