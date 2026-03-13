@@ -647,9 +647,25 @@ export default function Home() {
                 Com estratégia, paciência e conhecimento, construí uma carteira que chegou a mais de 30x de rentabilidade. Não por sorte — por método.
               </p>
 
-              <p className="text-gray-300 leading-relaxed">
+              <p className="text-gray-300 mb-8 leading-relaxed">
                 Hoje sou fundador da Level Cripto e já formei mais de 600 alunos que entraram nesse mercado sem saber nada e hoje operam com autonomia, segurança e estratégia real. Meu maior orgulho não é o que acumulei — é o olhar para essa comunidade e saber que nenhum deles precisou errar sozinho como eu errei.
               </p>
+
+              {/* Stats Cards - Inside Left Column */}
+              <div className="grid grid-cols-3 gap-4">
+                <div className="bg-gray-800 rounded-lg p-5 border border-gray-700 text-center">
+                  <div className="text-2xl font-black text-yellow-500 mb-1">+600</div>
+                  <p className="text-gray-400 text-xs">Alunos formados</p>
+                </div>
+                <div className="bg-gray-800 rounded-lg p-5 border border-gray-700 text-center">
+                  <div className="text-2xl font-black text-yellow-500 mb-1">+30x</div>
+                  <p className="text-gray-400 text-xs">Rentabilidade</p>
+                </div>
+                <div className="bg-gray-800 rounded-lg p-5 border border-gray-700 text-center">
+                  <div className="text-2xl font-black text-yellow-500 mb-1">desde</div>
+                  <p className="text-gray-400 text-xs">2017</p>
+                </div>
+              </div>
             </div>
 
             {/* Right Column - Photo Space */}
@@ -661,23 +677,6 @@ export default function Home() {
                   <span className="text-sm text-gray-600 mt-2 block">Dimensao recomendada: 400x500px</span>
                 </span>
               </div>
-            </div>
-          </div>
-
-          {/* Stats Cards - Below Content */}
-          <div className="grid md:grid-cols-3 gap-6 mt-12">
-            <div className="bg-gray-800 rounded-lg p-8 border border-gray-700 text-center">
-              <div className="text-4xl font-black text-yellow-500 mb-2">+600</div>
-              <p className="text-gray-400 text-sm">Alunos formados</p>
-            </div>
-            <div className="bg-gray-800 rounded-lg p-8 border border-gray-700 text-center">
-              <div className="text-4xl font-black text-yellow-500 mb-2">+30x</div>
-              <p className="text-gray-400 text-sm">Rentabilidade na carteira</p>
-            </div>
-            <div className="bg-gray-800 rounded-lg p-8 border border-gray-700 text-center">
-              <div className="text-4xl font-black text-yellow-500 mb-2">desde</div>
-              <p className="text-gray-400 text-sm">2017</p>
-              <p className="text-gray-500 text-xs mt-1">No mercado cripto</p>
             </div>
           </div>
         </div>
