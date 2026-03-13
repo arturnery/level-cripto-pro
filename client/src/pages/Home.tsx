@@ -604,40 +604,68 @@ export default function Home() {
       {/* Professor Section */}
       <section id="professor" className="py-20 px-4 md:px-8 bg-gray-900">
         <div className="max-w-7xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
+          {/* Badge */}
+          <div className="inline-block mb-8 px-4 py-2 border border-yellow-500 rounded-full">
+            <span className="text-yellow-500 font-black text-sm">■ QUEM ESTÁ POR TRÁS DA LEVEL CRIPTO</span>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-12 items-start">
+            {/* Left Column - Text Content */}
             <div>
-              <h3 className="text-2xl font-black mb-4 text-blue-900">Conheça Renan Mataveli</h3>
-              <p className="text-gray-300 mb-6 leading-relaxed">
-                Renan é um especialista em criptomoedas com mais de 5 anos de experiência no mercado. 
-                Ele fundou a comunidade Level Cripto para compartilhar seu conhecimento e ajudar outras pessoas 
-                a alcançarem a liberdade financeira através das criptomoedas.
-              </p>
-              <p className="text-gray-300 mb-6 leading-relaxed">
-                Com mais de 100k seguidores no YouTube e uma comunidade ativa no Instagram, 
-                Renan é conhecido por sua didática clara e estratégias práticas que funcionam no mercado real.
-              </p>
-              <div className="flex gap-4">
-                <a href="https://instagram.com/level_cripto" target="_blank" rel="noopener noreferrer" 
-                   className="p-3 bg-blue-900 text-black rounded-lg hover:bg-blue-950 transition">
-                  <Instagram size={24} />
-                </a>
-                <a href="https://youtube.com/@levelcripto" target="_blank" rel="noopener noreferrer"
-                   className="p-3 bg-blue-900 text-black rounded-lg hover:bg-blue-950 transition">
-                  <Youtube size={24} />
-                </a>
-                <a href="https://x.com/LevelCripto" target="_blank" rel="noopener noreferrer"
-                   className="p-3 bg-blue-900 text-black rounded-lg hover:bg-blue-950 transition">
-                  <Twitter size={24} />
-                </a>
+              {/* Avatar and Name */}
+              <div className="flex items-center gap-4 mb-8">
+                <div className="w-20 h-20 bg-yellow-500 rounded-full flex items-center justify-center flex-shrink-0">
+                  <span className="text-2xl font-black text-black">RM</span>
+                </div>
+                <div>
+                  <h3 className="text-2xl font-black text-white">Renan Mataveli</h3>
+                  <p className="text-gray-400 text-sm">No mercado de cripto desde 2017</p>
+                </div>
               </div>
+
+              {/* Main Text Content */}
+              <p className="text-gray-300 mb-6 leading-relaxed">
+                Durante anos, dinheiro foi algo que eu via passar pela minha mão sem entender por onde ia. Ninguém me ensinou sobre isso — nem em casa, nem na escola. Aprendi sobre finanças da forma mais difícil: errando com o meu próprio bolso.
+              </p>
+
+              <p className="text-gray-300 mb-6 leading-relaxed">
+                Em 2017, enquanto a maioria torcia o nariz para o Bitcoin e chamava de pirâmide, eu decidi acreditar. Não foi fácil — família duvidando, amigos rindo, notícia negativa pra todo lado. Mas algo me dizia que aquilo era real. Estudei, errei, e fiquei. Nos momentos de maior descrença do mercado, quando todo mundo fugia, eu avançava.
+              </p>
+
+              {/* Quote */}
+              <div className="border-l-4 border-yellow-500 pl-6 py-4 mb-6 bg-gray-800/50 rounded">
+                <p className="text-gray-300 italic">
+                  "As maiores oportunidades aparecem exatamente quando ninguém quer olhar."
+                </p>
+              </div>
+
+              <p className="text-gray-300 mb-6 leading-relaxed">
+                Mas não foram só acertos. Em determinado momento, acreditei que o mercado repetiria os ciclos anteriores à risca e investi em projetos sem valor real por trás. Aprendi da forma mais cara possível que cripto exige critério, não apenas otimismo. Esse erro me tornou um analista muito melhor.
+              </p>
+
+              <p className="text-gray-300 mb-6 leading-relaxed">
+                Com estratégia, paciência e conhecimento, construí uma carteira que chegou a mais de 30x de rentabilidade. Não por sorte — por método.
+              </p>
+
+              <p className="text-gray-300 leading-relaxed">
+                Hoje sou fundador da Level Cripto e já formei mais de 600 alunos que entraram nesse mercado sem saber nada e hoje operam com autonomia, segurança e estratégia real. Meu maior orgulho não é o que acumulei — é o olhar para essa comunidade e saber que nenhum deles precisou errar sozinho como eu errei.
+              </p>
             </div>
-            <div className="bg-gray-800 rounded-lg overflow-hidden h-96 md:h-full flex items-center justify-center">
-              <div className="w-full h-full bg-gradient-to-br from-blue-900/20 to-blue-900/5 flex items-center justify-center">
-                <span className="text-gray-500 text-center px-6">
-                  Espaço para foto do Renan
-                  <br />
-                  <span className="text-sm text-gray-600 mt-2 block">Dimensão recomendada: 400x500px</span>
-                </span>
+
+            {/* Right Column - Stats Cards */}
+            <div className="flex flex-col gap-6">
+              <div className="bg-gray-800 rounded-lg p-8 border border-gray-700">
+                <div className="text-4xl font-black text-yellow-500 mb-2">+600</div>
+                <p className="text-gray-400 text-sm">Alunos formados</p>
+              </div>
+              <div className="bg-gray-800 rounded-lg p-8 border border-gray-700">
+                <div className="text-4xl font-black text-yellow-500 mb-2">+30x</div>
+                <p className="text-gray-400 text-sm">Rentabilidade na carteira</p>
+              </div>
+              <div className="bg-gray-800 rounded-lg p-8 border border-gray-700">
+                <div className="text-4xl font-black text-yellow-500 mb-2">desde</div>
+                <p className="text-gray-400 text-sm">2017</p>
+                <p className="text-gray-500 text-xs mt-1">No mercado cripto</p>
               </div>
             </div>
           </div>
