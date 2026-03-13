@@ -657,8 +657,7 @@ export default function Home() {
                   <p className="text-gray-400 text-xs">Rentabilidade <span className="block">(na carteira)</span></p>
                 </div>
                 <div className="bg-gray-800 rounded-lg p-5 border border-gray-700 text-center">
-                  <div className="text-2xl font-black text-blue-500 mb-1">desde</div>
-                  <p className="text-gray-400 text-xs">2017</p>
+                  <div className="text-2xl font-black text-blue-500 mb-2">desde 2017</div>
                   <p className="text-gray-400 text-xs">No mercado cripto</p>
                 </div>
               </div>
