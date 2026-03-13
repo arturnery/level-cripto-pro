@@ -663,6 +663,23 @@ export default function Home() {
               </div>
             </div>
           </div>
+
+          {/* Stats Cards - Below Content */}
+          <div className="grid md:grid-cols-3 gap-6 mt-12">
+            <div className="bg-gray-800 rounded-lg p-8 border border-gray-700 text-center">
+              <div className="text-4xl font-black text-yellow-500 mb-2">+600</div>
+              <p className="text-gray-400 text-sm">Alunos formados</p>
+            </div>
+            <div className="bg-gray-800 rounded-lg p-8 border border-gray-700 text-center">
+              <div className="text-4xl font-black text-yellow-500 mb-2">+30x</div>
+              <p className="text-gray-400 text-sm">Rentabilidade na carteira</p>
+            </div>
+            <div className="bg-gray-800 rounded-lg p-8 border border-gray-700 text-center">
+              <div className="text-4xl font-black text-yellow-500 mb-2">desde</div>
+              <p className="text-gray-400 text-sm">2017</p>
+              <p className="text-gray-500 text-xs mt-1">No mercado cripto</p>
+            </div>
+          </div>
         </div>
       </section>
 
