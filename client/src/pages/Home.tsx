@@ -652,20 +652,14 @@ export default function Home() {
               </p>
             </div>
 
-            {/* Right Column - Stats Cards */}
-            <div className="flex flex-col gap-6">
-              <div className="bg-gray-800 rounded-lg p-8 border border-gray-700">
-                <div className="text-4xl font-black text-yellow-500 mb-2">+600</div>
-                <p className="text-gray-400 text-sm">Alunos formados</p>
-              </div>
-              <div className="bg-gray-800 rounded-lg p-8 border border-gray-700">
-                <div className="text-4xl font-black text-yellow-500 mb-2">+30x</div>
-                <p className="text-gray-400 text-sm">Rentabilidade na carteira</p>
-              </div>
-              <div className="bg-gray-800 rounded-lg p-8 border border-gray-700">
-                <div className="text-4xl font-black text-yellow-500 mb-2">desde</div>
-                <p className="text-gray-400 text-sm">2017</p>
-                <p className="text-gray-500 text-xs mt-1">No mercado cripto</p>
+            {/* Right Column - Photo Space */}
+            <div className="bg-gray-800 rounded-lg overflow-hidden h-96 md:h-full flex items-center justify-center">
+              <div className="w-full h-full bg-gradient-to-br from-blue-900/20 to-blue-900/5 flex items-center justify-center">
+                <span className="text-gray-500 text-center px-6">
+                  Espaco para foto do Renan
+                  <br />
+                  <span className="text-sm text-gray-600 mt-2 block">Dimensao recomendada: 400x500px</span>
+                </span>
               </div>
             </div>
           </div>
