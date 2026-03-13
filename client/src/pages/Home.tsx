@@ -620,11 +620,11 @@ export default function Home() {
 
               {/* Main Text Content */}
               <p className="text-gray-300 mb-6 leading-relaxed">
-                Durante anos, dinheiro foi algo que eu via passar pela minha mão sem entender por onde ia. Ninguém me ensinou sobre isso — nem em casa, nem na escola. Aprendi sobre finanças da forma mais difícil: errando com o meu próprio bolso.
+                Durante anos, dinheiro era algo que eu via passar pela minha mão sem entender pra onde ia. Ninguém me ensinou sobre isso, nem em casa, nem na escola. Aprendi sobre finanças da forma mais difícil: <strong>errando com o meu próprio bolso</strong>.
               </p>
 
               <p className="text-gray-300 mb-6 leading-relaxed">
-                Em 2017, enquanto a maioria torcia o nariz para o Bitcoin e chamava de pirâmide, eu decidi acreditar. Não foi fácil — família duvidando, amigos rindo, notícia negativa pra todo lado. Mas algo me dizia que aquilo era real. Estudei, errei, e fiquei. Nos momentos de maior descrença do mercado, quando todo mundo fugia, eu avançava.
+                Em 2017, enquanto a maioria torcia o nariz para o Bitcoin e chamava de pirâmide, eu decidi acreditar. Não foi fácil, família duvidando, amigos rindo, notícia negativa pra todo lado. Mas algo me dizia que aquilo era real. Estudei, errei, e fiquei. <strong>Nos momentos de maior descrença do mercado, quando todo mundo fugia, eu avançava</strong>.
               </p>
 
               {/* Quote */}
@@ -635,15 +635,15 @@ export default function Home() {
               </div>
 
               <p className="text-gray-300 mb-6 leading-relaxed">
-                Mas não foram só acertos. Em determinado momento, acreditei que o mercado repetiria os ciclos anteriores à risca e investi em projetos sem valor real por trás. Aprendi da forma mais cara possível que cripto exige critério, não apenas otimismo. Esse erro me tornou um analista muito melhor.
+                Mas não foram só acertos. Em determinado momento, acreditei que o mercado repetiria os ciclos anteriores à risca e investi em projetos sem valor real por trás. Aprendi da forma mais cara possível que <strong>cripto exige critério, não apenas otimismo</strong>. Esse erro me tornou um analista muito melhor.
               </p>
 
               <p className="text-gray-300 mb-6 leading-relaxed">
-                Com estratégia, paciência e conhecimento, construí uma carteira que chegou a mais de 30x de rentabilidade. Não por sorte — por método.
+                Com estratégia, paciência e conhecimento, construí uma carteira que chegou a <strong>mais de 30x de rentabilidade</strong>. Não por sorte, por método.
               </p>
 
               <p className="text-gray-300 mb-8 leading-relaxed">
-                Hoje sou fundador da Level Cripto e já formei mais de 600 alunos que entraram nesse mercado sem saber nada e hoje operam com autonomia, segurança e estratégia real. Meu maior orgulho não é o que acumulei — é o olhar para essa comunidade e saber que nenhum deles precisou errar sozinho como eu errei.
+                Hoje sou fundador do <strong>Level Cripto</strong> e já formei mais de <strong>600 alunos</strong> que entraram nesse mercado sem saber nada e hoje operam com autonomia, segurança e estratégia real. <strong>Meu maior orgulho</strong> não é o que acumulei, é olhar para essa comunidade e saber que nenhum deles precisou errar sozinho como eu errei.
               </p>
 
               {/* Stats Cards - Inside Left Column */}
