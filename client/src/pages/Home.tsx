@@ -628,7 +628,7 @@ export default function Home() {
               </p>
 
               {/* Quote */}
-              <div className="border-l-4 border-yellow-500 pl-6 py-4 mb-6 bg-gray-800/50 rounded">
+              <div className="border-l-4 border-blue-500 pl-6 py-4 mb-6 bg-gray-800/50 rounded">
                 <p className="text-gray-300 italic">
                   "As maiores oportunidades aparecem exatamente quando ninguém quer olhar."
                 </p>
@@ -649,15 +649,15 @@ export default function Home() {
               {/* Stats Cards - Inside Left Column */}
               <div className="grid grid-cols-3 gap-4">
                 <div className="bg-gray-800 rounded-lg p-5 border border-gray-700 text-center">
-                  <div className="text-2xl font-black text-yellow-500 mb-1">+600</div>
+                  <div className="text-2xl font-black text-blue-500 mb-1">+600</div>
                   <p className="text-gray-400 text-xs">Alunos formados</p>
                 </div>
                 <div className="bg-gray-800 rounded-lg p-5 border border-gray-700 text-center">
-                  <div className="text-2xl font-black text-yellow-500 mb-1">+30x</div>
+                  <div className="text-2xl font-black text-blue-500 mb-1">+30x</div>
                   <p className="text-gray-400 text-xs">Rentabilidade <span className="block">(na carteira)</span></p>
                 </div>
                 <div className="bg-gray-800 rounded-lg p-5 border border-gray-700 text-center">
-                  <div className="text-2xl font-black text-yellow-500 mb-1">desde</div>
+                  <div className="text-2xl font-black text-blue-500 mb-1">desde</div>
                   <p className="text-gray-400 text-xs">2017</p>
                   <p className="text-gray-400 text-xs">No mercado cripto</p>
                 </div>
