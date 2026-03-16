@@ -250,7 +250,7 @@ export default function Home() {
       <section className="pt-32 pb-20 px-4 md:px-8 bg-black relative overflow-hidden">
         {/* Background Image */}
         <img
-          src={`https://files.manuscdn.com/user_upload_by_module/session_file/310519663190783268/BatSLnAipWpTfZPM.webp?t=${Date.now()}`}
+          src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663190783268/iszuWVZHXSEAcBRV.webp"
           alt="Hero Background"
           className="absolute inset-0 w-full h-full object-contain lg:object-cover object-right"
           style={{ zIndex: 1, backgroundColor: '#000' }}
