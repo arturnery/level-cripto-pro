@@ -182,32 +182,32 @@ export default function Home() {
     {
       question: "Qual é o pré-requisito para fazer o curso?",
       answer:
-        "Nenhum! O curso é 100% para iniciantes. Se você quer aprender sobre criptomoedas do zero, este é o lugar certo.",
+        "Nenhum! O Level Cripto PRO foi desenvolvido do zero pensando em quem nunca teve contato com o mercado de criptoativos. Você não precisa ter conhecimento em finanças, tecnologia ou investimentos. Começamos pela criação do Bitcoin, explicamos como o mercado funciona e avançamos progressivamente até os temas mais complexos como DeFi, análise gráfica e airdrops. Se você tem vontade de aprender, está pronto para começar.",
     },
     {
       question: "Quanto tempo leva para completar o curso?",
       answer:
-        "O curso é estruturado em 7 semanas, com módulos que você pode acessar no seu próprio ritmo. Cada módulo leva entre 2-4 horas.",
+        "O curso é estruturado em 7 semanas de conteúdo, mas você estuda no seu próprio ritmo, sem prazo para terminar. Cada módulo leva entre 2 a 4 horas e foi pensado para caber na rotina de quem trabalha ou tem uma agenda cheia. Você acessa tudo quando quiser, quantas vezes precisar.",
     },
     {
       question: "O curso inclui suporte?",
       answer:
-        "Sim! Você terá acesso a uma comunidade ativa, suporte direto do Renan e respostas em até 24 horas.",
+        "Sim! Além do conteúdo gravado, você entra para uma comunidade fechada e ativa onde pode tirar dúvidas, acompanhar análises e trocar experiências com outros alunos. O Renan participa diretamente da comunidade e as dúvidas são respondidas em até 24 horas. Você não vai estudar sozinho.",
     },
     {
       question: "Posso acessar o curso em qualquer dispositivo?",
       answer:
-        "Sim! O curso é 100% online e responsivo. Acesse pelo celular, tablet ou computador quando quiser.",
+        "Sim! O curso é 100% online e funciona em qualquer dispositivo celular, tablet ou computador. Basta ter internet para acessar. Isso significa que você pode estudar no intervalo do trabalho, em casa ou onde estiver, sem depender de horário fixo.",
     },
     {
       question: "Há garantia de reembolso?",
       answer:
-        "Sim, oferecemos 7 dias de garantia de reembolso total se não gostar do curso.",
+        "Sim. Você tem 7 dias de garantia total e incondicional. Se por qualquer motivo sentir que o curso não é para você, basta solicitar o reembolso dentro desse prazo e devolvemos 100% do seu investimento, sem burocracia e sem perguntas.",
     },
     {
       question: "O curso aborda airdrops?",
       answer:
-        "Sim! Temos um módulo completo sobre estratégias de farm de airdrops com mapa mental e guias práticos.",
+        "Sim! Temos um módulo completo dedicado ao universo dos airdrops. Você vai aprender o que são, como identificar as melhores oportunidades, como fazer farm de forma estratégica e terá acesso a um mapa mental exclusivo com guias práticos para não perder nenhuma oportunidade relevante do mercado. É um dos módulos mais valorizados pelos alunos.",
     },
   ];
 
@@ -916,7 +916,7 @@ export default function Home() {
 
             {/* FAQ Items */}
             <div className="space-y-3">
-              <div className="text-lg font-black mb-6 text-blue-900">Tem alguma duvida?</div>
+              <div className="text-lg font-black mb-6 text-blue-900">Dúvidas Frequentes</div>
               {faqItems.map((item, idx) => (
                 <div
                   key={idx}
