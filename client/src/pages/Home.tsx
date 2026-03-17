@@ -514,9 +514,9 @@ export default function Home() {
               </div>
               <div className="p-6">
                 <p className="text-blue-900 font-black text-sm mb-2">MÓDULO 1</p>
-                <h3 className="text-xl font-black mb-4 text-white">Título do Módulo</h3>
+                <h3 className="text-xl font-black mb-4 text-white">Comunidade LEVEL PRO</h3>
                 <p className="text-gray-400 leading-relaxed text-sm">
-                  Descrição do conteúdo do módulo 1. Aqui você aprenderá os conceitos fundamentais e as estratégias práticas para dominar este tópico.
+                  Tenha acesso à comunidade LEVEL PRO no Discord. Você não estuda sozinho. Ao entrar no curso, ganha acesso direto a uma comunidade ativa de traders e investidores cripto para tirar dúvidas, trocar análises e evoluir junto.
                 </p>
               </div>
             </div>
@@ -529,9 +529,9 @@ export default function Home() {
               </div>
               <div className="p-6">
                 <p className="text-blue-900 font-black text-sm mb-2">MÓDULO 2</p>
-                <h3 className="text-xl font-black mb-4 text-white">Título do Módulo</h3>
+                <h3 className="text-xl font-black mb-4 text-white">Entenda o conceito por trás do surgimento do Bitcoin</h3>
                 <p className="text-gray-400 leading-relaxed text-sm">
-                  Descrição do conteúdo do módulo 2. Aqui você aprenderá os conceitos fundamentais e as estratégias práticas para dominar este tópico.
+                  Antes de investir, entenda o porquê. Você vai compreender o contexto histórico e econômico que deu origem ao Bitcoin — e por que essa tecnologia mudou para sempre a relação do mundo com o dinheiro.
                 </p>
               </div>
             </div>
@@ -544,9 +544,9 @@ export default function Home() {
               </div>
               <div className="p-6">
                 <p className="text-blue-900 font-black text-sm mb-2">MÓDULO 3</p>
-                <h3 className="text-xl font-black mb-4 text-white">Título do Módulo</h3>
+                <h3 className="text-xl font-black mb-4 text-white">Base Conceitual: Blockchain e Criptoativos</h3>
                 <p className="text-gray-400 leading-relaxed text-sm">
-                  Descrição do conteúdo do módulo 3. Aqui você aprenderá os conceitos fundamentais e as estratégias práticas para dominar este tópico.
+                  Domine os conceitos que a maioria dos investidores ignora. De Bitcoin a Stablecoins, você vai entender como o ecossistema cripto funciona de verdade — e tomar decisões com base em conhecimento, não em achismo.
                 </p>
               </div>
             </div>
@@ -559,9 +559,9 @@ export default function Home() {
               </div>
               <div className="p-6">
                 <p className="text-blue-900 font-black text-sm mb-2">MÓDULO 4</p>
-                <h3 className="text-xl font-black mb-4 text-white">Título do Módulo</h3>
+                <h3 className="text-xl font-black mb-4 text-white">AUTOCÚSTÓDIA</h3>
                 <p className="text-gray-400 leading-relaxed text-sm">
-                  Descrição do conteúdo do módulo 4. Aqui você aprenderá os conceitos fundamentais e as estratégias práticas para dominar este tópico.
+                  Aprenda a ser o único dono dos seus ativos. Você vai entender como proteger suas criptomoedas fora das exchanges, eliminando o risco de perder tudo por falhas ou bloqueios de terceiros.
                 </p>
               </div>
             </div>
@@ -574,9 +574,9 @@ export default function Home() {
               </div>
               <div className="p-6">
                 <p className="text-blue-900 font-black text-sm mb-2">MÓDULO 5</p>
-                <h3 className="text-xl font-black mb-4 text-white">Título do Módulo</h3>
+                <h3 className="text-xl font-black mb-4 text-white">Operação e Execução em Exchanges Centralizadas</h3>
                 <p className="text-gray-400 leading-relaxed text-sm">
-                  Descrição do conteúdo do módulo 5. Aqui você aprenderá os conceitos fundamentais e as estratégias práticas para dominar este tópico.
+                  Do zero ao operacional em uma corretora profissional. Você vai criar sua conta, configurar a segurança, depositar, operar com diferentes tipos de ordem e sacar — sem depender de ninguém.
                 </p>
               </div>
             </div>
@@ -589,9 +589,54 @@ export default function Home() {
               </div>
               <div className="p-6">
                 <p className="text-blue-900 font-black text-sm mb-2">MÓDULO 6</p>
-                <h3 className="text-xl font-black mb-4 text-white">Título do Módulo</h3>
+                <h3 className="text-xl font-black mb-4 text-white">Análise Técnica e Leitura Gráfica de Mercado</h3>
                 <p className="text-gray-400 leading-relaxed text-sm">
-                  Descrição do conteúdo do módulo 6. Aqui você aprenderá os conceitos fundamentais e as estratégias práticas para dominar este tópico.
+                  Pare de comprar no topo e vender no fundo. Com 19 aulas, você vai desenvolver a habilidade de ler gráficos, identificar tendências e tomar decisões de entrada e saída com critério técnico.
+                </p>
+              </div>
+            </div>
+
+            {/* MÓDULO 7 */}
+            <div className="bg-gray-900 rounded-lg overflow-hidden border border-gray-800 hover:border-blue-900 transition group">
+              <div className="h-48 bg-gradient-to-br from-blue-900/20 to-blue-900/5 flex items-center justify-center relative overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-900/30 to-transparent opacity-0 group-hover:opacity-100 transition"></div>
+                <span className="text-6xl">7️⃣</span>
+              </div>
+              <div className="p-6">
+                <p className="text-blue-900 font-black text-sm mb-2">MÓDULO 7</p>
+                <h3 className="text-xl font-black mb-4 text-white">Gestão de Carteira e Controle de Risco e Ganância</h3>
+                <p className="text-gray-400 leading-relaxed text-sm">
+                  O que separa quem lucra de quem perde no longo prazo é a gestão. Você vai aprender a montar uma carteira estratégica, controlar o risco por operação e manter a ganância sob controle.
+                </p>
+              </div>
+            </div>
+
+            {/* MÓDULO 8 */}
+            <div className="bg-gray-900 rounded-lg overflow-hidden border border-gray-800 hover:border-blue-900 transition group">
+              <div className="h-48 bg-gradient-to-br from-blue-900/20 to-blue-900/5 flex items-center justify-center relative overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-900/30 to-transparent opacity-0 group-hover:opacity-100 transition"></div>
+                <span className="text-6xl">8️⃣</span>
+              </div>
+              <div className="p-6">
+                <p className="text-blue-900 font-black text-sm mb-2">MÓDULO 8</p>
+                <h3 className="text-xl font-black mb-4 text-white">Finanças Descentralizadas — DeFi</h3>
+                <p className="text-gray-400 leading-relaxed text-sm">
+                  Descubra o sistema financeiro paralelo que nenhum banco controla. Você vai entender o que é DeFi, como ele funciona e quais as oportunidades disponíveis nesse ecossistema em expansão.
+                </p>
+              </div>
+            </div>
+
+            {/* MÓDULO 9 */}
+            <div className="bg-gray-900 rounded-lg overflow-hidden border border-gray-800 hover:border-blue-900 transition group">
+              <div className="h-48 bg-gradient-to-br from-blue-900/20 to-blue-900/5 flex items-center justify-center relative overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-900/30 to-transparent opacity-0 group-hover:opacity-100 transition"></div>
+                <span className="text-6xl">9️⃣</span>
+              </div>
+              <div className="p-6">
+                <p className="text-blue-900 font-black text-sm mb-2">MÓDULO 9</p>
+                <h3 className="text-xl font-black mb-4 text-white">Airdrop — Tudo para que você possa lucrar</h3>
+                <p className="text-gray-400 leading-relaxed text-sm">
+                  Aprenda a capturar valor onde a maioria nem sabe que existe. Você vai entender como funcionam os airdrops e como se posicionar estrategicamente para lucrar com distribuições gra tuítas de tokens.
                 </p>
               </div>
             </div>
