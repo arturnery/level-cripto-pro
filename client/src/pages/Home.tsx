@@ -999,14 +999,15 @@ export default function Home() {
           <div className="grid md:grid-cols-3 gap-8 mb-16">
             {/* Event Card 1 */}
             <div className="bg-gradient-to-br from-blue-900/30 to-blue-900/10 border-2 border-blue-900/40 rounded-2xl p-8 hover:border-blue-900/60 transition">
-              <div className="h-48 bg-blue-900/20 rounded-xl mb-6 flex items-center justify-center text-gray-400">
-                🏀 Espaço para Logo/Imagem
-              </div>
-              <h3 className="text-xl font-black text-blue-400 mb-3">Evento 1</h3>
+              <video className="h-48 bg-blue-900/20 rounded-xl mb-6 w-full object-cover" controls>
+                <source src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663190783268/grfBuNcrvheONDiz.mov" type="video/mp4" />
+                Seu navegador não suporta vídeo HTML5.
+              </video>
+              <h3 className="text-xl font-black text-blue-400 mb-3">Solana Breakpoint Abu Dhabi</h3>
               <p className="text-gray-300 text-sm leading-relaxed mb-4">
-                Descrição do evento ou participação especial de Renan Mataveli
+                Participacao especial no Evento Solana Breakpoint Abu Dhabi, realizado em 2025.
               </p>
-              <p className="text-xs text-blue-400 font-bold">Adicione data/detalhes aqui</p>
+              <p className="text-xs text-blue-400 font-bold">2025</p>
             </div>
 
             {/* Event Card 2 */}
