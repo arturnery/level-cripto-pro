@@ -906,7 +906,7 @@ export default function Home() {
               <p className="text-gray-300 mb-8 leading-relaxed text-lg">
                 Fale com um dos nossos consultores e tire todas as suas dúvidas sobre o Level Cripto PRO
               </p>
-              <button className="bg-gradient-to-r from-blue-900 to-blue-950 text-white font-black py-4 px-8 rounded-xl hover:from-blue-950 hover:to-blue-900 transition w-full mb-6 border border-blue-900/60 transform hover:scale-105">
+              <button className="bg-gradient-to-r from-green-600 to-green-700 text-white font-black py-4 px-8 rounded-xl hover:from-green-700 hover:to-green-600 transition w-full mb-6 border border-green-600/60 transform hover:scale-105">
                 FALE COM NOSSO WHATSAPP
               </button>
               <p className="text-xs text-blue-400 text-center font-bold">
