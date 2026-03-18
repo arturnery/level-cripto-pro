@@ -1,18 +1,17 @@
-# Level Cripto PRO - Landing Page com Integração de Banco de Dados
+# Level Cripto PRO - Landing Page Full-Stack
 
-Uma landing page moderna para um curso de criptomoedas, desenvolvida com tecnologias full-stack. O projeto demonstra integração completa entre frontend React, backend Express com tRPC, e banco de dados MySQL, implementando boas práticas de desenvolvimento profissional.
+Uma landing page moderna e responsiva para um curso de criptomoedas, desenvolvida com tecnologias full-stack profissionais. O projeto demonstra integração completa entre frontend React, backend Express com tRPC, e banco de dados MySQL, implementando boas práticas de desenvolvimento em produção.
 
 ## 📚 Processo de Desenvolvimento
 
-Este projeto foi desenvolvido como estudo de caso para portfólio, com assistência de IA para estrutura e documentação. O objetivo era aprender e demonstrar conhecimento em desenvolvimento full-stack.
+Este projeto foi desenvolvido como estudo de caso para portfólio, com assistência de IA para estrutura e documentação. O objetivo era aprender e demonstrar conhecimento em desenvolvimento full-stack moderno.
 
 **Aprendizados principais:**
-- ✅ Integração full-stack: React + Express + MySQL
+- ✅ Integração full-stack: React 19 + Express + MySQL
 - ✅ Type-safety end-to-end com TypeScript e tRPC
-- ✅ Validação robusta em múltiplas camadas
-- ✅ Segurança de dados e prevenção de SQL injection
 - ✅ Arquitetura escalável e manutenível
 - ✅ Boas práticas de desenvolvimento profissional
+- ✅ Design responsivo com Tailwind CSS 4
 - ✅ Documentação técnica detalhada
 
 **Tecnologias dominadas durante o desenvolvimento:**
@@ -20,20 +19,21 @@ Este projeto foi desenvolvido como estudo de caso para portfólio, com assistên
 - Drizzle ORM para gerenciamento de banco de dados
 - React 19 com hooks modernos
 - Express.js para backend
-- Zod para validação de dados
 - Tailwind CSS 4 para styling
+- TypeScript para type-safety
 
-> **Nota:** Este projeto demonstra capacidade de usar ferramentas modernas (IA) de forma eficaz, entender código profundo, implementar boas práticas e ser transparente sobre o processo. Todos os conceitos foram estudados, entendidos e testados em detalhe.
+> **Nota:** Este projeto demonstra capacidade de usar ferramentas modernas de forma eficaz, entender código profundo, implementar boas práticas e ser transparente sobre o processo. Todos os conceitos foram estudados, entendidos e testados em detalhe.
 
 ## 🎯 Visão Geral do Projeto
 
-**Level Cripto PRO** é uma plataforma de educação em criptomoedas que oferece:
+**Level Cripto PRO** é uma landing page educacional que oferece:
 - Landing page responsiva e visualmente atraente
-- Sistema de inscrição na lista de espera com validação robusta
-- Persistência de dados em banco de dados MySQL
+- Design moderno com tema azul/ciano
+- Seções: Hero, Benefícios, Professor, Diferenciadores, Módulos, FAQ, Eventos
+- Conteúdo dinâmico e bem estruturado
+- Backend preparado para futuras funcionalidades
 - APIs type-safe com tRPC
 - Autenticação OAuth integrada
-- Experiência de usuário otimizada
 
 ## 🏗️ Arquitetura do Sistema
 
@@ -42,10 +42,11 @@ Este projeto foi desenvolvido como estudo de caso para portfólio, com assistên
 │                    Cliente (Browser)                         │
 │  ┌──────────────────────────────────────────────────────┐  │
 │  │  React 19 + TypeScript + Tailwind CSS 4             │  │
-│  │  - Landing page responsiva                          │  │
-│  │  - Modal de inscrição com validação                 │  │
-│  │  - Input mask automático para telefone              │  │
-│  │  - Mensagens de erro amigáveis                      │  │
+│  │  - Landing page responsiva e moderna                │  │
+│  │  - Seções: Hero, Benefícios, Professor, Módulos     │  │
+│  │  - FAQ com accordions expansíveis                   │  │
+│  │  - Vídeos de eventos integrados                     │  │
+│  │  - Design profissional e acessível                  │  │
 │  └──────────────────────────────────────────────────────┘  │
 └─────────────────────────────────────────────────────────────┘
                             ↓ HTTP/tRPC
@@ -57,6 +58,7 @@ Este projeto foi desenvolvido como estudo de caso para portfólio, com assistên
 │  │  - Validação com Zod                                │  │
 │  │  - Autenticação OAuth (Manus)                       │  │
 │  │  - Funções de banco de dados                        │  │
+│  │  - Preparado para expansão futura                   │  │
 │  └──────────────────────────────────────────────────────┘  │
 └─────────────────────────────────────────────────────────────┘
                             ↓ SQL
@@ -65,8 +67,8 @@ Este projeto foi desenvolvido como estudo de caso para portfólio, com assistên
 │  ┌──────────────────────────────────────────────────────┐  │
 │  │  MySQL + Drizzle ORM                                │  │
 │  │  - Tabela: users (autenticação)                     │  │
-│  │  - Tabela: inscricoes (lista de espera)             │  │
-│  │  - Migrations automáticas                           │  │
+│  │  - Schema preparado para futuras tabelas            │  │
+│  │  - Migrations automáticas com Drizzle Kit           │  │
 │  └──────────────────────────────────────────────────────┘  │
 └─────────────────────────────────────────────────────────────┘
 ```
@@ -81,6 +83,7 @@ Este projeto foi desenvolvido como estudo de caso para portfólio, com assistên
 - **tRPC Client** - Type-safe RPC client para comunicação com backend
 - **React Query** - Gerenciamento de estado e cache de dados
 - **Lucide React** - Biblioteca de ícones SVG
+- **Wouter** - Router minimalista para navegação
 
 ### Backend
 - **Express 4** - Framework web minimalista e flexível
@@ -88,6 +91,7 @@ Este projeto foi desenvolvido como estudo de caso para portfólio, com assistên
 - **tRPC 11** - Framework RPC type-safe para APIs
 - **Zod** - Validação de dados com schemas TypeScript
 - **Jose** - JWT para autenticação segura
+- **Cookie** - Gerenciamento de cookies de sessão
 
 ### Banco de Dados
 - **MySQL** - Banco de dados relacional robusto
@@ -121,8 +125,8 @@ Este projeto foi desenvolvido como estudo de caso para portfólio, com assistên
 // Problema: Sem type-safety, precisa duplicar tipos
 
 // tRPC (nossa escolha)
-// Backend: inscricoes.criar.mutation(...)
-// Frontend: trpc.inscricoes.criar.useMutation(...)
+// Backend: auth.me.query()
+// Frontend: trpc.auth.me.useQuery()
 // Benefício: Type-safe, sem duplicação
 ```
 
@@ -141,39 +145,25 @@ Este projeto foi desenvolvido como estudo de caso para portfólio, com assistên
 ```typescript
 // Drizzle (nossa escolha)
 const result = await db.select()
-  .from(inscricoes)
-  .where(eq(inscricoes.email, email))
+  .from(users)
+  .where(eq(users.email, email))
   .limit(1);
 // Benefício: Type-safe, sem strings SQL
 
 // SQL puro (alternativa)
-const result = await db.query('SELECT * FROM inscricoes WHERE email = ?', [email]);
+const result = await db.query('SELECT * FROM users WHERE email = ?', [email]);
 // Problema: Sem type-safety, propenso a erros
 ```
 
-### 3. **Por Que Validação no Frontend E Backend?**
+### 3. **Por Que TypeScript em Todo o Código?**
 
-**Abordagem:** Validação em dois níveis
-
-**Razões:**
-- ✅ **Frontend**: Feedback instantâneo ao usuário (UX melhor)
-- ✅ **Backend**: Segurança - nunca confiar apenas no cliente
-- ✅ **Zod**: Mesmo schema de validação em ambos os lugares
-
-**Fluxo:**
-```
-Usuário digita → Validação Frontend (instant) → Envio → Validação Backend (segura) → BD
-```
-
-### 4. **Por Que Input Mask para Telefone?**
-
-**Escolha:** Formatação automática `(11) 99999-9999`
+**Abordagem:** Type-safety completo
 
 **Razões:**
-- ✅ **UX melhor**: Usuário vê o formato correto enquanto digita
-- ✅ **Menos erros**: Reduz inscrições com telefone inválido
-- ✅ **Profissional**: Aplicação parece mais polida
-- ✅ **Compatível**: Funciona com validação backend
+- ✅ **Menos bugs**: Erros detectados em tempo de desenvolvimento
+- ✅ **Melhor documentação**: Tipos servem como documentação viva
+- ✅ **Refatoração segura**: Mudanças propagam através do código
+- ✅ **Autocompletar**: IDE oferece sugestões precisas
 
 ## 🗄️ Schema do Banco de Dados
 
@@ -194,98 +184,89 @@ Usuário digita → Validação Frontend (instant) → Envio → Validação Bac
 
 **Propósito:** Armazenar usuários autenticados via OAuth
 
-### Tabela: `inscricoes`
-```typescript
-{
-  id: int (PK, auto-increment),
-  email: varchar(255) (unique),
-  telefone: varchar(20),
-  criadoEm: timestamp (default: now)
-}
-```
-
-**Propósito:** Armazenar inscrições na lista de espera
-
 ## 📡 APIs tRPC
 
-### `inscricoes.criar` (Mutation)
+### `auth.me` (Query)
 
-**Descrição:** Criar nova inscrição na lista de espera
-
-**Input:**
-```typescript
-{
-  email: string (email válido),
-  telefone: string (11 dígitos, começa com 9)
-}
-```
+**Descrição:** Obter informações do usuário autenticado
 
 **Output:**
 ```typescript
 {
   id: number,
+  name: string,
   email: string,
-  telefone: string,
-  criadoEm: Date
-}
+  role: 'user' | 'admin'
+} | null
 ```
 
-**Validação:**
-- Email: Validado com regex no frontend, Zod no backend
-- Telefone: Deve ter 11 dígitos e começar com 9
-- Unicidade: Email não pode estar duplicado
+### `auth.logout` (Mutation)
 
-**Exemplo de Uso:**
-```typescript
-// Frontend
-const { mutate } = trpc.inscricoes.criar.useMutation();
-mutate({ 
-  email: 'usuario@example.com', 
-  telefone: '(11) 99999-9999' 
-});
-```
-
-### `inscricoes.listar` (Query)
-
-**Descrição:** Listar todas as inscrições
-
-**Input:** Nenhum
+**Descrição:** Fazer logout do usuário
 
 **Output:**
 ```typescript
-Array<{
-  id: number,
-  email: string,
-  telefone: string,
-  criadoEm: Date
-}>
-```
-
-**Exemplo de Uso:**
-```typescript
-// Frontend
-const { data } = trpc.inscricoes.listar.useQuery();
+{
+  success: boolean
+}
 ```
 
 ## 🔐 Segurança Implementada
 
-### 1. **Validação em Dois Níveis**
-- Frontend: Feedback instantâneo
-- Backend: Segurança contra manipulação
-
-### 2. **Type-Safety**
+### 1. **Type-Safety**
 - TypeScript em todo o código
 - Zod para validação de runtime
 - Sem `any` types
 
-### 3. **Proteção de Dados**
+### 2. **Proteção de Dados**
 - `.env` não é commitado (`.gitignore`)
 - Dados sensíveis não são expostos no frontend
 - JWT para autenticação segura
+- Cookies HTTP-only para sessões
 
-### 4. **SQL Injection Prevention**
+### 3. **SQL Injection Prevention**
 - Drizzle ORM usa prepared statements
 - Sem concatenação de strings SQL
+
+### 4. **CORS e Segurança HTTP**
+- Configuração segura de headers
+- Proteção contra ataques comuns
+
+## 📁 Estrutura de Pastas
+
+```
+bitcoin-pro-landing-page/
+├── client/                 # Frontend React
+│   ├── src/
+│   │   ├── pages/         # Componentes de página (Home.tsx)
+│   │   ├── components/    # Componentes reutilizáveis
+│   │   ├── _core/         # Hooks e contextos (useAuth)
+│   │   ├── lib/           # Utilitários (tRPC client)
+│   │   ├── App.tsx        # Componente raiz com rotas
+│   │   ├── main.tsx       # Entry point
+│   │   └── index.css      # Estilos globais
+│   ├── public/            # Assets estáticos
+│   └── index.html         # HTML template
+├── server/                 # Backend Express
+│   ├── _core/             # Framework core (OAuth, context, etc)
+│   ├── db.ts              # Funções de banco de dados
+│   ├── routers.ts         # Procedures tRPC
+│   ├── storage.ts         # Upload de arquivos (S3)
+│   └── index.ts           # Entry point do servidor
+├── drizzle/               # Banco de dados
+│   ├── schema.ts          # Schema das tabelas
+│   ├── relations.ts       # Relações entre tabelas
+│   └── migrations/        # Migrations automáticas
+├── shared/                # Código compartilhado
+│   ├── types.ts           # Tipos compartilhados
+│   └── const.ts           # Constantes
+├── .env.example           # Exemplo de variáveis de ambiente
+├── package.json           # Dependências do projeto
+├── tsconfig.json          # Configuração TypeScript
+├── tailwind.config.ts     # Configuração Tailwind CSS
+├── vite.config.ts         # Configuração Vite
+└── README.md              # Este arquivo
+```
 
 ## 🚀 Como Executar Localmente
 
@@ -315,122 +296,74 @@ pnpm db:push
 pnpm dev
 ```
 
-A aplicação estará disponível em `http://localhost:5173`
-
-## 📦 Estrutura de Pastas
-
-```
-bitcoin-pro-landing-page/
-├── client/                 # Frontend React
-│   ├── src/
-│   │   ├── pages/         # Componentes de página
-│   │   ├── components/    # Componentes reutilizáveis
-│   │   ├── lib/           # Utilitários (tRPC client)
-│   │   ├── hooks/         # Custom React hooks
-│   │   └── App.tsx        # Componente raiz
-│   └── index.html
-├── server/                 # Backend Express
-│   ├── db.ts              # Funções de banco de dados
-│   ├── routers.ts         # Procedures tRPC
-│   ├── storage.ts         # Upload de arquivos (S3)
-│   └── _core/             # Código interno (OAuth, etc)
-├── drizzle/               # Banco de dados
-│   ├── schema.ts          # Definição de tabelas
-│   ├── migrations/        # Histórico de mudanças
-│   └── relations.ts       # Relacionamentos
-├── shared/                # Código compartilhado
-│   ├── const.ts           # Constantes
-│   └── types.ts           # Tipos compartilhados
-├── package.json
-├── tsconfig.json
-├── vite.config.ts
-└── README.md
-```
+A aplicação estará disponível em `http://localhost:3000`
 
 ## 🧪 Testes
 
 ```bash
-# Executar testes
+# Executar testes unitários
 pnpm test
 
-# Testes com coverage
-pnpm test -- --coverage
+# Executar testes em modo watch
+pnpm test:watch
 ```
 
-## 🎓 Aprendizados Principais
+## 📦 Build para Produção
 
-### 1. **Validação Amigável ao Usuário**
-Mostrar mensagens claras em vez de erros técnicos melhora significativamente a UX.
+```bash
+# Build do projeto
+pnpm build
 
-### 2. **Type-Safety é Produtividade**
-TypeScript + tRPC reduz bugs e acelera desenvolvimento.
-
-### 3. **Separação de Responsabilidades**
-Frontend valida para UX, backend valida para segurança.
-
-### 4. **Migrations Automáticas**
-Drizzle ORM torna fácil evoluir o schema sem scripts SQL manuais.
-
-## 🔄 Fluxo de Inscrição
-
-```
-1. Usuário clica "ENTRAR NA LISTA DE ESPERA"
-   ↓
-2. Modal abre com formulário
-   ↓
-3. Usuário preenche email e telefone
-   ↓
-4. Validação Frontend (email, telefone)
-   ↓
-5. Se válido, envia para tRPC.inscricoes.criar
-   ↓
-6. Backend valida novamente com Zod
-   ↓
-7. Drizzle ORM salva no MySQL
-   ↓
-8. Retorna sucesso ao frontend
-   ↓
-9. Mostra mensagem "Inscrição Confirmada!"
-   ↓
-10. Formulário é limpo
+# Preview do build
+pnpm preview
 ```
 
-## 📈 Métricas de Performance
+## 🎨 Design e UX
 
-- **Lighthouse Score**: 95+ (Performance, Accessibility, Best Practices)
-- **Bundle Size**: ~150KB (gzipped)
-- **First Contentful Paint**: < 1.5s
-- **Time to Interactive**: < 2.5s
+### Paleta de Cores
+- **Primária:** Azul (#3B82F6)
+- **Secundária:** Verde (#10B981)
+- **Fundo:** Preto (#000000) e Cinza (#111827)
+- **Texto:** Branco (#FFFFFF) e Cinza claro (#D1D5DB)
 
-## 🚢 Deploy
+### Responsividade
+- Mobile-first approach
+- Breakpoints: sm (640px), md (768px), lg (1024px), xl (1280px)
+- Todos os componentes testados em múltiplos tamanhos de tela
 
-O projeto está pronto para deploy em plataformas como:
-- Vercel (frontend)
-- Railway (backend + database)
-- Render
-- Heroku
+### Acessibilidade
+- Contraste de cores WCAG AA compliant
+- Navegação por teclado funcional
+- Semântica HTML correta
+- ARIA labels onde necessário
 
-## 📝 Próximos Passos Sugeridos
+## 📄 Seções da Landing Page
 
-1. **Integração com Hotmart**: Conectar CTA ao checkout
-2. **Dashboard Admin**: Visualizar inscrições em tempo real
-3. **Email Automático**: Confirmação por email ao se inscrever
-4. **Analytics**: Rastrear conversão de inscrições
-5. **Testes E2E**: Cypress ou Playwright para testes de integração
+1. **Hero** - Apresentação principal com CTA
+2. **Benefícios** - 6 benefícios principais do curso
+3. **Professor** - Informações sobre Renan Mataveli com foto
+4. **Diferenciadores** - O que torna o curso único
+5. **Módulos** - 9 módulos do curso com descrições
+6. **FAQ** - Perguntas frequentes com accordions
+7. **Eventos** - Participações especiais e eventos
+8. **Footer** - Links e informações de contato
+
+## 🔄 Próximas Funcionalidades Planejadas
+
+- [ ] Sistema de inscrição na lista de espera
+- [ ] Dashboard de administrador
+- [ ] Integração com email marketing
+- [ ] Análise de conversão
+- [ ] Sistema de pagamento (Stripe)
+
+## 📞 Contato
+
+Para dúvidas ou sugestões sobre o projeto, entre em contato através do GitHub ou email.
 
 ## 📄 Licença
 
-MIT - Sinta-se livre para usar este projeto como referência ou portfólio.
-
-## 👨‍💻 Autor
-
-Desenvolvido como projeto de portfólio para demonstrar:
-- Desenvolvimento full-stack com React + Express
-- Type-safety com TypeScript
-- Integração de banco de dados com Drizzle ORM
-- APIs type-safe com tRPC
-- Boas práticas de UX e segurança
+Este projeto está sob a licença MIT. Veja o arquivo LICENSE para mais detalhes.
 
 ---
 
-**Última atualização:** Fevereiro 2026
+**Desenvolvido com ❤️ para demonstrar expertise em desenvolvimento full-stack moderno**
