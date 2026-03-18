@@ -1013,7 +1013,7 @@ export default function Home() {
           <div className="grid md:grid-cols-3 gap-8 mb-16">
             {/* Event Card 1 */}
             <div className="bg-gradient-to-br from-blue-900/30 to-blue-900/10 border-2 border-blue-900/40 rounded-2xl p-8 hover:border-blue-900/60 transition">
-              <video className="h-48 bg-blue-900/20 rounded-xl mb-6 w-full object-cover" controls>
+              <video className="h-48 bg-blue-900/20 rounded-xl mb-6 w-full object-cover" controls muted>
                 <source src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663190783268/grfBuNcrvheONDiz.mov" type="video/mp4" />
                 Seu navegador não suporta vídeo HTML5.
               </video>
