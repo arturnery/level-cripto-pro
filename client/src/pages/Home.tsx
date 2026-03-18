@@ -960,32 +960,46 @@ export default function Home() {
             </div>
 
             {/* FAQ Items */}
-            <div className="space-y-3">
-              <div className="text-lg font-black mb-6 text-blue-900">Dúvidas Frequentes</div>
-              {faqItems.map((item, idx) => (
-                <div
-                  key={idx}
-                  className="bg-black rounded-lg border border-gray-800 overflow-hidden"
-                >
-                  <button
-                    onClick={() => setExpandedFAQ(expandedFAQ === idx ? null : idx)}
-                    className="w-full px-6 py-4 flex justify-between items-center hover:bg-gray-800 transition font-bold text-white text-left"
-                  >
-                    <span className="text-sm">{item.question}</span>
-                    <ChevronDown
-                      size={20}
-                      className={`transition-transform flex-shrink-0 ml-4 ${
-                        expandedFAQ === idx ? "rotate-180" : ""
-                      }`}
-                    />
-                  </button>
-                  {expandedFAQ === idx && (
-                    <div className="px-6 py-4 bg-gray-800 border-t border-gray-700 text-gray-300 text-sm">
-                      {item.answer}
-                    </div>
-                  )}
+            <div>
+              {/* Badge */}
+              <div className="flex mb-8">
+                <div className="inline-flex items-center gap-2 border-2 border-blue-500 rounded-full px-6 py-3">
+                  <span className="w-2 h-2 bg-blue-500 rounded-full"></span>
+                  <span className="text-blue-500 font-black text-sm">DÚVIDAS FREQUENTES</span>
                 </div>
-              ))}
+              </div>
+
+              {/* Title */}
+              <h3 className="text-3xl font-black mb-8 text-white">
+                Tem alguma <span className="text-blue-500">dúvida?</span>
+              </h3>
+
+              {/* FAQ Items */}
+              <div className="space-y-4">
+                {faqItems.map((item, idx) => (
+                  <div
+                    key={idx}
+                    className="bg-transparent border-2 border-blue-900/50 rounded-2xl overflow-hidden hover:border-blue-900/80 transition"
+                  >
+                    <button
+                      onClick={() => setExpandedFAQ(expandedFAQ === idx ? null : idx)}
+                      className="w-full px-8 py-6 flex justify-between items-center hover:bg-blue-900/10 transition font-semibold text-white text-left"
+                    >
+                      <span className="text-base">{item.question}</span>
+                      <div className="w-10 h-10 flex items-center justify-center border-2 border-blue-500 rounded-full flex-shrink-0 ml-4">
+                        <span className={`text-blue-500 text-xl font-bold transition-transform ${
+                          expandedFAQ === idx ? "rotate-45" : ""
+                        }`}>+</span>
+                      </div>
+                    </button>
+                    {expandedFAQ === idx && (
+                      <div className="px-8 py-6 bg-blue-900/10 border-t-2 border-blue-900/50 text-gray-300 text-sm leading-relaxed">
+                        {item.answer}
+                      </div>
+                    )}
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>
